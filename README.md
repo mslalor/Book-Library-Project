@@ -1,5 +1,7 @@
 # Book-Library-Project
 
+pweb.html is the Project Website that holds all of our deliverables.
+
 Here's a link to the Project Pitch Presentation 
 https://docs.google.com/presentation/d/1ZUvkWjVVrHXY7PvtJWYM9PY-nLF-qYOtTNUASSvMH9I/edit?usp=sharing
 
