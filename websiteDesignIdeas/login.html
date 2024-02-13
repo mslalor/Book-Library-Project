@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Design by foolishdeveloper.com -->
+  
     <title>Personal Library</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -69,11 +69,11 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-button{
+.button, form button, form input[type="button"], form input[type="submit"]{
     margin-top: 50px;
     width: 100%;
     background-color: black;
-    color: #080710;
+    color: white;
     padding: 15px 0;
     font-size: 18px;
     font-weight: 600;
@@ -97,7 +97,12 @@ button{
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
 
-        <button> <a href="dashboard.html">Log In</a></button>
+        <a href="dashboard.html">
+            <input type="button" value = "Login!" onclick= "window.location.href = 'dashboard.html'" /></input>
+        </a>
+
+       
+
         <div style = "text-align: center">
             <p>Don't have an account?</p>
             <p style = "font-weight: 100px;"> <a href = registration.html>Sign up here!</a></p>
