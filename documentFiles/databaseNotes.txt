@@ -1,0 +1,9 @@
+Some useful websites for the database:
+
+1) How to link Visual Studio Code to Azure: https://learn.microsoft.com/en-us/visualstudio/azure/azure-sql-database-add-connected-service?view=vs-2022
+
+2) How to connect Visual Studio Code to Azure, video tutorial: https://youtu.be/3b3dL4kwLUA?si=KGBekju1WvvkPM7g
+
+3) Using Node.js to query a database: https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-nodejs?view=azuresql&tabs=windows
+
+4) Connect to and query using Node.js: https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-sql-javascript-mssql-quickstart?view=azuresql&tabs=passwordless%2Cservice-connector%2Cportal
