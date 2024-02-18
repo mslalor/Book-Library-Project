@@ -24,7 +24,7 @@ body{
 form{
     height: 520px;
     width: 400px;
-    background-color: rgb(177, 177, 250);
+    background-color: rgb(177, 177, 251);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -52,7 +52,7 @@ form h3{
 label{
     display: block;
     margin-top: 30px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
 }
 input{
@@ -60,11 +60,14 @@ input{
     height: 50px;
     width: 100%;
     background-color: rgba(150, 168, 249, 0.07);
-    border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 300;
+    border: 1.5px solid rgba(255, 255, 255, 0.721);
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 ::placeholder{
     color: #e5e5e5;
@@ -73,12 +76,15 @@ input{
     margin-top: 50px;
     width: 100%;
     background-color: black;
-    color: white;
-    padding: 15px 0;
+    color: rgb(177, 177, 251);
     font-size: 18px;
     font-weight: 600;
-    border-radius: 5px;
+    border: none;
     cursor: pointer;
+}
+
+.login-link {
+    text-decoration: none;
 }
 
 
@@ -97,15 +103,15 @@ input{
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
 
-        <a href="dashboard.html">
-            <input type="button" value = "Login!" onclick= "window.location.href = 'dashboard.html'" />
+        <a href="dashboard.html" class="login-link">
+            <input type="button" value = "Log in" onclick= "window.location.href = 'dashboard.html'" />
         </a>
 
        
 
         <div style = "text-align: center">
-            <p>Don't have an account?</p>
-            <p style = "font-weight: 100px;"> <a href = registration.html>Sign up here!</a></p>
+            <p style = "font-size: 14px; padding-top:20px;" >Don't have an account?</p>
+            <p style = "font-weight: 100px; font-size: 14px;"> <a href = registration.html>Sign up here!</a></p>
         </div>
     </form>
 </body>
