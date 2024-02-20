@@ -1,5 +1,21 @@
 Some useful websites for the database:
 
+AWS:
+
+1) Adding an Amazon RDS DB instance to your Node.js application environment: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-nodejs.rds.html
+
+2) A stackoverflow example of an issue someone had, could be useful: https://stackoverflow.com/questions/38288154/connect-to-aws-mysql-database-via-node-js
+
+3) Connect to MySQL on AWS RDS using NodeJS, video tutorial:  https://youtu.be/6Nt-Jl3CzxE?si=-8jqpqpCeSZeSGw6
+
+4) Building a Scalable Web Application with AWS RDS, MySQL, and Node.js: A Complete Project Showcase, video tutorial: https://youtu.be/aaSRctAZB5Y?si=nTn3bGOmmH5HmoR1
+
+5) How to use an AWS SQL Database with Node.js and MySQL workbench! (can sign up for free to read):  https://javascript.plainenglish.io/how-to-use-an-aws-sql-database-with-node-js-and-mysql-workbench-f77a71ac12be
+
+6) How to Connect AWS RDS MySQL & NodeJs Application in 5 minutes.: https://medium.com/@Anas.shahwan/how-to-connect-aws-rds-mysql-nodejs-application-in-5-minutes-40d6fbf09b66
+
+Azure (no longer using):
+
 1) How to link Visual Studio Code to Azure: https://learn.microsoft.com/en-us/visualstudio/azure/azure-sql-database-add-connected-service?view=vs-2022
 
 2) How to connect Visual Studio Code to Azure, video tutorial: https://youtu.be/3b3dL4kwLUA?si=KGBekju1WvvkPM7g
