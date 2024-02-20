@@ -25,8 +25,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>EDIT</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>ADD</a>
     <a href = "login.html" style = "padding-left: 8mm;" > Sign out </a>
   </div>
 </nav>
@@ -46,9 +46,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <div class="w3-section w3-bottombar w3-padding-16">
         <!--We will need to add functionality to this -->
       <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black" onclick = "filterAll()">ALL</button>
+      <button class="w3-button w3-white" onclick = "filterAll()">ALL</button>
       <button class="w3-button w3-white" onclick = "filterLent()"></i>Lent out</button>
-      <button class="w3-button w3-white w3-hide-small" onclick= "filterIn()"></i>In Library</button>
+      <button class="w3-button w3-white" onclick= "filterIn()"></i>In Library</button>
     </div>
     </div>
   </header>
@@ -78,46 +78,75 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding" hidden>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="img/games2.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book4" hidden>
+      <img src="img/potter1.jpg" id = "image4" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b> Example Book</b></p>
-        <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <p id = "title4">Example Book</p>
+        <p id = "summ4" >Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
-    <div class="w3-third w3-container w3-margin-bottom" hidden> 
-      <img src="img/malala.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-third w3-container w3-margin-bottom" id = "book5" hidden>
+      <img src="img/potter7.jpeg" id = "image2" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b> Example Book</b></p>
-        <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <p id = "title5"><b> Example Book</b></p>
+        <p id = "summ5">Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
-    <div class="w3-third w3-container" hidden >
-      <img src="img/dictionary.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-third w3-container" id="book6" hidden >
+      <img src="img/games1.jpeg" id="image3" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b> Example Book</b></p>
-        <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <p id = "title6"><b> Example Book</b></p>
+        <p id = "summ6">Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
   </div>
-
-  <!-- Pagination -->
-  <!--We will also need to add functionality to this -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book7" hidden>
+      <img src="img/potter1.jpg" id = "image7" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title7">Example Book</p>
+        <p id = "summ7" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" id = "book8" hidden>
+      <img src="img/potter7.jpeg" id = "image8" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title8"><b> Example Book</b></p>
+        <p id = "summ8">Here would be the author, summary? ISBN info, and if it is available or not</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container" id="book9" hidden >
+      <img src="img/games1.jpeg" id="image9" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title9"><b> Example Book</b></p>
+        <p id = "summ9">Here would be the author, summary? ISBN info, and if it is available or not</p>
+      </div>
     </div>
   </div>
-
-  <!-- Images of Me -->
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book10" hidden>
+      <img src="img/potter1.jpg" id = "image10" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title10">Example Book</p>
+        <p id = "summ10" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" id = "book11" hidden>
+      <img src="img/potter7.jpeg" id = "image11" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title11"><b> Example Book</b></p>
+        <p id = "summ11">Here would be the author, summary? ISBN info, and if it is available or not</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container" id="book12" hidden >
+      <img src="img/games1.jpeg" id="image12" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title12"><b> Example Book</b></p>
+        <p id = "summ12">Here would be the author, summary? ISBN info, and if it is available or not</p>
+      </div>
+    </div>
+  </div>
   
 
   <div class="w3-container w3-padding-large" style="margin-bottom: 10mm">
