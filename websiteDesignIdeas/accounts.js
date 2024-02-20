@@ -1,15 +1,19 @@
 class Account{
-    constructor (username, email, password){
+    constructor (username, email, password, id){
+    
         this.username = username;
         this.email = email;
         this.password = password;
         this.numBooks = 0;
         this.bookList = [];
+        this.id = id;
+        
+    
     }
 
     addBook(book){
-        this.bookList[numBooks] = book;
-        numBooks++;
+        this.bookList[this.numBooks] = book;
+        this.numBooks++;
     }
 
     checkOut(book){
@@ -20,16 +24,16 @@ class Account{
 }
 
 class Book{
-    constructor(title, author, isbn, status){
+    constructor(title, author, isbn, status, img){
+        
         this.title = title;
         this.author = author;
         this.isbn = isbn;
         this.status = status;
+        this.img = img; 
     }
 
-    editStatus(){
-        this.status = !this.status;
-    }
+   
 }
 
 

@@ -21,7 +21,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <i class="fa fa-remove"></i>
     </a>
     <img src="img/profile.png" style="width:45%;" class="w3-round"><br><br>
-    <h4><b> [InsertUsername]'s Library</b></h4>
+    <h4 id = "SideTitle"><b> [InsertUsername]'s Library</b></h4>
   </div>
   <div class="w3-bar-block">
     <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
@@ -39,47 +39,48 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+   <!-- <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>-->
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>[InsertUserName]'s Library</b></h1>
+    <h1 id = "Title"><b>[InsertUserName]'s Library</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
         <!--We will need to add functionality to this -->
       <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black">ALL</button>
-      <button class="w3-button w3-white"></i>Lent out</button>
-      <button class="w3-button w3-white w3-hide-small"></i>In Library</button>
+      <button class="w3-button w3-black" onclick = "filterAll()">ALL</button>
+      <button class="w3-button w3-white" onclick = "filterLent()"></i>Lent out</button>
+      <button class="w3-button w3-white w3-hide-small" onclick= "filterIn()"></i>In Library</button>
     </div>
     </div>
   </header>
   
   <!-- First Photo Grid-->
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="img/potter1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book1" hidden>
+      <img src="img/potter1.jpg" id = "image1" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b> Example Book</b></p>
-        <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <p id = "title1">Example Book</p>
+        <p id = "summ1" >Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="img/potter7.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-third w3-container w3-margin-bottom" id = "book2" hidden>
+      <img src="img/potter7.jpeg" id = "image2" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b> Example Book</b></p>
-        <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <p id = "title2"><b> Example Book</b></p>
+        <p id = "summ2">Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
-    <div class="w3-third w3-container">
-      <img src="img/games1.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-third w3-container" id="book3" hidden >
+      <img src="img/games1.jpeg" id="image3" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b> Example Book</b></p>
-        <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <p id = "title3"><b> Example Book</b></p>
+        <p id = "summ3">Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
   </div>
   
   <!-- Second Photo Grid-->
-  <div class="w3-row-padding">
+  <div class="w3-row-padding" hidden>
     <div class="w3-third w3-container w3-margin-bottom">
       <img src="img/games2.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
@@ -87,14 +88,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
-    <div class="w3-third w3-container w3-margin-bottom">
+    <div class="w3-third w3-container w3-margin-bottom" hidden> 
       <img src="img/malala.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b> Example Book</b></p>
         <p>Here would be the author, summary? ISBN info, and if it is available or not</p>
       </div>
     </div>
-    <div class="w3-third w3-container">
+    <div class="w3-third w3-container" hidden >
       <img src="img/dictionary.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b> Example Book</b></p>
@@ -120,29 +121,33 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   
 
   <div class="w3-container w3-padding-large" style="margin-bottom: 10mm">
-    <div style = "margin-bottom: 15mm">
-    <h4><b>About Me</b></h4>
-    <p>I like to loan out books. You can contact me at this time. THIS SHOULD BE EDITABLE BY THE USER!!!!</p>
+
+    <div class="w3-container w3-padding-large w3-grey">
+      <h4 id="contact"><b>Edit Book Status</b></h4>
+      <hr class="w3-opacity">
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Status: </label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>If Lent out, please input their email: </label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Date: </label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <button type="submit" class="w3-button w3-black w3-margin-bottom"></i>Submit</button>
+      </form>
     </div>
-    
-  
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Contact Me</b></h4>
-    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-        <p>email@email.com</p>
-      </div>
-      <div class="w3-third w3-teal">
-        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-        <p>Chicago, US</p>
-      </div>
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-        <p>512312311</p>
-      </div>
-    </div>
+    <h4 id="contact"><b>Add Book </b></h4>
     <hr class="w3-opacity">
     <form action="/action_page.php" target="_blank">
       <div class="w3-section">
@@ -150,14 +155,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <input class="w3-input w3-border" type="text" name="Name" required>
       </div>
       <div class="w3-section">
-        <label>Email</label>
+        <label>Scan or Type ISBN info</label>
         <input class="w3-input w3-border" type="text" name="Email" required>
       </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"></i>Add!</button>
     </form>
   </div>
 
@@ -172,6 +173,59 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <script>
 // Script to open and close sidebar
+var kaleigh = new Account("Kaleigh", "kaleigh@gmail.com", "password", 1);
+let userName = kaleigh.username;
+document.getElementById('SideTitle').innerHTML = userName + "'s Library";
+document.getElementById('Title').innerHTML = userName + "'s Library";
+
+let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
+kaleigh.addBook(book1);
+let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
+kaleigh.addBook(book2);
+let book3 = new Book("I am Malala", "Malala", "0002", "Lent Out", "img/malala.jpeg");
+kaleigh.addBook(book3);
+
+for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn + " Status: " + kaleigh.bookList[i].status;
+  document.getElementById("image"+j).src = kaleigh.bookList[i].img;
+  book.removeAttribute("hidden");
+  
+}
+
+function filterAll(){
+  for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  book.removeAttribute("hidden");
+}
+}
+
+function filterIn(){
+  for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  if(kaleigh.bookList[i].status == "In Library"){
+      book.removeAttribute("hidden");
+  }else{
+    book.setAttribute("hidden", true);
+  }
+}
+}
+function filterLent(){
+  for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  if(kaleigh.bookList[i].status == "Lent Out"){
+      book.removeAttribute("hidden");
+  }else{
+    book.setAttribute("hidden", true);
+  }
+}
+}
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
