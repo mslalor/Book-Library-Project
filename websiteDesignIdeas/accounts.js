@@ -1,3 +1,16 @@
+class Accounts{
+    constructor(){
+        this.accountsList = [];
+        this.accountsNum;
+    }
+
+    newAccount(account){
+        this.accountsList[this.accountsNum] = account;
+        this.accountsNum++;
+        console.log("success2");
+    }
+}
+
 class Account{
     constructor (username, email, password, id){
     
@@ -38,3 +51,7 @@ class Book{
 
 
 
+function initialize(){
+   // console.log("success");
+    var accountList = new Accounts();
+ }

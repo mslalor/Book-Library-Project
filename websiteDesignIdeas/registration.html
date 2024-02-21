@@ -143,6 +143,7 @@ form .text h3 a:hover{
 
 
 <script>
+
 const form = document.querySelector('#form')
 const username = document.querySelector('#username');
 const email = document.querySelector('#email');
@@ -193,7 +194,9 @@ document.addEventListener('submit',(e)=>{
     }
     
     if (success){
+      
       const userAccount = new Account(usernameVal, emailVal, passwordVal);
+      accountList.newAccount=userAccount;
       //console.log(userAccount.username);
       myPopup.removeAttribute("hidden");
     }else{
