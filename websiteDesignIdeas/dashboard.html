@@ -20,13 +20,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="img/profile.png" style="width:45%;" class="w3-round"><br><br>
+    <img id ="myPic" src="img/logo.png" style="width:100%;" class="w3-round"><br><br>
     <h4 id = "SideTitle"><b> [InsertUsername]'s Library</b></h4>
   </div>
   <div class="w3-bar-block">
     <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>EDIT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>ADD</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">       ADD NEW BOOK</a>
     <a href = "login.html" style = "padding-left: 8mm;" > Sign out </a>
   </div>
 </nav>
@@ -61,6 +60,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title1">Example Book</p>
         <p id = "summ1" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit1" class="w3-button w3-black w3-margin-bottom" onclick = "edit(1)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" id = "book2" hidden>
@@ -68,6 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title2"><b> Example Book</b></p>
         <p id = "summ2">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit2" class="w3-button w3-black w3-margin-bottom" onclick = "edit(2)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container" id="book3" hidden >
@@ -75,6 +76,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title3"><b> Example Book</b></p>
         <p id = "summ3">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit3" class="w3-button w3-black w3-margin-bottom" onclick = "edit(3)"> Lend this book? </button>
       </div>
     </div>
   </div>
@@ -84,6 +86,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title4">Example Book</p>
         <p id = "summ4" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit4" class="w3-button w3-black w3-margin-bottom" onclick = "edit(4)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" id = "book5" hidden>
@@ -91,6 +94,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title5"><b> Example Book</b></p>
         <p id = "summ5">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit5" class="w3-button w3-black w3-margin-bottom" onclick = "edit(5)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container" id="book6" hidden >
@@ -98,6 +102,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title6"><b> Example Book</b></p>
         <p id = "summ6">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit6" class="w3-button w3-black w3-margin-bottom" onclick = "edit(6)"> Lend this book?</button>
       </div>
     </div>
   </div>
@@ -107,6 +112,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title7">Example Book</p>
         <p id = "summ7" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit7" class="w3-button w3-black w3-margin-bottom" onclick = "edit(7)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" id = "book8" hidden>
@@ -114,6 +120,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title8"><b> Example Book</b></p>
         <p id = "summ8">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit8" class="w3-button w3-black w3-margin-bottom" onclick = "edit(8)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container" id="book9" hidden >
@@ -121,6 +128,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title9"><b> Example Book</b></p>
         <p id = "summ9">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit9" class="w3-button w3-black w3-margin-bottom" onclick = "edit(9)"> Lend this book?</button>
       </div>
     </div>
   </div>
@@ -130,6 +138,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title10">Example Book</p>
         <p id = "summ10" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit10" class="w3-button w3-black w3-margin-bottom" onclick = "edit(10)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" id = "book11" hidden>
@@ -137,6 +146,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title11"><b> Example Book</b></p>
         <p id = "summ11">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit11" class="w3-button w3-black w3-margin-bottom" onclick = "edit(11)"> Lend this book?</button>
       </div>
     </div>
     <div class="w3-third w3-container" id="book12" hidden >
@@ -144,6 +154,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <div class="w3-container w3-white">
         <p id = "title12"><b> Example Book</b></p>
         <p id = "summ12">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit12" class="w3-button w3-black w3-margin-bottom" onclick = "edit(12)"> Lend this book?</button>
       </div>
     </div>
   </div>
@@ -151,29 +162,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <div class="w3-container w3-padding-large" style="margin-bottom: 10mm">
 
-    <div class="w3-container w3-padding-large w3-grey">
-      <h4 id="contact"><b>Edit Book Status</b></h4>
-      <hr class="w3-opacity">
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input w3-border" type="text" name="Name" required>
-        </div>
-        <div class="w3-section">
-          <label>Status: </label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>If Lent out, please input their email: </label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>Date: </label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <button type="submit" class="w3-button w3-black w3-margin-bottom"></i>Submit</button>
-      </form>
-    </div>
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
     <h4 id="contact"><b>Add Book </b></h4>
@@ -191,10 +179,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </form>
   </div>
 
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-dark-grey">
-    <p> Is there anything we want to put in the footer?</p>
-  </footer>
+
   
   
 <!-- End page content -->
@@ -206,21 +191,33 @@ var kaleigh = new Account("Kaleigh", "kaleigh@gmail.com", "password", 1);
 let userName = kaleigh.username;
 document.getElementById('SideTitle').innerHTML = userName + "'s Library";
 document.getElementById('Title').innerHTML = userName + "'s Library";
-
 let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
 kaleigh.addBook(book1);
 let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
 kaleigh.addBook(book2);
-let book3 = new Book("I am Malala", "Malala", "0002", "Lent Out", "img/malala.jpeg");
+let book3 = new Book("I am Malala", "Malala", "0002", "In Library", "img/malala.jpeg");
 kaleigh.addBook(book3);
 
 for(var i = 0; i< kaleigh.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
   document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn + " Status: " + kaleigh.bookList[i].status;
+  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
   document.getElementById("image"+j).src = kaleigh.bookList[i].img;
   book.removeAttribute("hidden");
+  
+}
+
+function edit(num){
+  if(kaleigh.bookList[num-1].status == "In Library"){
+    kaleigh.bookList[num-1].status = "Lent Out";
+    //go to lending html somehow
+    document.getElementById('edit'+num).innerHTML = "Returned?";
+  }else{
+    kaleigh.bookList[num-1].status = "In Library";
+    document.getElementById('edit'+num).innerHTML = "Lend this book?"
+  }
+  document.getElementById('summ'+num).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
   
 }
 
