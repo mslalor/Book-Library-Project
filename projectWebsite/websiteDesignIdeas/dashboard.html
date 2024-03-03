@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src = "accounts.js"></script> 
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img id ="myPic" src="img/logo.png" style="width:100%;" class="w3-round"><br><br>
+    <h4 id = "SideTitle"><b> [InsertUsername]'s Library</b></h4>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">       ADD NEW BOOK</a>
+    <a href = "login.html" style = "padding-left: 8mm;" > Sign out </a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+   <!-- <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>-->
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1 id = "Title"><b>[InsertUserName]'s Library</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+        <!--We will need to add functionality to this -->
+      <span class="w3-margin-right">Filter:</span> 
+      <button class="w3-button w3-white" onclick = "filterAll()">ALL</button>
+      <button class="w3-button w3-white" onclick = "filterLent()"></i>Lent out</button>
+      <button class="w3-button w3-white" onclick= "filterIn()"></i>In Library</button>
+    </div>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book1" hidden>
+      <img src="img/potter1.jpg" id = "image1" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title1">Example Book</p>
+        <p id = "summ1" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit1" class="w3-button w3-black w3-margin-bottom" onclick = "edit(1)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" id = "book2" hidden>
+      <img src="img/potter7.jpeg" id = "image2" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title2"><b> Example Book</b></p>
+        <p id = "summ2">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit2" class="w3-button w3-black w3-margin-bottom" onclick = "edit(2)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container" id="book3" hidden >
+      <img src="img/games1.jpeg" id="image3" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title3"><b> Example Book</b></p>
+        <p id = "summ3">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit3" class="w3-button w3-black w3-margin-bottom" onclick = "edit(3)"> Lend this book? </button>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book4" hidden>
+      <img src="img/potter1.jpg" id = "image4" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title4">Example Book</p>
+        <p id = "summ4" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit4" class="w3-button w3-black w3-margin-bottom" onclick = "edit(4)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" id = "book5" hidden>
+      <img src="img/potter7.jpeg" id = "image2" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title5"><b> Example Book</b></p>
+        <p id = "summ5">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit5" class="w3-button w3-black w3-margin-bottom" onclick = "edit(5)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container" id="book6" hidden >
+      <img src="img/games1.jpeg" id="image3" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title6"><b> Example Book</b></p>
+        <p id = "summ6">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit6" class="w3-button w3-black w3-margin-bottom" onclick = "edit(6)"> Lend this book?</button>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book7" hidden>
+      <img src="img/potter1.jpg" id = "image7" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title7">Example Book</p>
+        <p id = "summ7" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit7" class="w3-button w3-black w3-margin-bottom" onclick = "edit(7)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" id = "book8" hidden>
+      <img src="img/potter7.jpeg" id = "image8" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title8"><b> Example Book</b></p>
+        <p id = "summ8">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit8" class="w3-button w3-black w3-margin-bottom" onclick = "edit(8)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container" id="book9" hidden >
+      <img src="img/games1.jpeg" id="image9" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title9"><b> Example Book</b></p>
+        <p id = "summ9">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit9" class="w3-button w3-black w3-margin-bottom" onclick = "edit(9)"> Lend this book?</button>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding" >
+    <div class="w3-third w3-container w3-margin-bottom" id = "book10" hidden>
+      <img src="img/potter1.jpg" id = "image10" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title10">Example Book</p>
+        <p id = "summ10" >Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit10" class="w3-button w3-black w3-margin-bottom" onclick = "edit(10)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" id = "book11" hidden>
+      <img src="img/potter7.jpeg" id = "image11" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title11"><b> Example Book</b></p>
+        <p id = "summ11">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit11" class="w3-button w3-black w3-margin-bottom" onclick = "edit(11)"> Lend this book?</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container" id="book12" hidden >
+      <img src="img/games1.jpeg" id="image12" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "title12"><b> Example Book</b></p>
+        <p id = "summ12">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "edit12" class="w3-button w3-black w3-margin-bottom" onclick = "edit(12)"> Lend this book?</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="w3-container w3-padding-large" style="margin-bottom: 10mm">
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact"><b>Add Book </b></h4>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Scan or Type ISBN info</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"></i>Add!</button>
+    </form>
+  </div>
+
+
+  
+  
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+var kaleigh = new Account("Kaleigh", "kaleigh@gmail.com", "password", 1);
+let userName = kaleigh.username;
+document.getElementById('SideTitle').innerHTML = userName + "'s Library";
+document.getElementById('Title').innerHTML = userName + "'s Library";
+let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
+kaleigh.addBook(book1);
+let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
+kaleigh.addBook(book2);
+let book3 = new Book("I am Malala", "Malala", "0002", "In Library", "img/malala.jpeg");
+kaleigh.addBook(book3);
+
+for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
+  document.getElementById("image"+j).src = kaleigh.bookList[i].img;
+  book.removeAttribute("hidden");
+  
+}
+
+function edit(num){
+  if(kaleigh.bookList[num-1].status == "In Library"){
+    kaleigh.bookList[num-1].status = "Lent Out";
+    //go to lending html somehow
+    document.getElementById('edit'+num).innerHTML = "Returned?";
+  }else{
+    kaleigh.bookList[num-1].status = "In Library";
+    document.getElementById('edit'+num).innerHTML = "Lend this book?"
+  }
+  document.getElementById('summ'+num).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
+  
+}
+
+function filterAll(){
+  for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  book.removeAttribute("hidden");
+}
+}
+
+function filterIn(){
+  for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  if(kaleigh.bookList[i].status == "In Library"){
+      book.removeAttribute("hidden");
+  }else{
+    book.setAttribute("hidden", true);
+  }
+}
+}
+function filterLent(){
+  for(var i = 0; i< kaleigh.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  if(kaleigh.bookList[i].status == "Lent Out"){
+      book.removeAttribute("hidden");
+  }else{
+    book.setAttribute("hidden", true);
+  }
+}
+}
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
