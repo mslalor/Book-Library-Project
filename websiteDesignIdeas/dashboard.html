@@ -165,20 +165,96 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
     <h4 id="contact"><b>Add Book </b></h4>
-    <hr class="w3-opacity">
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
+
+    <input id="input">
+    <button onclick="getbooks()">Get books</button><br>
+    <div id="output"></div>
+
+<div class="w3-row-padding"  id = "searchResults">
+    <div class="w3-third w3-container" id="result1"  style = 'margin-bottom: 10px' hidden>
+      <img src="img/games1.jpeg" id="cover1" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "search1"><b> Example Book</b></p>
+        <p id = "info1">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "add1" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(1)"> Add to Library!</button>
       </div>
-      <div class="w3-section">
-        <label>Scan or Type ISBN info</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
+    </div>
+    <div class="w3-third w3-container" id="result2" style = 'margin-bottom: 10px' hidden>
+      <img src="img/games1.jpeg" id="cover2" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "search2"><b> Example Book</b></p>
+        <p id = "info2">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "add2" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(2)"> Add to Library!</button>
+    </div>
+    </div>
+    <div class="w3-third w3-container" id="result3" style = 'margin-bottom: 10px'  hidden>
+        <img src="img/games1.jpeg" id="cover3" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p id = "search3"><b> Example Book</b></p>
+          <p id = "info3">Here would be the author, summary? ISBN info, and if it is available or not</p>
+          <button id = "add3" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(3)"> Add to Library!</button>
+        </div>
+    </div>
+    </div>
+
+<div class="w3-row-padding"  id = "searchResults">
+    <div class="w3-third w3-container" id="result4" style = 'margin-bottom: 10px'  hidden>
+        <img src="img/games1.jpeg" id="cover4" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p id = "search4"><b> Example Book</b></p>
+          <p id = "info4">Here would be the author, summary? ISBN info, and if it is available or not</p>
+          <button id = "add4" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(4)"> Add to Library!</button>
+        </div>
+    </div>
+    <div class="w3-third w3-container" id="result5" style = 'margin-bottom: 10px'  hidden>
+          <img src="img/games1.jpeg" id="cover5" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p id = "search5"><b> Example Book</b></p>
+            <p id = "info5">Here would be the author, summary? ISBN info, and if it is available or not</p>
+            <button id = "add5" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(3)"> Add to Library!</button>
+          </div>
+    </div>
+    <div class="w3-third w3-container" id="result6" style = 'margin-bottom: 10px'  hidden>
+            <img src="img/games1.jpeg" id="cover6" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+              <p id = "search6"><b> Example Book</b></p>
+              <p id = "info6">Here would be the author, summary? ISBN info, and if it is available or not</p>
+              <button id = "add6" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(6)"> Add to Library!</button>
+            </div>
+    </div>
+    </div>
+<div class="w3-row-padding"  id = "searchResults"></div>
+    <div class="w3-third w3-container" id="result7" style = 'margin-bottom: 10px'  hidden>
+              <img src="img/games1.jpeg" id="cover7" style="width:100%" class="w3-hover-opacity">
+              <div class="w3-container w3-white">
+                <p id = "search7"><b> Example Book</b></p>
+                <p id = "info7">Here would be the author, summary? ISBN info, and if it is available or not</p>
+                <button id = "add7" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(7)"> Add to Library!</button>
+              </div>
+    </div>
+    <div class="w3-third w3-container" id="result8" style = 'margin-bottom: 10px'  hidden>
+      <img src="img/games1.jpeg" id="cover8" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p id = "search8"><b> Example Book</b></p>
+        <p id = "info8">Here would be the author, summary? ISBN info, and if it is available or not</p>
+        <button id = "add8" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(8)"> Add to Library!</button>
       </div>
-      <button type="submit" class="w3-button w3-black w3-margin-bottom"></i>Add!</button>
-    </form>
+</div>
+<div class="w3-third w3-container" id="result9" style = 'margin-bottom: 10px'  hidden>
+  <img src="img/games1.jpeg" id="cover9" style="width:100%" class="w3-hover-opacity">
+  <div class="w3-container w3-white">
+    <p id = "search9"><b> Example Book</b></p>
+    <p id = "info9">Here would be the author, summary? ISBN info, and if it is available or not</p>
+    <button id = "add9" class="w3-button w3-black w3-margin-bottom" onclick = "addBook(9)"> Add to Library!</button>
+  </div>
+</div>
+
   </div>
 
+
+
+</div>
+</div>
 
   
   
@@ -260,6 +336,65 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
+}
+
+
+function addBook(num){
+  var searched = document.getElementById('result'+num);
+  var title = document.getElementById("search" + num).innerHTML;
+  var author = document.getElementById("info"+num).innerHTML;
+  if(!document.getElementById("cover"+num).src){
+    var source = 'img/noimage.jpeg';
+  }else{
+    var source = document.getElementById("cover"+num).src;
+  }
+
+ // console.log("title: " + title);
+
+  let newBook = new Book(title, author, "0000", "In Library", source)
+  kaleigh.addBook(newBook);
+  //console.log(kaleigh.numBooks);
+  //console.log(kaleigh.bookList[kaleigh.numBooks-1].title);
+
+  var j = kaleigh.numBooks;
+  var i = kaleigh.numBooks - 1;
+  //console.log(i + "= i"); 
+  var book = document.getElementById('book'+j);
+  document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;
+  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
+  document.getElementById("image"+j).src = kaleigh.bookList[i].img;
+  book.removeAttribute("hidden");
+
+  document.getElementById('input').innerHTML = "";
+  for(var i = 0; i<9; i++){
+    j = i +1;
+    var searched = document.getElementById('result'+j);
+    searched.setAttribute("hidden", true);
+  }
+
+}
+
+function getbooks(){
+    document.getElementById('output').innerHTML="Searching...";
+    fetch("https://openlibrary.org/search.json?q=" + document.getElementById("input").value)
+    .then(a => a.json())
+    .then(response =>{
+        // clear "searching..." before displaying results
+        document.getElementById('output').innerHTML = "";
+        for (var i = 0; i < 9; i++){
+            console.log("here "+ i );
+            j = i +1;
+            var searched = document.getElementById('result'+j);
+            document.getElementById("search"+j).innerHTML = response.docs[i].title;
+            document.getElementById("info"+j).innerHTML = response.docs[i].author_name[0];
+            if('https://covers.openlibrary.org/b/isbn/'+response.docs[i].isbn[0]+'-M.jpg' == null){
+                document.getElementById("cover"+j).src = 'img/noimage.jpeg';
+            }else{
+                document.getElementById("cover"+j).src = 'https://covers.openlibrary.org/b/isbn/'+response.docs[i].isbn[0]+'-M.jpg';
+            }
+            searched.removeAttribute("hidden");
+        }
+    });
 }
 </script>
 
