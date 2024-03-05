@@ -1,0 +1,22 @@
+<!doctype html>
+<script>
+    //line 8 clears output div, search for another element after a search
+    //line 9 makes request to search API endpoint
+    //line 10 converts response of string to dictionary/object to read
+    //line 12 i can change i < 10 to i < response.docs.length to get all books returned
+function getbooks(){
+    document.getElementById('output').innerHTML="Searching...";
+    fetch("https://openlibrary.org/search.json?q=" + document.getElementById("input").value)
+    .then(a => a.json())
+    .then(response =>{
+        // clear "searching..." before displaying results
+        document.getElementById('output').innerHTML = "";
+        for (var i = 0; i < response.docs.length; i++){
+            document.getElementById("output").innerHTML += "<h2>"+response.docs[i].title+"</h2>"+response.docs[i].author_name[0]+"<br><img src='https://covers.openlibrary.org/b/isbn/"+response.docs[i].isbn[0]+"-M.jpg'><br>";
+        }
+    });
+}
+</script>
+<input id="input">
+<button onclick="getbooks()">Get books</button><br>
+<div id="output"></div>
