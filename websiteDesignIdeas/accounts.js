@@ -30,9 +30,7 @@ class Account{
         this.numBooks++;
     }
 
-    checkOut(book){
-        print("finish this function");
-    }
+    
 
 
 }
@@ -45,6 +43,13 @@ class Book{
         this.isbn = isbn;
         this.status = status;
         this.img = img; 
+        this.renterEmail;
+        this.dateRented;
+    }
+
+    marked(email, date){
+        this.renterEmail = email;
+        this.dateRented = date;
     }
 
    
