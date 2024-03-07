@@ -159,7 +159,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
   </div>
   
-  
+  <div class="w3-container w3-padding-large" id = "renter" style="margin-bottom: 10mm" hidden>
+
+    <!-- Add book sectionn -->
+    <div class="w3-container w3-padding-large w3-grey">
+      <h4 id="contact"><b>Who did you rent this to?(Email) </b></h4>
+      <input id="inputEmail">
+      <h4 id="contact"><b>What is the date? </b></h4>
+      <input id = "inputDate">
+      <h4 id="contact"><b>In how many weeks should we start sending reminder emails? </b></h4>
+      <input id = "inputWeeks">
+      <button onclick="checkOut()">Submit!</button><br>
+      <div id="output"></div>
+    </div>
+  </div>
 
   <div class="w3-container w3-padding-large" style="margin-bottom: 10mm">
 
@@ -296,14 +309,37 @@ for(var i = 0; i< kaleigh.numBooks; i++){
 
 function edit(num){
   if(kaleigh.bookList[num-1].status == "In Library"){
-    kaleigh.bookList[num-1].status = "Lent Out";
+    kaleigh.bookList[num-1].status = "Lent Out Pending";
     //go to lending html somehow
-    document.getElementById('edit'+num).innerHTML = "Returned?";
+    var box = document.getElementById('renter');
+    box.removeAttribute('hidden');
+    document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
   }else{
     kaleigh.bookList[num-1].status = "In Library";
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
   }
   document.getElementById('summ'+num).innerHTML ="Author: " + kaleigh.bookList[num-1].author + " ISBN:  " +kaleigh.bookList[num-1].isbn;
+  
+}
+
+function checkOut(){
+ var email = document.getElementById("inputEmail").value;
+ var date = document.getElementById("inputDate").value;
+ var weeks = document.getElementById("inputWeeks").value;
+ 
+
+  for(var i = 0; i < kaleigh.numBooks; i++){
+    if(kaleigh.bookList[i].status == "Lent Out Pending"){
+        kaleigh.bookList[i].marked(email, date, weeks);
+        kaleigh.bookList[i].status = "Lent Out";
+        document.getElementById('edit'+(i+1)).innerHTML = "Returned?";
+        var box = document.getElementById('renter');
+        box.setAttribute('hidden', true);
+       // console.log(kaleigh.bookList[i].title + " to "  + kaleigh.bookList[i].renterEmail);
+        break;
+    }
+  }
+
   
 }
 

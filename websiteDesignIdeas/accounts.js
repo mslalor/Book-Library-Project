@@ -47,9 +47,11 @@ class Book{
         this.dateRented;
     }
 
-    marked(email, date){
+    marked(email, date, weeks){
+        //console.log("here");
         this.renterEmail = email;
         this.dateRented = date;
+        this.weeks = weeks;
     }
 
    
