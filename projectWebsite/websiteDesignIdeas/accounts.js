@@ -45,25 +45,3 @@ function initialize() {
   // console.log("success");
   var accountList = new Accounts();
 }
-
-const { Client } = require("pg");
-
-const client = new Client({
-  user: "librarian",
-  host: "your_host", //update
-  database: "your_database", //update
-  password: "makm18910",
-  port: 5432,
-});
-
-client
-  .connect()
-  .then(() => console.log("Connected to PostgreSQL database"))
-  .catch((err) => console.error("Connection error", err));
-
-//Example of SQL query 
-/*client
-  .query("SELECT * FROM your_table")
-  .then((results) => console.log(results.rows))
-  .catch((err) => console.error("Query error", err))
-  .finally(() => client.end());   */
