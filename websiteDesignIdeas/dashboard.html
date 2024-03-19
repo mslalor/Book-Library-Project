@@ -332,7 +332,7 @@ function checkOut(){
     if(kaleigh.bookList[i].status == "Lent Out Pending"){
         kaleigh.bookList[i].marked(email, date, weeks);
         kaleigh.bookList[i].status = "Lent Out";
-        document.getElementById('edit'+(i+1)).innerHTML = "Returned?";
+        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + kaleigh.bookList[i].renterEmail +"\n"+  "Returned?";
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
        // console.log(kaleigh.bookList[i].title + " to "  + kaleigh.bookList[i].renterEmail);
