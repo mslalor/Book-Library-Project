@@ -122,7 +122,7 @@ form .text h3 a:hover{
       </div>
       <div class="policy">
         <input type="checkbox">
-        <h3>I accept all terms & condition</h3>
+        <h3>I accept all terms & conditions</h3>
       </div>
       <div class="input-box button" >
         
@@ -193,6 +193,13 @@ document.addEventListener('submit',(e)=>{
        //console.log("culprit");
     }
     
+    if(document.getElementById("checkbox").required = false){
+      success = false;
+      //  setError(checkbox,'Must confirm terms and conditions')
+      
+    }
+ 
+
     if (success){
       
       const userAccount = new Account(usernameVal, emailVal, passwordVal);
