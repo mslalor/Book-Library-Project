@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kadan\\.nuget\\packages\\": {}
+    "/Users/monicalalor/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kadan\\OneDrive\\Desktop\\dotnetFolder\\dotnetFolder.csproj",
+      "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
       "projectName": "dotnetFolder",
-      "projectPath": "C:\\Users\\kadan\\OneDrive\\Desktop\\dotnetFolder\\dotnetFolder.csproj",
-      "packagesPath": "C:\\Users\\kadan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kadan\\OneDrive\\Desktop\\dotnetFolder\\obj\\",
+      "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
+      "packagesPath": "/Users/monicalalor/.nuget/packages/",
+      "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

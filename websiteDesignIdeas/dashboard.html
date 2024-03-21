@@ -297,40 +297,38 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <script>
-// Script to open and close sidebar
-var kaleigh = new Account("Kaleigh", "kaleigh@gmail.com", "password", 1);
-let userName = kaleigh.username;
+
+var id = getID();
+var user = getAccount(id);
+let userName = user.username;
 document.getElementById('SideTitle').innerHTML = userName + "'s Library";
 document.getElementById('Title').innerHTML = userName + "'s Library";
-let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
-kaleigh.addBook(book1);
-let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
-kaleigh.addBook(book2);
-let book3 = new Book("I am Malala", "Malala", "0002", "In Library", "img/malala.jpeg");
-kaleigh.addBook(book3);
+getBooks(user);
 
-for(var i = 0; i< kaleigh.numBooks; i++){
+
+
+for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
-  document.getElementById("image"+j).src = kaleigh.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = user.bookList[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+  document.getElementById("image"+j).src = user.bookList[i].img;
   book.removeAttribute("hidden");
   
 }
 
 function edit(num){
-  if(kaleigh.bookList[num-1].status == "In Library"){
-    kaleigh.bookList[num-1].status = "Lent Out Pending";
+  if(user.bookList[num-1].status == "In Library"){
+    user.bookList[num-1].status = "Lent Out Pending";
     //go to lending html somehow
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
   }else{
-    kaleigh.bookList[num-1].status = "In Library";
+    user.bookList[num-1].status = "In Library";
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
   }
-  document.getElementById('summ'+num).innerHTML ="Author: " + kaleigh.bookList[num-1].author + " ISBN:  " +kaleigh.bookList[num-1].isbn;
+  document.getElementById('summ'+num).innerHTML ="Author: " + user.bookList[num-1].author + " ISBN:  " +user.bookList[num-1].isbn;
   
 }
 
@@ -340,14 +338,14 @@ function checkOut(){
  var weeks = document.getElementById("inputWeeks").value;
  
 
-  for(var i = 0; i < kaleigh.numBooks; i++){
-    if(kaleigh.bookList[i].status == "Lent Out Pending"){
-        kaleigh.bookList[i].marked(email, date, weeks);
-        kaleigh.bookList[i].status = "Lent Out";
-        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + kaleigh.bookList[i].renterEmail +"\n"+  "Returned?";
+  for(var i = 0; i < user.numBooks; i++){
+    if(user.bookList[i].status == "Lent Out Pending"){
+        user.bookList[i].marked(email, date, weeks);
+        user.bookList[i].status = "Lent Out";
+        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + user.bookList[i].renterEmail +"\n"+  "Returned?";
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
-       // console.log(kaleigh.bookList[i].title + " to "  + kaleigh.bookList[i].renterEmail);
+       // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
         break;
     }
   }
@@ -356,7 +354,7 @@ function checkOut(){
 }
 
 function filterAll(){
-  for(var i = 0; i< kaleigh.numBooks; i++){
+  for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
   book.removeAttribute("hidden");
@@ -364,10 +362,10 @@ function filterAll(){
 }
 
 function filterIn(){
-  for(var i = 0; i< kaleigh.numBooks; i++){
+  for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  if(kaleigh.bookList[i].status == "In Library"){
+  if(user.bookList[i].status == "In Library"){
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -375,10 +373,10 @@ function filterIn(){
 }
 }
 function filterLent(){
-  for(var i = 0; i< kaleigh.numBooks; i++){
+  for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  if(kaleigh.bookList[i].status == "Lent Out"){
+  if(user.bookList[i].status == "Lent Out"){
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -411,17 +409,17 @@ function addBook(num){
  // console.log("title: " + title);
 
   let newBook = new Book(title, author, isbn, "In Library", source)
-  kaleigh.addBook(newBook);
-  //console.log(kaleigh.numBooks);
-  //console.log(kaleigh.bookList[kaleigh.numBooks-1].title);
+  user.addBook(newBook);
+  //console.log(user.numBooks);
+  //console.log(user.bookList[user.numBooks-1].title);
 
-  var j = kaleigh.numBooks;
-  var i = kaleigh.numBooks - 1;
+  var j = user.numBooks;
+  var i = user.numBooks - 1;
   //console.log(i + "= i"); 
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;
-  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
-  document.getElementById("image"+j).src = kaleigh.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = user.bookList[i].title;
+  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+  document.getElementById("image"+j).src = user.bookList[i].img;
   book.removeAttribute("hidden");
 
   document.getElementById('input').innerHTML = "";
@@ -463,25 +461,25 @@ function remove(num){
   var book = document.getElementById('book'+num);
   var place = num - 1; 
 
-  if(num == kaleigh.numBooks){
+  if(num == user.numBooks){
     book.setAttribute("hidden", true);
-    kaleigh.numBooks = kaleigh.numBooks - 1;
-    console.log(kaleigh.numBooks);
+    user.numBooks = user.numBooks - 1;
+    console.log(user.numBooks);
     return;
   }
-  for(var i = place; i<kaleigh.numBooks; i++){
+  for(var i = place; i<user.numBooks; i++){
     console.log((i+1) + " replacing " + i);
-    kaleigh.bookList[i] = kaleigh.bookList[i+1];
+    user.bookList[i] = user.bookList[i+1];
   }
 
-  kaleigh.numBooks = kaleigh.numBooks -1;
+  user.numBooks = user.numBooks -1;
 
-  for(var i = 0; i< kaleigh.numBooks; i++){
+  for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = kaleigh.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + kaleigh.bookList[i].author + " ISBN:  " +kaleigh.bookList[i].isbn;
-  document.getElementById("image"+j).src = kaleigh.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = user.bookList[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+  document.getElementById("image"+j).src = user.bookList[i].img;
   document.getElementById("edit"+j).innerHTML = "test";
  // book.removeAttribute("hidden");
   console.log("displaying: " + j + " which is at index " + i);
@@ -490,7 +488,7 @@ function remove(num){
   console.log("j " + j);
   var book = document.getElementById('book'+j);
   book.setAttribute("hidden", true);
-  console.log("numbooks " + kaleigh.numBooks);
+  console.log("numbooks " + user.numBooks);
 
 }
 </script>

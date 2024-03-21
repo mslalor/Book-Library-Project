@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj": {}
+    "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj": {
+    "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
+        "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\kadan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\obj\\",
+        "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj",
+        "packagesPath": "/Users/monicalalor/.nuget/packages/",
+        "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -67,6 +62,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -75,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
