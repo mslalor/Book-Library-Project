@@ -111,14 +111,26 @@ form .text h3 a:hover{
       <div class="input-box">
         <input type="text" id = "username" placeholder="Enter your first name" required>
       </div>
+      <div>
+        <p id = "nameError" style = "color: red" hidden>*Username is required</p>
+      </div>
       <div class="input-box">
         <input type="text"  id= "email" placeholder="Enter your email" required>
+      </div>
+      <div>
+        <p id = "emailError" style = "color: red" hidden>*Email is required</p>
       </div>
       <div class="input-box">
         <input type="password" id = "password" placeholder="Create password" required>
       </div>
+      <div>
+        <p id = "passwordError" style = "color: red" hidden>*Password is required</p>
+      </div>
       <div class="input-box">
         <input type="password" id = "cpassword" placeholder="Confirm password" required>
+      </div>
+      <div>
+        <p id = "confirmError" style = "color: red" hidden>*Passwords do not match</p>
       </div>
       <div class="policy">
         <input type="checkbox">
@@ -167,10 +179,14 @@ document.addEventListener('submit',(e)=>{
     if(usernameVal===''){
         success=false;
        // setError(name,'Username is required')
+       var error = document.getElementById("userError");
+       error.removeAttribute("hidden");
     }
     if(emailVal===''){
         success = false;
        // setError(email,'Email is required')
+       var error = document.getElementById("emailError");
+       error.removeAttribute("hidden");
     }
     
   
@@ -178,22 +194,33 @@ document.addEventListener('submit',(e)=>{
     if(passwordVal === ''){
         success= false;
        // setError(password,'Password is required')
+       var error = document.getElementById("passwordError");
+       error.removeAttribute("hidden");
     }
     else if(passwordVal.length<8){
         success = false;
         //setError(password,'Password must be atleast 8 characters long')
+        var error = document.getElementById("passwordError");
+        error.innerHTML = "Password must be atleast 8 characters long";
+        error.removeAttribute("hidden");
     }
     
 
     if(cpasswordVal === ''){
         success = false;
       //  setError(cpassword,'Confirm password is required')
+        var error = document.getElementById("confirmError");
+        error.innerHTML = "Confirm password is required";
+        error.removeAttribute("hidden");
       //console.log("culprit");
     }
     else if(cpasswordVal!==passwordVal){
         success = false;
        // setError(cpassword,'Password does not match')
        //console.log("culprit");
+       var error = document.getElementById("confirmError");
+        error.innerHTML = "Password does not match";
+        error.removeAttribute("hidden");
     }
     
     if (success){
