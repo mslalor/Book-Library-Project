@@ -79,8 +79,20 @@ function getID(){
 
 function getBooks(user){
     //replace the below lines with queries to the user's book list. If empty then just return null.
+    //(it should only be empty most likely if there is a new account)
     //for now this is just our tester. 
+    /* I was thinking something like this. 
+    for(var i = 0; i<user.numBooks){
+        var title = query for title of book i 
+        var author = ^
+        var isbn = ^
+        var status = ^
+        var img = ^
+        let book = new Book (title, author, isbn, status, img);
+        user.addBook(book);
+    }
 
+    */
     let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
     user.addBook(book1);
     let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
