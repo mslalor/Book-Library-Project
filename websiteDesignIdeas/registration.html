@@ -143,6 +143,9 @@ form .text h3 a:hover{
 
 
 <script>
+const url = "http://localhost:5176/api/User";
+
+let myUser = [];
 
 const form = document.querySelector('#form')
 const username = document.querySelector('#username');
@@ -194,11 +197,11 @@ document.addEventListener('submit',(e)=>{
     }
     
     if (success){
-      
-      const userAccount = new Account(usernameVal, emailVal, passwordVal);
-      accountList.newAccount=userAccount;
+      addUser(usernameVal, emailVal, passwordVal);
+      //const userAccount = new Account(usernameVal, emailVal, passwordVal);
+      //accountList.newAccount=userAccount;
       //console.log(userAccount.username);
-      myPopup.removeAttribute("hidden");
+      //myPopup.removeAttribute("hidden");
     }else{
       console.log("failed");
     }
@@ -206,6 +209,69 @@ document.addEventListener('submit',(e)=>{
     
 
 })
+
+async function addUser(usernameVal, emailVal, passwordVal) {
+    let User = {
+        username: emailVal,
+        email: emailVal,
+        firstName: usernameVal,
+        password: passwordVal,
+        numBooks: 0
+    };
+
+    myUser.push(User);
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(User),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        console.log("User added successfully!");
+        // Optionally, you can reload the page or show a success message here
+    } catch (error) {
+        console.error('Error adding user:', error.message);
+        // Log the error message to the console
+        // You can add more detailed error handling or show an error message to the user here
+    }
+}
+
+
+// async function addUser(usernameVal, emailVal, passwordVal)
+// {
+//   //const transactionDate = new Date();
+//   //const formattedDate = transactionDate.toLocaleDateString('en-CA');
+//   //dateEntered: formattedDate,
+//   //onHold: false,
+//   //isDeleted: false
+
+//   let User= 
+//   {
+//     username: emailVal,
+//     email: emailVal,
+//     firstName: usernameVal,
+//     password: passwordVal,
+//     numBooks: 0
+//   }
+//   myUser.push(User)
+
+//    await fetch(url, {
+//     method: "POST",
+//     body: JSON.stringify(User),
+//     headers:
+//     {
+//       "Content-type": "application/json; charset=UTF-8"
+//     }
+//   })
+//   //location.reload();
+// }
 
 
 </script>
