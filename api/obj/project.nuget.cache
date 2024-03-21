@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gNLzIh/rCOJrZRAy+3qwvv9icm2yQh4Ie2iWnegOdw+rIFPRp67meGOJHLi3JCaflIa1AJZKC5hH1aehG+rSmw==",
+  "dgSpecHash": "HDj7O/SHics9Ve6K8tgzbZY55FgeH8S3t3sbxhw6Qd2qmwMwte+k2dAcI8UZBar8k8n9IPozdHJaSZ7DCZ2pUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
   "expectedPackageFiles": [
@@ -16,12 +16,6 @@
     "C:\\Users\\kadan\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\mysql.data\\8.3.0\\mysql.data.8.3.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\runtime.any.system.io\\4.3.0\\runtime.any.system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\runtime.any.system.reflection\\4.3.0\\runtime.any.system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\runtime.any.system.reflection.primitives\\4.3.0\\runtime.any.system.reflection.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\runtime.any.system.text.encoding\\4.3.0\\runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\runtime.any.system.threading.tasks\\4.3.0\\runtime.any.system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
@@ -32,7 +26,6 @@
     "C:\\Users\\kadan\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
@@ -49,10 +42,7 @@
     "C:\\Users\\kadan\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\kadan\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.17\\microsoft.netcore.app.runtime.win-x64.7.0.17.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.17\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.17.nupkg.sha512",
-    "C:\\Users\\kadan\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.17\\microsoft.aspnetcore.app.runtime.win-x64.7.0.17.nupkg.sha512"
+    "C:\\Users\\kadan\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512"
   ],
   "logs": []
 }
