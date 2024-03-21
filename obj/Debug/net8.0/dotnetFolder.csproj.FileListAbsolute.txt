@@ -1,0 +1,5 @@
+C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\obj\Debug\net8.0\dotnetFolder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\obj\Debug\net8.0\dotnetFolder.AssemblyInfoInputs.cache
+C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\obj\Debug\net8.0\dotnetFolder.AssemblyInfo.cs
+C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\obj\Debug\net8.0\dotnetFolder.csproj.CoreCompileInputs.cache
+C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\obj\Debug\net8.0\dotnetFolder.sourcelink.json
