@@ -35,39 +35,38 @@ namespace api
             con.Close();
             return user;
          }
-/*
-public static Book GetInventoryById(int id)
-{
-    Book newBook = new Book();
 
-    Database db = new Database();
+// public static User GetUserByUsername(int username)
+// {
+//     User newUser = new User();
 
-    using var con = new MySqlConnection(db.cs);
-    con.Open();
+//     Database db = new Database();
 
-    //string stm = "SELECT * FROM inventory";
-    string stm = "SELECT * FROM books ORDER BY dateEntered ASC;";
+//     using var con = new MySqlConnection(db.cs);
+//     con.Open();
 
-    using var cmd = new MySqlCommand(stm, con);
-    cmd.Parameters.AddWithValue("@id", id);
+//     //string stm = "SELECT * FROM inventory";
+//     string stm = "SELECT * FROM users ORDER BY dateEntered ASC;";
 
-    using MySqlDataReader rdr = cmd.ExecuteReader();
+//     using var cmd = new MySqlCommand(stm, con);
+//     cmd.Parameters.AddWithValue("@username", username);
 
-    if (rdr.Read())
-    {
-        newInventory.carID = rdr.GetInt32("carID");
-        newInventory.carMake= rdr.GetString("carMake");
-        newInventory.carModel = rdr.GetString("carModel");
-        newInventory.carMileage = rdr.GetInt32("carMileage");
-        newInventory.dateEntered = rdr.GetDateTime("dateEntered");
-        newInventory.onHold = rdr.GetBoolean("onHold");
-        newInventory.isDeleted = rdr.GetBoolean("isDeleted");
+//     using MySqlDataReader rdr = cmd.ExecuteReader();
+
+//     if (rdr.Read())
+//     {
+//         newUser.idusers = rdr.GetInt32("idusers");
+//         newUser.username = rdr.GetString("username");
+//         newUser.email = rdr.GetString("email");
+//         newUser.firstName = rdr.GetString("firstName");
+//         newUser.password = rdr.GetString("password");
+//         newUser.numBooks = rdr.GetInt32("numBooks");
        
-    }
+//     }
 
-    con.Close();
-    return newInventory;
-}*/
+//     con.Close();
+//     return newUser;
+// }
 
 
           public static void AddUser(User user)
