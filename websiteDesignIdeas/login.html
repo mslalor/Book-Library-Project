@@ -138,8 +138,14 @@ const password = document.querySelector('#password');
 
 // })
 
-async function getUser(emailVal, passwordVal) {
+async function GetAllUsers() {
+  let response = await fetch(url);
+  myUser = await response.json();
+  console.log(myUser);
+} 
 
+async function getUser(emailVal, passwordVal) {
+await GetAllUsers();
 const userCheck = myUser.find(User => User.username === emailVal);
 if (!userCheck) return;
 
