@@ -298,7 +298,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <script>
 
-var id = getID();
+
+//var id = getID();
+var id = localStorage.getItem("userId");
 var user = getAccount(id);
 let userName = user.username;
 document.getElementById('SideTitle').innerHTML = userName + "'s Library";

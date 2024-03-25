@@ -104,7 +104,7 @@ input{
         <input type="password" placeholder="Password" id="password">
 
         <a href="dashboard.html" class="login-link">
-            <input type="button" value = "Log in" onclick= "window.location.href = 'dashboard.html'" />
+            <input type="button" value = "Log in"  id = "log" />
         </a>
 
        
@@ -121,10 +121,33 @@ input{
 const url = "http://localhost:5176/api/User";
 
 let myUser = [];
+let success = false;
+let userID = 1;
 
 const form = document.querySelector('#form')
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
+
+var button = document.getElementById("log");
+button.setAttribute("onclick", "login();");
+function login() {
+    const emailVal = username.value;
+    const passwordVal = password.value;
+   //let success = true;
+
+
+    getUser(emailVal, passwordVal);
+     if (success) {
+        // Take to dashboard
+        localStorage.userId = userID;
+        window.location.href = "dashboard.html";
+    } else {
+        // Print error saying username or password is incorrect
+        alert("incorrect username or password");
+    }
+   
+   
+}
 
 // Fix name of button
 // document.addEventListener('submit',(e)=>{
@@ -150,11 +173,11 @@ async function GetAllUsers() {
   console.log(myUser);
 } 
 
-async function getUser(emailVal, passwordVal, successVal) {
+async function getUser(emailVal, passwordVal) {
 await GetAllUsers();
 const userCheck = myUser.find(User => User.username === emailVal);
 if (!userCheck) return;
-
+userID = userCheck.idusers;
 if (userCheck.password = passwordVal) successVal = true;
 
 // await fetch(`${url}/${username}`, {
