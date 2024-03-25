@@ -103,9 +103,9 @@ input{
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
 
-        <a href="dashboard.html" class="login-link">
+        
             <input type="button" value = "Log in"  id = "log" />
-        </a>
+        
 
        
 
@@ -130,14 +130,15 @@ const password = document.querySelector('#password');
 
 var button = document.getElementById("log");
 button.setAttribute("onclick", "login();");
-function login() {
+async function login() {
     const emailVal = username.value;
     const passwordVal = password.value;
    //let success = true;
 
-
-    getUser(emailVal, passwordVal);
-     if (success) {
+    console.log(success);
+    await getUser(emailVal, passwordVal);
+    console.log(success);
+    if (success) {
         // Take to dashboard
         localStorage.userId = userID;
         window.location.href = "dashboard.html";
@@ -148,7 +149,7 @@ function login() {
    
    
 }
-
+//<a href="dashboard.html" class="login-link">
 // Fix name of button
 // document.addEventListener('submit',(e)=>{
 //     //console.log("Here");
@@ -178,7 +179,13 @@ await GetAllUsers();
 const userCheck = myUser.find(User => User.username === emailVal);
 if (!userCheck) return;
 userID = userCheck.idusers;
-if (userCheck.password = passwordVal) successVal = true;
+console.log(userID);
+console.log(passwordVal);
+console.log(userCheck.password);
+if (userCheck.password == passwordVal) {
+    success = true;
+    console.log("Success");
+} 
 
 // await fetch(`${url}/${username}`, {
 //     method: "GET",
