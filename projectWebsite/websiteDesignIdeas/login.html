@@ -82,11 +82,15 @@ input{
     border: none;
     cursor: pointer;
 }
-
+input[type="button"]:hover {
+    background-color: white; 
+}
 .login-link {
     text-decoration: none;
 }
-
+.signup-link:hover {
+    color:black;
+}
 
 
 
@@ -111,7 +115,7 @@ input{
 
         <div style = "text-align: center">
             <p style = "font-size: 14px; padding-top:20px;" >Don't have an account?</p>
-            <p style = "font-weight: 100px; font-size: 14px;"> <a href = registration.html>Sign up here!</a></p>
+            <p style = "font-weight: 100px; font-size: 14px;"> <a href = registration.html class="signup-link">Sign up here!</a></p>
         </div>
     </form>
 </body>

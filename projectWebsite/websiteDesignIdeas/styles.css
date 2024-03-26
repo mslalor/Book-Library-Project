@@ -1,0 +1,90 @@
+:root {
+    --lightpurple: rgb(177, 177, 251);
+    --darkpurple: rgb(152, 152, 251);
+}
+
+
+body {
+    color: black;
+    background-image: url("img/librarybookswallpaper.jpg");
+    font-family: 'Poppins',sans-serif;
+}
+
+.button {
+    font-family:'Poppins',sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white; 
+    color: var(--darkpurple); 
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+.button:hover {
+    background-color: black; 
+}
+
+.button-container {
+    background-color: white;
+    display: flex;
+    justify-content:space-between; 
+}
+.button-container .button:first-child {
+    margin-right: auto; /* Pushes the first button (Home) to the left */
+}
+.getstartedbutton{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--darkpurple);
+    background-color: black;
+    margin: 30px auto 0; 
+    display: block; 
+    width: fit-content;
+}
+.getstartedbutton:hover{
+    background-color: white;
+}
+
+
+p{
+    color: black;
+}
+h1 {
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 5px 5px 8px var(--darkpurple);
+}
+h3{
+    color:white;
+}
+header{
+    color: #FFFFFF;
+    font-size: 150%;
+}
+#wrapper{
+    margin: auto;
+    width: 80%;
+    background-color: var(--lightpurple);
+    border-left: 20px solid  var(--lightpurple);
+    border-right: 20px solid  var(--lightpurple);
+    border-bottom: 20px solid  var(--lightpurple);    
+    border-top: 10px solid  var(--lightpurple); 
+    margin-top: 12px;
+}
+.bio {
+    background-color: var(--lightpurple);
+    width: 80%;
+    margin: 20px auto; 
+    padding: 15px;
+}
+#email{
+    color: white;
+}
+footer{
+    padding-top: 50px;
+    margin: auto;
+    width:75%;
+}
