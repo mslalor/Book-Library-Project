@@ -2244,19 +2244,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mikay\\.nuget\\packages\\": {}
+    "C:\\Users\\kadan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj",
-      "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\obj\\",
+      "projectPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\kadan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2274,6 +2274,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2304,24 +2309,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.17, 7.0.17]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.17, 7.0.17]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.17, 7.0.17]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.17, 7.0.17]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2330,7 +2317,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
