@@ -297,15 +297,41 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <script>
+const url = "http://localhost:5176/api/User";
 
+let myUser = [];
 
 //var id = getID();
-var id = localStorage.getItem("userId");
-var user = getAccount(id);
+//var id = localStorage.getItem("userId");
+//var user = getAccount(id);
+//user = localStorage.getItem("user");
+const user = JSON.parse(localStorage.getItem('user'));
+const id = JSON.parse(localStorage.getItem('userID'));
 let userName = user.username;
-document.getElementById('SideTitle').innerHTML = userName + "'s Library";
-document.getElementById('Title').innerHTML = userName + "'s Library";
+let firstName = user.firstName;
+document.getElementById('SideTitle').innerHTML = firstName + "'s Library";
+document.getElementById('Title').innerHTML = firstName + "'s Library";
 getBooks(user);
+
+async function GetAllUsers() {
+  let response = await fetch(url);
+  myUser = await response.json();
+  console.log(myUser);
+} 
+
+async function getUser(emailVal, passwordVal) {
+await GetAllUsers();
+const userCheck = myUser.find(User => User.username === emailVal);
+if (!userCheck) return;
+userID = userCheck.idusers;
+//console.log(userID);
+//console.log(passwordVal);
+//console.log(userCheck.password);
+if (userCheck.password == passwordVal) {
+    success = true;
+    console.log("Success");
+} 
+}
 
 
 
