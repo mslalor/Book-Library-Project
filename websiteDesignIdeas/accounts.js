@@ -64,11 +64,20 @@ function initialize(){
     var accountList = new Accounts();
  }
 
-function getAccount(id){
-    //search through data base for matching key to login
-    //replace below line with info from the database. 
-    var id = id; 
-    return new Account("Kaleigh", "kaleigh@gmail.com", "password", 1);
+ async function GetAllUsers() {
+    let response = await fetch(url);
+    myUser = await response.json();
+    console.log(myUser);
+  } 
+  
+  async function getAccount(id) {
+    await GetAllUsers();
+    const userCheck = myUser.find(User => User.idusers === id);
+    if (!userCheck) return;
+    userID = userCheck.idusers;
+    
+    return new Account(User.username, User.passwordVal, User.idusers);
+       
 }
 
 function getID(){
