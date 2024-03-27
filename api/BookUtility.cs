@@ -29,8 +29,8 @@ namespace api
                     title = rdr.GetString(4),
                     img = rdr.GetString(5),
                     status = rdr.GetString(6),
-                    renter = rdr.GetString(7),
-                    renterEmail = rdr.GetString(8)
+                    //renter = rdr.GetString(7),
+                    renterEmail = rdr.GetString(7)
                     //dateRented = (rdr[4] is DBNull) ? DateTime.MinValue : rdr.GetDateTime(6)
                     //onHold = rdr.GetBoolean(5),
                     //isDeleted = rdr.GetBoolean(6)
@@ -83,7 +83,7 @@ public static Book GetInventoryById(int id)
              using var con = new MySqlConnection(db.cs);
              con.Open();
 
-             string stm= "INSERT INTO books (idbooks, username, isbn, author, title, img, status, renter, renterEmail) VALUES (@idbooks, @username, @isbn, @author, @title, @img, @status, @renter, @renterEmail);";
+             string stm= "INSERT INTO books (idbooks, username, isbn, author, title, img, status, renterEmail) VALUES (@idbooks, @username, @isbn, @author, @title, @img, @status, @renterEmail);";
              using var cmd = new MySqlCommand(stm, con);
 
              cmd.Parameters.AddWithValue("@idbooks", book.idbooks);
@@ -93,7 +93,7 @@ public static Book GetInventoryById(int id)
              cmd.Parameters.AddWithValue("@title", book.title);
              cmd.Parameters.AddWithValue("@img", book.img);
              cmd.Parameters.AddWithValue("@status", book.status);
-             cmd.Parameters.AddWithValue("@renter", book.renter);
+             //cmd.Parameters.AddWithValue("@renter", book.renter);
              cmd.Parameters.AddWithValue("@renterEmail", book.renterEmail);
              //cmd.Parameters.AddWithValue("@dateRented", book.dateRented);
              
@@ -111,15 +111,40 @@ public static Book GetInventoryById(int id)
             using var con = new MySqlConnection(db.cs);
             con.Open();
 
-            string stm = "UPDATE books SET status = 'Lent Out Pending' WHERE idbooks = @idbooks";
+            string stm = "UPDATE books SET status = 'Lent out', renterEmail = 'monica@gmail.com' WHERE idbooks = @idbooks";
             using var cmd = new MySqlCommand(stm, con);
 
+            //cmd.Parameters.AddWithValue("@status", book.status);
+            //cmd.Parameters.AddWithValue("@idbooks", book.renter);
+            //cmd.Parameters.AddWithValue("@idbooks", book.renterEmail);
             cmd.Parameters.AddWithValue("@idbooks", idbooks);
 
             cmd.ExecuteNonQuery();
 
             con.Close();
         }
+
+
+        // public static void UpdateBook (Book book)
+        // {
+        //     Database db = new Database();
+
+        //     using var con = new MySqlConnection(db.cs);
+        //     con.Open();
+
+        //     string stm = "UPDATE books SET status = @status, renterEmail = @renterEmail WHERE idbooks = @idbooks";
+        //     using var cmd = new MySqlCommand(stm, con);
+
+        //     cmd.Parameters.AddWithValue("@status", book.status);
+        //     //cmd.Parameters.AddWithValue("@idbooks", book.renter);
+        //     cmd.Parameters.AddWithValue("@idbooks", book.renterEmail);
+        //     cmd.Parameters.AddWithValue("@idbooks", book.idbooks);
+
+        //     cmd.ExecuteNonQuery();
+
+        //     con.Close();
+        // }
+
 
          /*
         public static void DeleteInventory(int carID)

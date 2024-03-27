@@ -40,6 +40,21 @@ namespace api.Controllers
         {
             BookUtility.UpdateBook(id);
         }
+
+        // // PUT: api/Book/5
+        // [HttpPut("{id}")]
+        // public void Put(int id)
+        // {
+        //     BookUtility.UpdateBook(id);
+        // }
+
+        // // PUT: api/Book/5
+        // //("{book}")
+        // [HttpPut]
+        // public void Put([FromBody] Book book)
+        // {
+        //     BookUtility.UpdateBook(book);
+        // }
 /*
         // PUT: api/Book/5
         [HttpPut("{id}")]

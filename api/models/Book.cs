@@ -17,7 +17,7 @@ namespace api.models
 
         public string status {get;set;}
 
-        public string renter {get;set;}
+        //public string renter {get;set;}
 
         public string renterEmail {get; set;} 
 

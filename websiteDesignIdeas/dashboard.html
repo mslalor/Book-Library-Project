@@ -359,7 +359,7 @@ async function addBookData(username, isbn, author, title, img) {
         title: title,
         img: img,
         status: "In Library",
-        renter: "none",
+        //renter: "none",
         renterEmail: "none"
         //dateRented: 0-0-0
     };
@@ -387,14 +387,34 @@ async function addBookData(username, isbn, author, title, img) {
     }
 }
 
-async function handleStatusUpdate(idbooks) {
+async function handleStatusUpdate(idbooks, status, renterEmail) {
 
 const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
 if (!bookUpdate) return;
 
+let Book = {
+        username: bookUpdate.username,
+        isbn: bookUpdate.isbn,
+        author: bookUpdate.author,
+        title: bookUpdate.title,
+        img: bookUpdate.img,
+        status: status,
+        //renter: renter,
+        renterEmail: renterEmail
+        //dateRented: 0-0-0
+    };
+
 await fetch(`${url}/${idbooks}`, {
+  
     method: "PUT",
 });
+// const response = await fetch(url, {
+//             method: "PUT",
+//             body: JSON.stringify(Book),
+//             headers: {
+//                 "Content-type": "application/json; charset=UTF-8"
+//             }
+//         });
 
 //myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
 
@@ -432,7 +452,7 @@ function edit(num){
   if (myBooks[num-1].status == "In Library"){
     myBooks[num-1].status = "Lent Out Pending"; //FIX THIS LINE FOR DATABASE
     //go to lending html somehow
-    handleStatusUpdate(myBooks.idbooks);
+    //handleStatusUpdate(myBooks[num-1].idbooks);
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
@@ -473,6 +493,8 @@ function checkOut(){
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
+       //Add for lending:
+        handleStatusUpdate(myBooks[i].idbooks, "Lent Out", email, )
         break;
     }
   }
