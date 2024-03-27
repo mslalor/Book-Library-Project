@@ -103,6 +103,24 @@ public static Book GetInventoryById(int id)
 
              con.Close();
          }
+
+         public static void UpdateBook (int idbooks)
+        {
+            Database db = new Database();
+
+            using var con = new MySqlConnection(db.cs);
+            con.Open();
+
+            string stm = "UPDATE books SET status = 'Lent Out Pending' WHERE idbooks = @idbooks";
+            using var cmd = new MySqlCommand(stm, con);
+
+            cmd.Parameters.AddWithValue("@idbooks", idbooks);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+        }
+
          /*
         public static void DeleteInventory(int carID)
         {

@@ -33,6 +33,13 @@ namespace api.Controllers
         {
             BookUtility.AddBook(book);
         }
+
+        // PUT: api/Book/5
+        [HttpPut("{id}")]
+        public void Put(int id)
+        {
+            BookUtility.UpdateBook(id);
+        }
 /*
         // PUT: api/Book/5
         [HttpPut("{id}")]

@@ -297,7 +297,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <script>
-//const url = "http://localhost:5176/api/User";
+const url2 = "http://localhost:5176/api/User";
 const url = "http://localhost:5176/api/Book";
 
 let myBooks = [];
@@ -328,8 +328,19 @@ async function GetAllBooks() {
 
 async function getBooks(username) {
 await GetAllBooks();
-myBooks = allBooks.find(Book => Book.username === username);
+myBooks = allBooks.filter(Book => Book.username === username);
 if (!myBooks) return;
+console.log(myBooks);
+for(var i = 0; i< user.numBooks; i++){
+  var j = i+1;
+  var book = document.getElementById('book'+j);
+  document.getElementById('title'+j).innerHTML = myBooks[i].title;
+  document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+  document.getElementById("image"+j).src = myBooks[i].img;
+  book.removeAttribute("hidden");
+  
+}
+
 //userID = userCheck.idusers;
 //console.log(userID);
 //console.log(passwordVal);
@@ -376,24 +387,52 @@ async function addBookData(username, isbn, author, title, img) {
     }
 }
 
+async function handleStatusUpdate(idbooks) {
 
+const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
+if (!bookUpdate) return;
 
+await fetch(`${url}/${idbooks}`, {
+    method: "PUT",
+});
 
+//myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
 
-for(var i = 0; i< user.numBooks; i++){
-  var j = i+1;
-  var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = myBooks[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
-  document.getElementById("image"+j).src = myBooks[i].img;
-  book.removeAttribute("hidden");
-  
+//location.reload();
 }
+
+async function handleNumBooksUpdate(idusers) {
+
+//const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
+//if (!bookUpdate) return;
+
+await fetch(`${url2}/${idusers}`, {
+    method: "PUT",
+});
+
+//myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
+
+//location.reload();
+}
+
+
+
+
+// for(var i = 0; i< user.numBooks; i++){
+//   var j = i+1;
+//   var book = document.getElementById('book'+j);
+//   document.getElementById('title'+j).innerHTML = myBooks[i].title;
+//   document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+//   document.getElementById("image"+j).src = myBooks[i].img;
+//   book.removeAttribute("hidden");
+  
+// }
 
 function edit(num){
   if (myBooks[num-1].status == "In Library"){
     myBooks[num-1].status = "Lent Out Pending"; //FIX THIS LINE FOR DATABASE
     //go to lending html somehow
+    handleStatusUpdate(myBooks.idbooks);
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
@@ -501,6 +540,7 @@ function addBook(num){
   addBookData(userName, isbn, author, title, source);
   //numBooks += 1;
   user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
+  handleNumBooksUpdate(user.idusers);
   //user2.numBooks = user2.numBooks + 1; 
   //console.log(user.numBooks);
   //console.log(user.bookList[user.numBooks-1].title);
