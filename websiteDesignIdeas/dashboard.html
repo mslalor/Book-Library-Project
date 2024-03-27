@@ -297,13 +297,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <script>
-const url = "http://localhost:5176/api/User";
+//const url = "http://localhost:5176/api/User";
+const url = "http://localhost:5176/api/Book";
 
-let myUser = [];
+let myBooks = [];
+let allBooks = [];
 
 //var id = getID();
 //var id = localStorage.getItem("userId");
-//var user = getAccount(id);
+//var user2 = getAccount(id);
 //user = localStorage.getItem("user");
 const user = JSON.parse(localStorage.getItem('user'));
 const id = JSON.parse(localStorage.getItem('userID'));
@@ -311,54 +313,112 @@ let userName = user.username;
 let firstName = user.firstName;
 document.getElementById('SideTitle').innerHTML = firstName + "'s Library";
 document.getElementById('Title').innerHTML = firstName + "'s Library";
-getBooks(user);
 
-async function GetAllUsers() {
+if (user.numBooks != 0) {
+  getBooks(userName);
+}
+
+//getBooks(user);
+
+async function GetAllBooks() {
   let response = await fetch(url);
-  myUser = await response.json();
-  console.log(myUser);
+  allBooks = await response.json();
+  //console.log(myUser);
 } 
 
-async function getUser(emailVal, passwordVal) {
-await GetAllUsers();
-const userCheck = myUser.find(User => User.username === emailVal);
-if (!userCheck) return;
-userID = userCheck.idusers;
+async function getBooks(username) {
+await GetAllBooks();
+myBooks = allBooks.find(Book => Book.username === username);
+if (!myBooks) return;
+//userID = userCheck.idusers;
 //console.log(userID);
 //console.log(passwordVal);
 //console.log(userCheck.password);
-if (userCheck.password == passwordVal) {
-    success = true;
-    console.log("Success");
-} 
+// if (userCheck.password == passwordVal) {
+//     success = true;
+//     console.log("Success");
+// } 
 }
+
+async function addBookData(username, isbn, author, title, img) {
+    let Book = {
+        username: username,
+        isbn: isbn,
+        author: author,
+        title: title,
+        img: img,
+        status: "In Library",
+        renter: "none",
+        renterEmail: "none"
+        //dateRented: 0-0-0
+    };
+
+    myBooks.push(Book);
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(Book),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        console.log("Book added successfully!");
+        // Optionally, you can reload the page or show a success message here
+    } catch (error) {
+        console.error('Error adding book:', error.message);
+        // Log the error message to the console
+    }
+}
+
+
 
 
 
 for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = user.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-  document.getElementById("image"+j).src = user.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = myBooks[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+  document.getElementById("image"+j).src = myBooks[i].img;
   book.removeAttribute("hidden");
   
 }
 
 function edit(num){
-  if(user.bookList[num-1].status == "In Library"){
-    user.bookList[num-1].status = "Lent Out Pending";
+  if (myBooks[num-1].status == "In Library"){
+    myBooks[num-1].status = "Lent Out Pending"; //FIX THIS LINE FOR DATABASE
     //go to lending html somehow
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
   }else{
-    user.bookList[num-1].status = "In Library";
+    myBooks[num-1].status = "In Library";
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
   }
-  document.getElementById('summ'+num).innerHTML ="Author: " + user.bookList[num-1].author + " ISBN:  " +user.bookList[num-1].isbn;
+  document.getElementById('summ'+num).innerHTML ="Author: " + myBooks[num-1].author + " ISBN:  " + myBooks[num-1].isbn;
   
 }
+
+// function edit(num){
+//   if (user.bookList[num-1].status == "In Library"){
+//     user.bookList[num-1].status = "Lent Out Pending";
+//     //go to lending html somehow
+//     var box = document.getElementById('renter');
+//     box.removeAttribute('hidden');
+//     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
+//   }else{
+//     user.bookList[num-1].status = "In Library";
+//     document.getElementById('edit'+num).innerHTML = "Lend this book?"
+//   }
+//   document.getElementById('summ'+num).innerHTML ="Author: " + user.bookList[num-1].author + " ISBN:  " +user.bookList[num-1].isbn;
+  
+// }
 
 function checkOut(){
  var email = document.getElementById("inputEmail").value;
@@ -367,10 +427,10 @@ function checkOut(){
  
 
   for(var i = 0; i < user.numBooks; i++){
-    if(user.bookList[i].status == "Lent Out Pending"){
-        user.bookList[i].marked(email, date, weeks);
-        user.bookList[i].status = "Lent Out";
-        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + user.bookList[i].renterEmail +"\n"+  "Returned?";
+    if(myBooks[i].status == "Lent Out Pending"){
+        //myBooks[i].marked(email, date, weeks); idk what this is but we need it
+        myBooks[i].status = "Lent Out";
+        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + myBooks[i].renterEmail +"\n"+  "Returned?";
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
@@ -393,7 +453,7 @@ function filterIn(){
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  if(user.bookList[i].status == "In Library"){
+  if(myBooks[i].status == "In Library"){
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -404,7 +464,7 @@ function filterLent(){
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  if(user.bookList[i].status == "Lent Out"){
+  if(myBooks[i].status == "Lent Out"){
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -437,7 +497,11 @@ function addBook(num){
  // console.log("title: " + title);
 
   let newBook = new Book(title, author, isbn, "In Library", source)
-  user.addBook(newBook);
+  //user2.addBook(newBook);
+  addBookData(userName, isbn, author, title, source);
+  //numBooks += 1;
+  user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
+  //user2.numBooks = user2.numBooks + 1; 
   //console.log(user.numBooks);
   //console.log(user.bookList[user.numBooks-1].title);
 
@@ -445,9 +509,12 @@ function addBook(num){
   var i = user.numBooks - 1;
   //console.log(i + "= i"); 
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = user.bookList[i].title;
-  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-  document.getElementById("image"+j).src = user.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = title;
+  document.getElementById('summ'+j).innerHTML ="Author: " + author + " ISBN:  " + isbn;
+  document.getElementById("image"+j).src = source;
+  // document.getElementById('title'+j).innerHTML = user.bookList[i].title;
+  // document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+  // document.getElementById("image"+j).src = user.bookList[i].img;
   book.removeAttribute("hidden");
 
   document.getElementById('input').innerHTML = "";
@@ -458,6 +525,45 @@ function addBook(num){
   }
 
 }
+
+
+// function addBook(num){
+//   var searched = document.getElementById('result'+num);
+//   var title = document.getElementById("search" + num).innerHTML;
+//   var author = document.getElementById("info"+num).innerHTML;
+//   var isbn = document.getElementById("isbn"+num).innerHTML;
+//   if(!document.getElementById("cover"+num).src){
+//     var source = 'img/noimage.jpeg';
+//   }else{
+//     var source = document.getElementById("cover"+num).src;
+//   }
+
+//  // console.log("title: " + title);
+
+//   let newBook = new Book(title, author, isbn, "In Library", source)
+//   //user.addBook(newBook);
+//   addBookData(userName, isbn);
+//   user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
+//   //console.log(user.numBooks);
+//   //console.log(user.bookList[user.numBooks-1].title);
+
+//   var j = user.numBooks;
+//   var i = user.numBooks - 1;
+//   //console.log(i + "= i"); 
+//   var book = document.getElementById('book'+j);
+//   document.getElementById('title'+j).innerHTML = user.bookList[i].title;
+//   document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+//   document.getElementById("image"+j).src = user.bookList[i].img;
+//   book.removeAttribute("hidden");
+
+//   document.getElementById('input').innerHTML = "";
+//   for(var i = 0; i<9; i++){
+//     j = i +1;
+//     var searched = document.getElementById('result'+j);
+//     searched.setAttribute("hidden", true);
+//   }
+
+// }
 
 function getbooks(){
     document.getElementById('output').innerHTML="Searching...";
@@ -497,7 +603,7 @@ function remove(num){
   }
   for(var i = place; i<user.numBooks; i++){
     console.log((i+1) + " replacing " + i);
-    user.bookList[i] = user.bookList[i+1];
+    myBooks[i] = myBooks[i+1];
   }
 
   user.numBooks = user.numBooks -1;
@@ -505,9 +611,9 @@ function remove(num){
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = user.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-  document.getElementById("image"+j).src = user.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = myBooks[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+  document.getElementById("image"+j).src = myBooks[i].img;
   document.getElementById("edit"+j).innerHTML = "test";
  // book.removeAttribute("hidden");
   console.log("displaying: " + j + " which is at index " + i);
