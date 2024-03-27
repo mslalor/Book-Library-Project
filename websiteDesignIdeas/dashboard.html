@@ -405,8 +405,11 @@ let Book = {
     };
 
 await fetch(`${url}/${idbooks}`, {
-  
     method: "PUT",
+    // body: JSON.stringify(Book),
+    // headers: {
+    //   "Content-type": "application/json"
+    // }
 });
 // const response = await fetch(url, {
 //             method: "PUT",
