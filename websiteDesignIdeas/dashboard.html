@@ -15,18 +15,21 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px; background-color: #271A42" id="mySidebar"><br>
   <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-white" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
     <img id ="myPic" src="img/logo.png" style="width:100%;" class="w3-round"><br><br>
-    <h4 id = "SideTitle"><b> [InsertUsername]'s Library</b></h4>
+    <h4 id = "SideTitle" style = "color: white"><b> [InsertUsername]'s Library</b></h4>
   </div>
   <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">       ADD NEW BOOK</a>
-    <a href = "login.html" style = "padding-left: 8mm;" > Sign out </a>
+    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding " style = "color: white"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
+    
+    <a href="#add" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white">       ADD NEW BOOK</a>
+
+    <a href = "login.html" class="w3-bar-item w3-button w3-padding" style = "color: white"> Sign out </a>
+    <a id = "sideRenter" href="#renter" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white" hidden> ADD RENTER INFO</a>
   </div>
 </nav>
 
@@ -34,27 +37,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+<div class="w3-main" style="margin-left:300px; background-color: #e5ddf4;">
 
   <!-- Header -->
-  <header id="portfolio">
+  <header id="portfolio" style = "background-color: #e5ddf4; border-bottom-color: #271A42;">
    <!-- <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>-->
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1 id = "Title"><b>[InsertUserName]'s Library</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
+    <h1 id = "Title" style= "color: #271A42"><b>[InsertUserName]'s Library</b></h1>
+    <div class="w3-section w3-padding-16" style= "color: #271A42">
         <!--We will need to add functionality to this -->
-      <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-white" onclick = "filterAll()">ALL</button>
-      <button class="w3-button w3-white" onclick = "filterLent()"></i>Lent out</button>
-      <button class="w3-button w3-white" onclick= "filterIn()"></i>In Library</button>
+      <span class="w3-margin-right" style= "color: #271A42">Filter:</span> 
+      <button class="w3-button" style = "background-color: #66616fa3" onclick = "filterAll()">ALL</button>
+      <button class="w3-button" style = "background-color: #66616fa3"  onclick = "filterLent()"></i>Lent out</button>
+      <button class="w3-button" style = "background-color: #66616fa3"  onclick= "filterIn()"></i>In Library</button>
     </div>
     </div>
   </header>
   
   <!-- First Photo Grid-->
 
-  <div class="w3-row-padding" >
+  <div class="w3-row-padding" style="border-top:#271A42; border-width: 10px;">
     <div class="w3-third w3-container w3-margin-bottom" id = "book1" hidden>
       <img src="img/potter1.jpg" id = "image1" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
@@ -174,7 +177,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-padding-large" id = "renter" style="margin-bottom: 10mm" hidden>
 
     <!-- Add book sectionn -->
-    <div class="w3-container w3-padding-large w3-grey">
+    <div id = "renter" class="w3-container w3-padding-large w3-grey">
       <h4 id="contact"><b>Who did you rent this to? (Email) </b></h4>
       <input id="inputEmail">
       <h4 id="contact"><b>Renter's Name? </b></h4>
@@ -190,7 +193,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Add book sectionn -->
   <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Add Book </b></h4>
+    <h4 id="add"><b>Add Book </b></h4>
 
     <input id="input">
     <button onclick="getbooks()">Get books</button><br>
@@ -459,6 +462,8 @@ function edit(num){
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
+    var label = document.getElementById("sideRenter");
+    label.setAttribute('background-color', black);
   }else{
     myBooks[num-1].status = "In Library";
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
@@ -497,6 +502,8 @@ function checkOut(){
         document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + date +"\n"+  "Returned?";
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
+        var label = document.getElementById('sideRenter');
+        label.setAttribute('background-color', white);
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
        //Add for lending:
         handleStatusUpdate(myBooks[i].idbooks, 'Lent Out', email);
