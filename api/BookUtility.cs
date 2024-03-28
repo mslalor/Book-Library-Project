@@ -104,20 +104,20 @@ public static Book GetInventoryById(int id)
              con.Close();
          }
 
-         public static void UpdateBook (int idbooks)
+         public static void UpdateBook (int id)
         {
             Database db = new Database();
 
             using var con = new MySqlConnection(db.cs);
             con.Open();
 
-            string stm = "UPDATE books SET status = 'Lent out', renterEmail = 'monica@gmail.com' WHERE idbooks = @idbooks";
+            string stm = "UPDATE books SET status = 'Lent out', renterEmail = 'monica@gmail.com'  WHERE idbooks = @idbooks";
             using var cmd = new MySqlCommand(stm, con);
 
             //cmd.Parameters.AddWithValue("@status", book.status);
-            //cmd.Parameters.AddWithValue("@idbooks", book.renter);
-            //cmd.Parameters.AddWithValue("@idbooks", book.renterEmail);
-            cmd.Parameters.AddWithValue("@idbooks", idbooks);
+            //cmd.Parameters.AddWithValue("@renter", book.renter);
+            //cmd.Parameters.AddWithValue("@renterEmail", email);
+            cmd.Parameters.AddWithValue("@idbooks", id);
 
             cmd.ExecuteNonQuery();
 
