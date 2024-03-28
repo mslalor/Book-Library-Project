@@ -35,6 +35,13 @@ namespace api.Controllers
         }
 
         // PUT: api/User/5
+        [HttpPut("{id}")]
+        public void Put(int id)
+        {
+            UserUtility.UpdateUser(id);
+        }
+
+        // PUT: api/User/5
         /*[HttpPut("{id}")]
         public void Put(int id)
         {

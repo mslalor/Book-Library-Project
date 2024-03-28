@@ -64,11 +64,20 @@ function initialize(){
     var accountList = new Accounts();
  }
 
-function getAccount(id){
-    //search through data base for matching key to login
-    //replace below line with info from the database. 
-    var id = id; 
-    return new Account("Kaleigh", "kaleigh@gmail.com", "password", 1);
+ async function GetAllUsers() {
+    let response = await fetch(url);
+    myUser = await response.json();
+    console.log(myUser);
+  } 
+  
+  async function getAccount(id) {
+    await GetAllUsers();
+    const userCheck = myUser.find(User => User.idusers === id);
+    if (!userCheck) return;
+    userID = userCheck.idusers;
+    
+    return new Account(User.username, User.passwordVal, User.idusers);
+       
 }
 
 function getID(){
@@ -77,26 +86,26 @@ function getID(){
     return 1; 
 }
 
-function getBooks(user){
-    //replace the below lines with queries to the user's book list. If empty then just return null.
-    //(it should only be empty most likely if there is a new account)
-    //for now this is just our tester. 
-    /* I was thinking something like this. 
-    for(var i = 0; i<user.numBooks){
-        var title = query for title of book i 
-        var author = ^
-        var isbn = ^
-        var status = ^
-        var img = ^
-        let book = new Book (title, author, isbn, status, img);
-        user.addBook(book);
-    }
+// function getBooks(user){
+//     //replace the below lines with queries to the user's book list. If empty then just return null.
+//     //(it should only be empty most likely if there is a new account)
+//     //for now this is just our tester. 
+//     /* I was thinking something like this. 
+//     for(var i = 0; i<user.numBooks){
+//         var title = query for title of book i 
+//         var author = ^
+//         var isbn = ^
+//         var status = ^
+//         var img = ^
+//         let book = new Book (title, author, isbn, status, img);
+//         user.addBook(book);
+//     }
 
-    */
-    let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
-    user.addBook(book1);
-    let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
-    user.addBook(book2);
-    let book3 = new Book("I am Malala", "Malala", "0002", "In Library", "img/malala.jpeg");
-    user.addBook(book3);    
-}
+//     */
+//     let book1 = new Book("Harry Potter", "JK Rowling", "0000", "In Library", "img/potter7.jpeg")
+//     user.addBook(book1);
+//     let book2 = new Book("Hunger Games", "Suzanne Collins", "0001", "In Library", "img/games1.jpeg");
+//     user.addBook(book2);
+//     let book3 = new Book("I am Malala", "Malala", "0002", "In Library", "img/malala.jpeg");
+//     user.addBook(book3);    
+// }

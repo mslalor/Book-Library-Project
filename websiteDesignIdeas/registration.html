@@ -115,7 +115,7 @@ form .text h3 a:hover{
         <p id = "nameError" style = "color: red" hidden>*Username is required</p>
       </div>
       <div class="input-box">
-        <input type="text"  id= "email" placeholder="Enter your email" required>
+        <input type="email" name="emailField" id= "emailField" placeholder="Enter your email" required/>
       </div>
       <div>
         <p id = "emailError" style = "color: red" hidden>*Email is required</p>
@@ -132,10 +132,10 @@ form .text h3 a:hover{
       <div>
         <p id = "confirmError" style = "color: red" hidden>*Passwords do not match</p>
       </div>
-      <div class="policy">
+      <!--<div class="policy">
         <input type="checkbox">
         <h3>I accept all terms & condition</h3>
-      </div>
+      </div>-->
       <div class="input-box button" >
         
         <input type="Submit" id = "submit" value="Register Now">
@@ -161,7 +161,7 @@ let myUser = [];
 
 const form = document.querySelector('#form')
 const username = document.querySelector('#username');
-const email = document.querySelector('#email');
+const email = document.querySelector('#emailField');
 const password = document.querySelector('#password');
 const cpassword = document.querySelector('#cpassword');
 var myPopup = document.getElementById('myPopuup');
@@ -169,7 +169,7 @@ document.addEventListener('submit',(e)=>{
     //console.log("Here");
     
     const usernameVal = username.value; 
-    const emailVal = email.value;
+    const emailVal = emailField.value;
     const passwordVal = password.value;
     const cpasswordVal = cpassword.value;
     let success = true
@@ -201,7 +201,7 @@ document.addEventListener('submit',(e)=>{
         success = false;
         //setError(password,'Password must be atleast 8 characters long')
         var error = document.getElementById("passwordError");
-        error.innerHTML = "Password must be atleast 8 characters long";
+        error.innerHTML = "Password must be at least 8 characters long";
         error.removeAttribute("hidden");
     }
     

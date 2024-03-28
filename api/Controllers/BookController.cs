@@ -19,13 +19,13 @@ namespace api.Controllers
             List<Book> book = BookUtility.GetBook();
             return book;
         }
-/*
-        [HttpGet("{id}", Name = "Get")]
-        public Book Get(int id)
-        {
-            Book newBook= BookUtility.GetBookById(id);
-            return newBook;
-        }
+
+        // [HttpGet("{id}", Name = "Get")]
+        // public Book Get(int id)
+        // {
+        //     Book newBook= BookUtility.GetBookById(id);
+        //     return newBook;
+        // }
 
         // POST: api/Book
         [HttpPost]
@@ -34,6 +34,28 @@ namespace api.Controllers
             BookUtility.AddBook(book);
         }
 
+        // PUT: api/Book/5
+        [HttpPut("{id}")]
+        public void Put(int id)
+        {
+            BookUtility.UpdateBook(id);
+        }
+
+        // // PUT: api/Book/5
+        // [HttpPut("{id}")]
+        // public void Put(int id)
+        // {
+        //     BookUtility.UpdateBook(id);
+        // }
+
+        // // PUT: api/Book/5
+        // //("{book}")
+        // [HttpPut]
+        // public void Put([FromBody] Book book)
+        // {
+        //     BookUtility.UpdateBook(book);
+        // }
+/*
         // PUT: api/Book/5
         [HttpPut("{id}")]
         public void Put(int id)

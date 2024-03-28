@@ -15,18 +15,21 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px; background-color: #271A42" id="mySidebar"><br>
   <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-white" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
     <img id ="myPic" src="img/logo.png" style="width:100%;" class="w3-round"><br><br>
-    <h4 id = "SideTitle"><b> [InsertUsername]'s Library</b></h4>
+    <h4 id = "SideTitle" style = "color: white"><b> [InsertUsername]'s Library</b></h4>
   </div>
   <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">       ADD NEW BOOK</a>
-    <a href = "login.html" style = "padding-left: 8mm;" > Sign out </a>
+    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding " style = "color: white"><i class="fa fa-th-large fa-fw w3-margin-right"></i>LIBRARY</a> 
+    
+    <a href="#add" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white">       ADD NEW BOOK</a>
+
+    <a href = "login.html" class="w3-bar-item w3-button w3-padding" style = "color: white"> Sign out </a>
+    <a id = "sideRenter" href="#renter" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white" hidden> ADD RENTER INFO</a>
   </div>
 </nav>
 
@@ -34,27 +37,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+<div class="w3-main" style="margin-left:300px; background-color: #e5ddf4;">
 
   <!-- Header -->
-  <header id="portfolio">
+  <header id="portfolio" style = "background-color: #e5ddf4; border-bottom-color: #271A42;">
    <!-- <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>-->
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1 id = "Title"><b>[InsertUserName]'s Library</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
+    <h1 id = "Title" style= "color: #271A42"><b>[InsertUserName]'s Library</b></h1>
+    <div class="w3-section w3-padding-16" style= "color: #271A42">
         <!--We will need to add functionality to this -->
-      <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-white" onclick = "filterAll()">ALL</button>
-      <button class="w3-button w3-white" onclick = "filterLent()"></i>Lent out</button>
-      <button class="w3-button w3-white" onclick= "filterIn()"></i>In Library</button>
+      <span class="w3-margin-right" style= "color: #271A42">Filter:</span> 
+      <button class="w3-button" style = "background-color: #66616fa3" onclick = "filterAll()">ALL</button>
+      <button class="w3-button" style = "background-color: #66616fa3"  onclick = "filterLent()"></i>Lent out</button>
+      <button class="w3-button" style = "background-color: #66616fa3"  onclick= "filterIn()"></i>In Library</button>
     </div>
     </div>
   </header>
   
   <!-- First Photo Grid-->
 
-  <div class="w3-row-padding" >
+  <div class="w3-row-padding" style="border-top:#271A42; border-width: 10px;">
     <div class="w3-third w3-container w3-margin-bottom" id = "book1" hidden>
       <img src="img/potter1.jpg" id = "image1" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
@@ -174,10 +177,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-padding-large" id = "renter" style="margin-bottom: 10mm" hidden>
 
     <!-- Add book sectionn -->
-    <div class="w3-container w3-padding-large w3-grey">
-      <h4 id="contact"><b>Who did you rent this to?(Email) </b></h4>
+    <div id = "renter" class="w3-container w3-padding-large w3-grey">
+      <h4 id="contact"><b>Who did you rent this to? (Email) </b></h4>
       <input id="inputEmail">
-      <h4 id="contact"><b>What is the date? </b></h4>
+      <h4 id="contact"><b>Renter's Name? </b></h4>
       <input id = "inputDate">
       <h4 id="contact"><b>In how many weeks should we start sending reminder emails? </b></h4>
       <input id = "inputWeeks">
@@ -190,7 +193,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Add book sectionn -->
   <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Add Book </b></h4>
+    <h4 id="add"><b>Add Book </b></h4>
 
     <input id="input">
     <button onclick="getbooks()">Get books</button><br>
@@ -297,42 +300,192 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <script>
+const url2 = "http://localhost:5176/api/User";
+const url = "http://localhost:5176/api/Book";
 
+let myBooks = [];
+let allBooks = [];
 
 //var id = getID();
-var id = localStorage.getItem("userId");
-var user = getAccount(id);
+//var id = localStorage.getItem("userId");
+//var user2 = getAccount(id);
+//user = localStorage.getItem("user");
+const user = JSON.parse(localStorage.getItem('user'));
+const id = JSON.parse(localStorage.getItem('userID'));
 let userName = user.username;
-document.getElementById('SideTitle').innerHTML = userName + "'s Library";
-document.getElementById('Title').innerHTML = userName + "'s Library";
-getBooks(user);
+let firstName = user.firstName;
+document.getElementById('SideTitle').innerHTML = firstName + "'s Library";
+document.getElementById('Title').innerHTML = firstName + "'s Library";
 
+if (user.numBooks != 0) {
+  getBooks(userName);
+}
 
+//getBooks(user);
 
+async function GetAllBooks() {
+  let response = await fetch(url);
+  allBooks = await response.json();
+  //console.log(myUser);
+} 
+
+async function getBooks(username) {
+await GetAllBooks();
+myBooks = allBooks.filter(Book => Book.username === username);
+if (!myBooks) return;
+console.log(myBooks);
 for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = user.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-  document.getElementById("image"+j).src = user.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = myBooks[i].title;
+  document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+  document.getElementById("image"+j).src = myBooks[i].img;
   book.removeAttribute("hidden");
   
 }
 
+//userID = userCheck.idusers;
+//console.log(userID);
+//console.log(passwordVal);
+//console.log(userCheck.password);
+// if (userCheck.password == passwordVal) {
+//     success = true;
+//     console.log("Success");
+// } 
+}
+
+async function addBookData(username, isbn, author, title, img) {
+    let Book = {
+        username: username,
+        isbn: isbn,
+        author: author,
+        title: title,
+        img: img,
+        status: "In Library",
+        //renter: "none",
+        renterEmail: "none"
+        //dateRented: 0-0-0
+    };
+
+    myBooks.push(Book);
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(Book),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        console.log("Book added successfully!");
+        // Optionally, you can reload the page or show a success message here
+    } catch (error) {
+        console.error('Error adding book:', error.message);
+        // Log the error message to the console
+    }
+}
+
+async function handleStatusUpdate(idbooks, status, renterEmail) {
+
+const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
+if (!bookUpdate) return;
+
+let Book = {
+        username: bookUpdate.username,
+        isbn: bookUpdate.isbn,
+        author: bookUpdate.author,
+        title: bookUpdate.title,
+        img: bookUpdate.img,
+        status: status,
+        //renter: renter,
+        renterEmail: renterEmail
+        //dateRented: 0-0-0
+    };
+
+await fetch(`${url}/${idbooks}`, {
+    method: "PUT"
+    //body: JSON.stringify(renterEmail)
+    // headers: {
+    //   "Content-type": "application/json"
+    // }
+});
+// const response = await fetch(url, {
+//             method: "PUT",
+//             body: JSON.stringify(Book),
+//             headers: {
+//                 "Content-type": "application/json; charset=UTF-8"
+//             }
+//         });
+
+//myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
+
+//location.reload();
+}
+
+async function handleNumBooksUpdate(idusers) {
+
+//const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
+//if (!bookUpdate) return;
+
+await fetch(`${url2}/${idusers}`, {
+    method: "PUT",
+});
+
+//myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
+
+//location.reload();
+}
+
+
+
+
+// for(var i = 0; i< user.numBooks; i++){
+//   var j = i+1;
+//   var book = document.getElementById('book'+j);
+//   document.getElementById('title'+j).innerHTML = myBooks[i].title;
+//   document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+//   document.getElementById("image"+j).src = myBooks[i].img;
+//   book.removeAttribute("hidden");
+  
+// }
+
 function edit(num){
-  if(user.bookList[num-1].status == "In Library"){
-    user.bookList[num-1].status = "Lent Out Pending";
+  if (myBooks[num-1].status == "In Library"){
+    myBooks[num-1].status = "Lent Out Pending"; //FIX THIS LINE FOR DATABASE
     //go to lending html somehow
+    //handleStatusUpdate(myBooks[num-1].idbooks);
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
+    var label = document.getElementById("sideRenter");
+    label.setAttribute('background-color', black);
   }else{
-    user.bookList[num-1].status = "In Library";
+    myBooks[num-1].status = "In Library";
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
   }
-  document.getElementById('summ'+num).innerHTML ="Author: " + user.bookList[num-1].author + " ISBN:  " +user.bookList[num-1].isbn;
+  document.getElementById('summ'+num).innerHTML ="Author: " + myBooks[num-1].author + " ISBN:  " + myBooks[num-1].isbn;
   
 }
+
+// function edit(num){
+//   if (user.bookList[num-1].status == "In Library"){
+//     user.bookList[num-1].status = "Lent Out Pending";
+//     //go to lending html somehow
+//     var box = document.getElementById('renter');
+//     box.removeAttribute('hidden');
+//     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
+//   }else{
+//     user.bookList[num-1].status = "In Library";
+//     document.getElementById('edit'+num).innerHTML = "Lend this book?"
+//   }
+//   document.getElementById('summ'+num).innerHTML ="Author: " + user.bookList[num-1].author + " ISBN:  " +user.bookList[num-1].isbn;
+  
+// }
 
 function checkOut(){
  var email = document.getElementById("inputEmail").value;
@@ -341,13 +494,19 @@ function checkOut(){
  
 
   for(var i = 0; i < user.numBooks; i++){
-    if(user.bookList[i].status == "Lent Out Pending"){
-        user.bookList[i].marked(email, date, weeks);
-        user.bookList[i].status = "Lent Out";
-        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + user.bookList[i].renterEmail +"\n"+  "Returned?";
+    if(myBooks[i].status == "Lent Out Pending"){
+        //myBooks[i].marked(email, date, weeks); idk what this is but we need it
+        myBooks[i].status = "Lent Out";
+        myBooks[i].renterEmail = email;
+        //myBooks[i].renterEmail
+        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + date +"\n"+  "Returned?";
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
+        var label = document.getElementById('sideRenter');
+        label.setAttribute('background-color', white);
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
+       //Add for lending:
+        handleStatusUpdate(myBooks[i].idbooks, 'Lent Out', email);
         break;
     }
   }
@@ -367,7 +526,7 @@ function filterIn(){
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  if(user.bookList[i].status == "In Library"){
+  if(myBooks[i].status == "In Library"){
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -378,7 +537,7 @@ function filterLent(){
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  if(user.bookList[i].status == "Lent Out"){
+  if(myBooks[i].status == "Lent Out"){
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -411,7 +570,12 @@ function addBook(num){
  // console.log("title: " + title);
 
   let newBook = new Book(title, author, isbn, "In Library", source)
-  user.addBook(newBook);
+  //user2.addBook(newBook);
+  addBookData(userName, isbn, author, title, source);
+  //numBooks += 1;
+  user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
+  handleNumBooksUpdate(user.idusers);
+  //user2.numBooks = user2.numBooks + 1; 
   //console.log(user.numBooks);
   //console.log(user.bookList[user.numBooks-1].title);
 
@@ -419,9 +583,12 @@ function addBook(num){
   var i = user.numBooks - 1;
   //console.log(i + "= i"); 
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = user.bookList[i].title;
-  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-  document.getElementById("image"+j).src = user.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = title;
+  document.getElementById('summ'+j).innerHTML ="Author: " + author + " ISBN:  " + isbn;
+  document.getElementById("image"+j).src = source;
+  // document.getElementById('title'+j).innerHTML = user.bookList[i].title;
+  // document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+  // document.getElementById("image"+j).src = user.bookList[i].img;
   book.removeAttribute("hidden");
 
   document.getElementById('input').innerHTML = "";
@@ -432,6 +599,45 @@ function addBook(num){
   }
 
 }
+
+
+// function addBook(num){
+//   var searched = document.getElementById('result'+num);
+//   var title = document.getElementById("search" + num).innerHTML;
+//   var author = document.getElementById("info"+num).innerHTML;
+//   var isbn = document.getElementById("isbn"+num).innerHTML;
+//   if(!document.getElementById("cover"+num).src){
+//     var source = 'img/noimage.jpeg';
+//   }else{
+//     var source = document.getElementById("cover"+num).src;
+//   }
+
+//  // console.log("title: " + title);
+
+//   let newBook = new Book(title, author, isbn, "In Library", source)
+//   //user.addBook(newBook);
+//   addBookData(userName, isbn);
+//   user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
+//   //console.log(user.numBooks);
+//   //console.log(user.bookList[user.numBooks-1].title);
+
+//   var j = user.numBooks;
+//   var i = user.numBooks - 1;
+//   //console.log(i + "= i"); 
+//   var book = document.getElementById('book'+j);
+//   document.getElementById('title'+j).innerHTML = user.bookList[i].title;
+//   document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
+//   document.getElementById("image"+j).src = user.bookList[i].img;
+//   book.removeAttribute("hidden");
+
+//   document.getElementById('input').innerHTML = "";
+//   for(var i = 0; i<9; i++){
+//     j = i +1;
+//     var searched = document.getElementById('result'+j);
+//     searched.setAttribute("hidden", true);
+//   }
+
+// }
 
 function getbooks(){
     document.getElementById('output').innerHTML="Searching...";
@@ -471,7 +677,7 @@ function remove(num){
   }
   for(var i = place; i<user.numBooks; i++){
     console.log((i+1) + " replacing " + i);
-    user.bookList[i] = user.bookList[i+1];
+    myBooks[i] = myBooks[i+1];
   }
 
   user.numBooks = user.numBooks -1;
@@ -479,9 +685,9 @@ function remove(num){
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  document.getElementById('title'+j).innerHTML = user.bookList[i].title;;
-  document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-  document.getElementById("image"+j).src = user.bookList[i].img;
+  document.getElementById('title'+j).innerHTML = myBooks[i].title;;
+  document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
+  document.getElementById("image"+j).src = myBooks[i].img;
   document.getElementById("edit"+j).innerHTML = "test";
  // book.removeAttribute("hidden");
   console.log("displaying: " + j + " which is at index " + i);
