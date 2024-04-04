@@ -41,9 +41,12 @@ body {
     margin: 30px auto 0; 
     display: block; 
     width: fit-content;
+    box-shadow: 7x 5px 5px rgb(60, 60, 60);
+    border-radius: 10px;
 }
 .getstartedbutton:hover{
     background-color: white;
+    
 }
 
 
@@ -73,6 +76,8 @@ header{
     border-bottom: 20px solid  var(--lightpurple);    
     border-top: 10px solid  var(--lightpurple); 
     margin-top: 12px;
+    box-shadow: 10px 10px 20px rgb(21, 21, 21);
+    border-radius: 10px;
 }
 .bio {
     background-color: var(--lightpurple);
