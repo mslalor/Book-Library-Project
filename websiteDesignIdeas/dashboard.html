@@ -577,7 +577,8 @@ let Book = {
         //dateRented: 0-0-0
     };
 
-await fetch(`${url}/${idbooks}`, {
+JSON.stringify(Book);
+await fetch(`${url}/${Book}`, {
     method: "PUT"
     //body: JSON.stringify(renterEmail)
     // headers: {
@@ -676,6 +677,7 @@ function checkOut(){
         label.setAttribute('background-color', white);
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
        //Add for lending:
+       
         handleStatusUpdate(myBooks[i].idbooks, 'Lent Out', email);
         break;
     }
