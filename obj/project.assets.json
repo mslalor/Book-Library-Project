@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mikay\\.nuget\\packages\\": {}
+    "C:\\Users\\kadan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
+      "projectUniqueName": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\dotnetFolder.csproj",
       "projectName": "dotnetFolder",
-      "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
-      "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\obj\\",
+      "projectPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\dotnetFolder.csproj",
+      "packagesPath": "C:\\Users\\kadan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
