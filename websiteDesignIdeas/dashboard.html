@@ -29,7 +29,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#add" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white">       ADD NEW BOOK</a>
 
     <a href = "login.html" class="w3-bar-item w3-button w3-padding" style = "color: white"> Sign out </a>
-    <a id = "sideRenter" href="#renter" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white" hidden> ADD RENTER INFO</a>
+    <a href="#renter" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" style = "color: white" hidden><p id = "sideRenter" hidden>ADD RENTER INFO</p></a>
   </div>
 </nav>
 
@@ -510,6 +510,11 @@ for(var i = 0; i< user.numBooks; i++){
   document.getElementById('title'+j).innerHTML = myBooks[i].title;
   document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
   document.getElementById("image"+j).src = myBooks[i].img;
+  if(myBooks[i].status == "In Library"){
+    document.getElementById("edit"+j).innerHTML = "Lend this book?";
+  }else{
+    document.getElementById("edit"+j).innerHTML = "Rented to: " + "[INSERT]" +"\n"+  "Returned?";
+  }
   book.removeAttribute("hidden");
   
 }
@@ -634,7 +639,7 @@ function edit(num){
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
     var label = document.getElementById("sideRenter");
-    label.setAttribute('background-color', black);
+    label.removeAttribute('hidden');
   }else{
     myBooks[num-1].status = "In Library";
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
@@ -660,7 +665,7 @@ function edit(num){
 
 function checkOut(){
  var email = document.getElementById("inputEmail").value;
- var date = document.getElementById("inputDate").value;
+ var name = document.getElementById("inputDate").value;
  var weeks = document.getElementById("inputWeeks").value;
  
 
@@ -670,11 +675,11 @@ function checkOut(){
         myBooks[i].status = "Lent Out";
         myBooks[i].renterEmail = email;
         //myBooks[i].renterEmail
-        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + date +"\n"+  "Returned?";
+        document.getElementById('edit'+(i+1)).innerHTML = "Rented to: " + name +"\n"+  "Returned?";
         var box = document.getElementById('renter');
         box.setAttribute('hidden', true);
         var label = document.getElementById('sideRenter');
-        label.setAttribute('background-color', white);
+        label.setAttribute('hidden', true);
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
        //Add for lending:
        
@@ -687,6 +692,7 @@ function checkOut(){
 }
 
 function filterAll(){
+  console.log("Filter all");
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
@@ -695,10 +701,13 @@ function filterAll(){
 }
 
 function filterIn(){
+  console.log("Filtered In library");
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
+  console.log(myBooks[i].status + myBooks[i].title);
   if(myBooks[i].status == "In Library"){
+      console.log("here");
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -706,6 +715,7 @@ function filterIn(){
 }
 }
 function filterLent(){
+  console.log("filterd lent out");
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
