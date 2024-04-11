@@ -165,16 +165,15 @@ const email = document.querySelector('#emailField');
 const password = document.querySelector('#password');
 const cpassword = document.querySelector('#cpassword');
 var myPopup = document.getElementById('myPopuup');
+
 document.addEventListener('submit',(e)=>{
-    //console.log("Here");
-    
+  
     const usernameVal = username.value; 
     const emailVal = emailField.value;
     const passwordVal = password.value;
     const cpasswordVal = cpassword.value;
     let success = true
     
-
 
     if(usernameVal===''){
         success=false;
@@ -224,16 +223,18 @@ document.addEventListener('submit',(e)=>{
     }
     
     if (success){
+      
       addUser(usernameVal, emailVal, passwordVal);
+      password.value = '';
+      cpassword.value = '';
       //const userAccount = new Account(usernameVal, emailVal, passwordVal);
       //accountList.newAccount=userAccount;
       //console.log(userAccount.username);
       //myPopup.removeAttribute("hidden");
     }else{
-      console.log("failed");
+      console.log("Failed.");
     }
-    
-    
+    e.preventDefault();
 
 })
 
@@ -262,9 +263,11 @@ async function addUser(usernameVal, emailVal, passwordVal) {
         }
 
         console.log("User added successfully!");
+        alert("Account registered successfully.");
         // Optionally, you can reload the page or show a success message here
     } catch (error) {
         console.error('Error adding user:', error.message);
+        alert("Error registering the account.");
         // Log the error message to the console
         // You can add more detailed error handling or show an error message to the user here
     }

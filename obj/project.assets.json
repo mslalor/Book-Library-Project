@@ -8,24 +8,26 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/monicalalor/.nuget/packages/": {}
+    "C:\\Users\\kadan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
+      "projectUniqueName": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\dotnetFolder.csproj",
       "projectName": "dotnetFolder",
-      "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
-      "packagesPath": "/Users/monicalalor/.nuget/packages/",
-      "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/obj/",
+      "projectPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\dotnetFolder.csproj",
+      "packagesPath": "C:\\Users\\kadan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -38,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
