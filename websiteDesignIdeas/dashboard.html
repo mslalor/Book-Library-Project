@@ -513,7 +513,7 @@ for(var i = 0; i< user.numBooks; i++){
   if(myBooks[i].status == "In Library"){
     document.getElementById("edit"+j).innerHTML = "Lend this book?";
   }else{
-    document.getElementById("edit"+j).innerHTML = "Rented to: " + "[INSERT]" +"\n"+  "Returned?";
+    document.getElementById("edit"+j).innerHTML = "Rented to: " + myBooks[i].renter +"\n"+  "Returned?";
   }
   book.removeAttribute("hidden");
   
@@ -537,7 +537,7 @@ async function addBookData(username, isbn, author, title, img) {
         title: title,
         img: img,
         status: "In Library",
-        //renter: "none",
+        renter: "none",
         renterEmail: "none"
         //dateRented: 0-0-0
     };
@@ -565,7 +565,7 @@ async function addBookData(username, isbn, author, title, img) {
     }
 }
 
-async function handleStatusUpdate(idbooks, status, renterEmail) {
+async function handleStatusUpdate(idbooks, status, renterEmail, renterName) {
 
 const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
 if (!bookUpdate) return;
@@ -577,15 +577,15 @@ let Book = {
         title: bookUpdate.title,
         img: bookUpdate.img,
         status: status,
-        //renter: renter,
+        renter: renterName,
         renterEmail: renterEmail
         //dateRented: 0-0-0
     };
 
-JSON.stringify(Book);
-await fetch(`${url}/${Book}`, {
-    method: "PUT"
-    //body: JSON.stringify(renterEmail)
+//JSON.stringify(Book);
+await fetch(`${url}/${idbooks}`, {
+    method: "PUT",
+    body: JSON.stringify(Book)
     // headers: {
     //   "Content-type": "application/json"
     // }
@@ -683,7 +683,7 @@ function checkOut(){
        // console.log(user.bookList[i].title + " to "  + user.bookList[i].renterEmail);
        //Add for lending:
        
-        handleStatusUpdate(myBooks[i].idbooks, 'Lent Out', email);
+        handleStatusUpdate(myBooks[i].idbooks, 'Lent Out', email, name);
         break;
     }
   }
