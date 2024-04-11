@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,232 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 150px auto;
+            grid-template-rows: 72px auto auto;
+            grid-template-areas: "head head" "nav nav" "nav2 content";
+        }
+
+        h1 {
+            grid-area: head;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        #nav2 {
+            grid-area: nav2;
+            width: 100%;
+            z-index: 1;
+            top: 72px;
+            bottom: 0px;
+            background-color: rgb(152, 152, 251);
+            text-align: left;
+        }
+
+        #nav2 a {
+            padding: 8px 8px 8px 8px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid white;
+        }
+
+        #nav2 a:hover {
+            background-color: black;
+        }
+
+        #content {
+            grid-area: content;
+            padding: 15px;
+            background-color: rgb(177, 177, 251);
+            color: black;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+        ol li{
+            margin-bottom: 5px;
+        }
+        h2{
+            padding-top: 50px;
+            color:white;
+        }
+        h3{
+            color:black;
+            padding-bottom: 0px;
+            padding-left: 10px;
+        }
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px; 
+            left: 20px; 
+            background-color: rgba(255, 255, 255, 0.5); 
+            color: black;
+            font-size: small; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-decoration: none;
+            z-index: 1000; 
+        }
+        .back-to-top:hover {
+            background-color: rgb(152, 152, 251); 
+        }
+        .show {
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Deliverables</h1>
+    <h1 class="top">Deliverables</h1>
     <nav>
         <div class="button-container">
-            <a href="welcome.html" class="button">Home</a>
+            <a href="../welcome.html" class="button">Home</a>
             <a href="deliverables.html" class="button">Deliverables</a>
             <a href="teambios.html" class="button">Our Team</a>
             <a href="registration.html" class="button">Sign Up</a>
             <a href="login.html" class="button">Login</a>
         </div>
     </nav>
+    <div id="nav2">
+        <a href="#howto">How to execute</a>
+        <a href="#projectpitch">Project Pitch</a>
+        <a href="#sprint1">Sprint 1</a>
+        <a href="#sprint2">Sprint 2</a>
+        <a href="#sprint3">Sprint 3</a>
+        <a href="#databasenotes">Database</a>
 
+    </div>
+    <div id="content">
+        <h2 id="howto" style="padding-top: 0;">How to Execute Our Website:</h2>
+        <ul>
+            <li>On the welcome page, select "<strong>Get started now!</strong>" or select "<strong>Sign Up</strong>"
+                from the navigation bar to register.</li>
+            <li>To register for an account, click "<strong>Sign up here!</strong>" which will take you to the
+                registration page (<em>registration.html</em>).</li>
+            <li>To get to the login page, click "<strong>Login now</strong>". (<em>login.html</em>)</li>
+            <li>After entering your login and clicking "<strong>Login</strong>", you are taken to your dashboard page
+                (<em>dashboard.html</em>).</li>
+            <li>Here, users are able to view their personal library, add/edit books, and edit the book's status.</li>
+            <li>If a book has been lent out, select "<strong>Lend this book?</strong>". This will change the button to
+                "<strong>Returned?</strong>" which can be selected when the book has been returned.</li>
+            <li>Users can filter at the top of the screen by all their books, books that have been lent out, and books
+                that have not been lent out and are currently in their library.</li>
+            <li>Selecting "<strong>Add New Book</strong>" on the sidebar takes users down to the section where they will
+                be able to add a new book to their library.</li>
+            <li>Selecting "<strong>Library</strong>" on the sidebar takes users back up to the top of their library.
+            </li>
+            <li>Selecting "<strong>Sign out</strong>" on the sidebar takes users back to the login page and signs them
+                out of their account.</li>
+        </ul>
 
+        <h2 id="projectpitch">Project Pitch</h2>
+        <iframe
+            src="https://docs.google.com/presentation/d/e/2PACX-1vQfn_DUuxsWRta4B0xcdycLe3-Z-88eus9IO_MFX_IAD8ixR1WA6Wgji2R1GpyDBf9vyWbOxT5auaVO/embed?start=false&loop=false&delayms=3000"
+            frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true"
+            webkitallowfullscreen="true"></iframe>
+        
+        <h2 id="sprint1">Sprint 1</h2>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTHfhqTifVEhw9anguIzDWA_p00DeVD1Uzmhx27ui2tOe86vht0jlGrdgf9dQhmxsyMk2Q4iGqCFCo1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+        <h2 id="sprint2">Sprint 2</h2>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSm5suHUxkdJc2bH6R5674PG2ft0DRecu_3MhhSHSPu1ZuteaTS2jH5_9OB0pjujHH7bBVhLNXp-FQ2/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+        <h2 id="sprint3">Sprint 3</h2>
+        <p>*to be posted*</p>
+
+        <h2 id="databasenotes">Database Notes</h2>
+
+        <h3>Commands</h3>
+        <ul>
+            <li><code>dotnet watch run</code> - Runs the program</li>
+        </ul>
     
+        <h3>Apps</h3>
+        <ul>
+            <li><strong>Swagger API:</strong> Built-in with .NET, connects the database and code for the website</li>
+        </ul>
+    
+        <h3>Commands in API folder</h3>
+        <ul>
+            <li><code>GET</code> - Retrieves information from the database</li>
+            <li><code>POST</code> - Puts information into the database</li>
+        </ul>
+    
+        <h3>.NET</h3>
+        <ul>
+            <li>Builds websites, locally accessible through a link</li>
+            <li>Open-source developer platform</li>
+        </ul>
+    
+        <h3>Heroku</h3>
+        <ol>
+            <li>Go to Dashboard</li>
+            <li>Create new App</li>
+            <li>Go to Resources</li>
+            <ul>
+                <li style="margin-bottom:0px;">Add-ons</li>
+                <li style="margin-bottom:0px;">JawsDB</li>
+                <li style="margin-bottom:0px;">MySQL Free</li></ul>
+        </ol>
+    
+        <h3>Create a JawsDB account from Heroku</h3>
+
+        <h3>MySQL</h3>
+        <ul>
+            <li>Go to home
+            </li><li>Can grab things directly from the website</li>
+            <li>Store into a keychain for password</li>
+        </ul>
+    
+        <h3>HTML, Bootstrap, and JavaScript</h3>
+        <ul>
+            <li>HTML can be enhanced with Bootstrap and JavaScript to make parts of the website interactive</li>
+        </ul>
+    
+        <h3>Advice for IBSN Scanner</h3>
+        <ul>
+            <li>Look up a free scanner online, they typically provide free libraries that can be implemented in your code</li>
+        </ul>
+    
+        <h3>Technologies Used</h3>
+        <ul>
+            <li>Database: C#</li>
+            <li>Styling: CSS</li>
+        </ul>
+    
+    </div>
+
+
+    <a href="#top" class="back-to-top">To Top &uarr;</a>
+    <script>
+        // Show or hide the back-to-top button based on scroll position
+        window.onscroll = function () {
+            scrollFunction()
+        };
+        function scrollFunction() {
+            var backToTopButton = document.querySelector('.back-to-top');
+            var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            var scrollThreshold = 500;
+
+            if (scrollPosition > scrollThreshold) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+    </script>
 </body>
+
 </html>
