@@ -36,9 +36,9 @@ namespace api.Controllers
 
         // PUT: api/Book/5
         [HttpPut("{id}")]
-        public void Put(Book id)
+        public void Put(int id, [FromBody] Book book)
         {
-            BookUtility.UpdateBook(id);
+            BookUtility.UpdateBook(id, book);
         }
 
         // // PUT: api/Book/5

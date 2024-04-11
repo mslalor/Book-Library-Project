@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj": {}
+    "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj": {
+    "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj",
+        "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\obj\\",
+        "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj",
+        "packagesPath": "/Users/monicalalor/.nuget/packages/",
+        "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -65,19 +65,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.25, 6.0.25]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.28, 6.0.28]"
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[6.0.25, 6.0.25]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.28, 6.0.28]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.28, 6.0.28]"
+              "version": "[6.0.25, 6.0.25]"
             }
           ],
           "frameworkReferences": {
@@ -88,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
