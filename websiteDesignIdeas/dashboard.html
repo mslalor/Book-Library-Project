@@ -585,10 +585,10 @@ let Book = {
 //JSON.stringify(Book);
 await fetch(`${url}/${idbooks}`, {
     method: "PUT",
-    body: JSON.stringify(Book)
-    // headers: {
-    //   "Content-type": "application/json"
-    // }
+    body: JSON.stringify(Book),
+    headers: {
+       "Content-type": "application/json"
+     }
 });
 // const response = await fetch(url, {
 //             method: "PUT",
@@ -601,6 +601,7 @@ await fetch(`${url}/${idbooks}`, {
 //myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
 
 //location.reload();
+
 }
 
 async function handleNumBooksUpdate(idusers) {
@@ -642,6 +643,7 @@ function edit(num){
     label.removeAttribute('hidden');
   }else{
     myBooks[num-1].status = "In Library";
+    handleStatusUpdate(myBooks[num-1].idbooks, 'In Library', 'none', 'none');
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
   }
   document.getElementById('summ'+num).innerHTML ="Author: " + myBooks[num-1].author + " ISBN:  " + myBooks[num-1].isbn;
