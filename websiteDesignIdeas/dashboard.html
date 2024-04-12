@@ -850,7 +850,7 @@ function getbooks(){
 
 function remind(num){
   var book = document.getElementById('book'+num);
-  //renter email and book title
+  //renter email and book
   bookTitle = myBooks[num-1].title;
   renterEmailTo = myBooks[num-1].renterEmail;
   
@@ -902,7 +902,6 @@ function sendReminder(bookTitle, userName, renterEmailTo){ //actually sends the 
 
   sgMail.setApiKey(API_KEY)
 
-  const bookTitle = bookTitle;
   const renter = userName;
 
   const message = {
