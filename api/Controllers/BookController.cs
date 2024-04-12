@@ -62,12 +62,12 @@ namespace api.Controllers
         {
             BookUtility.HoldBook(id);
         }
-
+*/
         // DELETE: api/Book/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
             BookUtility.DeleteBook(id);
-        }*/
+        }
     }
 }

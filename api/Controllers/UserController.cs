@@ -36,9 +36,14 @@ namespace api.Controllers
 
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public void Put(int id)
+        public void Put(int id, [FromBody] int num)
         {
-            UserUtility.UpdateUser(id);
+        
+            if (num == 1) {
+                UserUtility.UpdateUser(id);
+            } else {
+                UserUtility.UpdateUserMinus(id);
+            }
         }
 
         // PUT: api/User/5

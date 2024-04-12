@@ -617,6 +617,8 @@ await fetch(`${url}/${idbooks}`, {
        "Content-type": "application/json"
      }
 });
+
+
 // const response = await fetch(url, {
 //             method: "PUT",
 //             body: JSON.stringify(Book),
@@ -631,13 +633,28 @@ await fetch(`${url}/${idbooks}`, {
 
 }
 
-async function handleNumBooksUpdate(idusers) {
+async function deleteBookData(idbooks) {
+
+const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
+if (!bookUpdate) return;
+
+await fetch(`${url}/${idbooks}`, {
+    method: "DELETE"
+});
+
+}
+
+async function handleNumBooksUpdate(idusers, num) {
 
 //const bookUpdate = myBooks.find(Book => Book.idbooks === idbooks);
 //if (!bookUpdate) return;
 
 await fetch(`${url2}/${idusers}`, {
     method: "PUT",
+    body: JSON.stringify(num),
+    headers: {
+      "Content-type": "application/json"
+    }
 });
 
 //myInventory = myInventory.filter(Inventory => Inventory.carID !== carID);
@@ -785,7 +802,7 @@ function addBook(num){
   addBookData(userName, isbn, author, title, source);
   //numBooks += 1;
   user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
-  handleNumBooksUpdate(user.idusers);
+  handleNumBooksUpdate(user.idusers, 1);
   //user2.numBooks = user2.numBooks + 1; 
   //console.log(user.numBooks);
   //console.log(user.bookList[user.numBooks-1].title);
@@ -885,9 +902,11 @@ function remind(num){
 }
 
 function remove(num){
-  console.log("removing " + num);
+  console.log("Removing " + num);
   var book = document.getElementById('book'+num);
   var place = num - 1; 
+  deleteBookData(myBooks[num-1].idbooks);
+  handleNumBooksUpdate(user.idusers, 0);
 
   if(num == user.numBooks){
     book.setAttribute("hidden", true);

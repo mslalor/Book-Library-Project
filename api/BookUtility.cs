@@ -146,24 +146,24 @@ public static Book GetInventoryById(int id)
         // }
 
 
-         /*
-        public static void DeleteInventory(int carID)
+        
+        public static void DeleteBook(int idbooks)
         {
             Database db = new Database();
 
             using var con = new MySqlConnection(db.cs);
             con.Open();
 
-            string stm = "UPDATE inventory SET isDeleted = true WHERE carID = @carID";
+            string stm = "DELETE FROM books WHERE idbooks = @idbooks";
             using var cmd = new MySqlCommand(stm, con);
 
-            cmd.Parameters.AddWithValue("@carID", carID);
+            cmd.Parameters.AddWithValue("@idbooks", idbooks);
 
             cmd.ExecuteNonQuery();
 
             con.Close();
         }
-
+        /*
         public static void HoldInventory(int carID)
         {
             Database db = new Database();

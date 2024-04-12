@@ -109,6 +109,23 @@ namespace api
 
             con.Close();
         }
+
+          public static void UpdateUserMinus(int idusers)
+        {
+            Database db = new Database();
+
+            using var con = new MySqlConnection(db.cs);
+            con.Open();
+
+            string stm = "UPDATE users SET numBooks = (numBooks - 1) WHERE idusers = @idusers";
+            using var cmd = new MySqlCommand(stm, con);
+
+            cmd.Parameters.AddWithValue("@idusers", idusers);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+        }
          /*
         public static void DeleteInventory(int carID)
         {
