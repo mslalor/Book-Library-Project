@@ -876,7 +876,12 @@ function getbooks(){
 
 function remind(num){
   var book = document.getElementById('book'+num);
-
+  //renter email and book
+  bookTitle = myBooks[num-1].title;
+  renterEmailTo = myBooks[num-1].renterEmail;
+  
+  sendReminder(bookTitle, userName, renterEmailTo);
+  
 }
 
 function remove(num){
@@ -914,7 +919,34 @@ function remove(num){
   console.log("numbooks " + user.numBooks);
 
 }
+
+
+function sendReminder(bookTitle, userName, renterEmailTo){ //actually sends the reminder
+  const sgMail = require('@sendgrid/mail')
+
+  const API_KEY = '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';
+
+  sgMail.setApiKey(API_KEY)
+
+  const renter = userName;
+
+  const message = {
+      to: renterEmailTo,
+      from: 'personalbooklibrarydesign@gmail.com',
+      subject: 'Your book is overdue!',
+      text: 'Dear borrower,\n\nThis is to inform you that your book ' + bookTitle + ' rented from ' + renter + ' is overdue.\nPlease return it as soon as possible.\n\nThank you,\nPersonal Book Library',
+      html: '<p><strong>Dear borrower,</strong></p><p>This is to inform you that your book <strong>' + bookTitle + '</strong> rented from <strong>' + renter + '</strong> is overdue.</p><p>Please return it as soon as possible.</p><p>Thank you,<br>Personal Book Library</p>',
+  };
+
+  sgMail
+      .send(message)
+      .then(Response => console.log('Email sent.'))
+      .catch(error => console.log(error.message));
+}
+
 </script>
 
 </body>
 </html>
+
+
