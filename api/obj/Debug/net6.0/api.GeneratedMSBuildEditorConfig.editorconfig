@@ -9,11 +9,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = api
 build_property.RootNamespace = api
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\mikay\school\CS 495\Book-Library-Project\api\
+=======
+build_property.ProjectDir = C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\api\
+>>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\mikay\school\CS 495\Book-Library-Project\api
+=======
+build_property.MSBuildProjectDirectory = C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\api
+>>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
 build_property._RazorSourceGeneratorDebug = 

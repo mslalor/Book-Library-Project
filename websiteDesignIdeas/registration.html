@@ -158,6 +158,7 @@ form .text h3 a:hover{
 //const url = "http://localhost:5176/api/User";
 const url = "https://personal-book-library.azurewebsites.net/api/User";
 let myUser = [];
+let exists = false;
 
 const form = document.querySelector('#form')
 const username = document.querySelector('#username');
@@ -165,16 +166,15 @@ const email = document.querySelector('#emailField');
 const password = document.querySelector('#password');
 const cpassword = document.querySelector('#cpassword');
 var myPopup = document.getElementById('myPopuup');
+
 document.addEventListener('submit',(e)=>{
-    //console.log("Here");
-    
+  
     const usernameVal = username.value; 
     const emailVal = emailField.value;
     const passwordVal = password.value;
     const cpasswordVal = cpassword.value;
     let success = true
     
-
 
     if(usernameVal===''){
         success=false;
@@ -224,18 +224,39 @@ document.addEventListener('submit',(e)=>{
     }
     
     if (success){
+      
       addUser(usernameVal, emailVal, passwordVal);
+      password.value = '';
+      cpassword.value = '';
       //const userAccount = new Account(usernameVal, emailVal, passwordVal);
       //accountList.newAccount=userAccount;
       //console.log(userAccount.username);
       //myPopup.removeAttribute("hidden");
     }else{
-      console.log("failed");
+      console.log("Failed.");
+      alert("Error registering the account.");
     }
-    
-    
+    e.preventDefault();
 
 })
+
+async function GetAllUsers() {
+  let response = await fetch(url);
+  myUser = await response.json();
+  console.log(myUser);
+} 
+
+async function getUser(emailVal) {
+await GetAllUsers();
+const userCheck = myUser.find(User => User.username === emailVal);
+if (!userCheck) {
+    return;
+}  else {
+    exists = true;
+    return;
+}
+
+}
 
 async function addUser(usernameVal, emailVal, passwordVal) {
     let User = {
@@ -245,7 +266,12 @@ async function addUser(usernameVal, emailVal, passwordVal) {
         password: passwordVal,
         numBooks: 0
     };
-
+    await getUser(emailVal);
+    if (exists) {
+      exists = false;
+      alert("Error registering the account.");
+      return;
+    }
     myUser.push(User);
 
     try {
@@ -262,9 +288,11 @@ async function addUser(usernameVal, emailVal, passwordVal) {
         }
 
         console.log("User added successfully!");
+        alert("Account registered successfully.");
         // Optionally, you can reload the page or show a success message here
     } catch (error) {
         console.error('Error adding user:', error.message);
+        alert("Error registering the account.");
         // Log the error message to the console
         // You can add more detailed error handling or show an error message to the user here
     }
