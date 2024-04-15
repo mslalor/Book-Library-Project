@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/monicalalor/.nuget/packages/": {}
+    "C:\\Users\\mikay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
+      "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
       "projectName": "dotnetFolder",
-      "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
-      "packagesPath": "/Users/monicalalor/.nuget/packages/",
-      "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/obj/",
+      "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
+      "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
