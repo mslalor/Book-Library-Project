@@ -150,9 +150,28 @@ const password = document.querySelector('#password');
 var button = document.getElementById("log");
 button.setAttribute("onclick", "login();");
 async function login() {
-    const emailVal = username.value;
+    const emailVal = username.value.toLowerCase();
     const passwordVal = password.value;
    //let success = true;
+
+    //check for character limits
+    if (emailVal.length < 6) {
+        alert("Invalid email. Too short.");
+        return;
+    }
+    if (emailVal.length > 50) {
+        alert("Invalid email. Too long.");
+        return;
+    }
+    
+    if (passwordVal.length < 8) {
+        alert("Password must be at least 8 characters.");
+        return;
+    }
+    if (passwordVal.length > 30) {
+        alert("Password too long");
+        return;
+    }
 
     await getUser(emailVal, passwordVal);
 
