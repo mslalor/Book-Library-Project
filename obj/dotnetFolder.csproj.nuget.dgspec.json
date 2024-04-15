@@ -1,6 +1,22 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
+        "projectName": "dotnetFolder",
+        "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
+        "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
     "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\dotnetFolder.csproj": {}
   },
   "projects": {
@@ -16,6 +32,7 @@
         "configFilePaths": [
           "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -60,7 +77,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+>>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
         }
       }
     }

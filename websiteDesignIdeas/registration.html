@@ -158,6 +158,7 @@ form .text h3 a:hover{
 //const url = "http://localhost:5176/api/User";
 const url = "https://personal-book-library.azurewebsites.net/api/User";
 let myUser = [];
+let exists = false;
 
 const form = document.querySelector('#form')
 const username = document.querySelector('#username');
@@ -233,10 +234,29 @@ document.addEventListener('submit',(e)=>{
       //myPopup.removeAttribute("hidden");
     }else{
       console.log("Failed.");
+      alert("Error registering the account.");
     }
     e.preventDefault();
 
 })
+
+async function GetAllUsers() {
+  let response = await fetch(url);
+  myUser = await response.json();
+  console.log(myUser);
+} 
+
+async function getUser(emailVal) {
+await GetAllUsers();
+const userCheck = myUser.find(User => User.username === emailVal);
+if (!userCheck) {
+    return;
+}  else {
+    exists = true;
+    return;
+}
+
+}
 
 async function addUser(usernameVal, emailVal, passwordVal) {
     let User = {
@@ -246,7 +266,12 @@ async function addUser(usernameVal, emailVal, passwordVal) {
         password: passwordVal,
         numBooks: 0
     };
-
+    await getUser(emailVal);
+    if (exists) {
+      exists = false;
+      alert("Error registering the account.");
+      return;
+    }
     myUser.push(User);
 
     try {
