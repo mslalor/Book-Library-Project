@@ -502,6 +502,7 @@ const url = "https://personal-book-library.azurewebsites.net/api/Book";
 
 let myBooks = [];
 let allBooks = [];
+let index = 0;
 
 //var id = getID();
 //var id = localStorage.getItem("userId");
@@ -516,6 +517,7 @@ document.getElementById('Title').innerHTML = firstName + "'s Library";
 
 if (user.numBooks != 0) {
   getBooks(userName);
+  index = user.numBooks;
 }
 
 //getBooks(user);
@@ -529,6 +531,8 @@ async function GetAllBooks() {
 async function getBooks(username) {
 await GetAllBooks();
 myBooks = allBooks.filter(Book => Book.username === username);
+user.numBooks = myBooks.length;
+console.log(user.numBooks);
 if (!myBooks) return;
 console.log(myBooks);
 for(var i = 0; i< user.numBooks; i++){
@@ -811,7 +815,9 @@ function addBook(num){
   //user2.addBook(newBook);
   addBookData(userName, isbn, author, title, source);
   //numBooks += 1;
-  user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
+  //myBooks.push(newBook);
+  user.numBooks = user.numBooks + 1; 
+  index += 1;
   handleNumBooksUpdate(user.idusers, 1);
   //user2.numBooks = user2.numBooks + 1; 
   //console.log(user.numBooks);
@@ -915,12 +921,18 @@ function remove(num){
   console.log("Removing " + num);
   var book = document.getElementById('book'+num);
   var place = num - 1; 
+  console.log(myBooks);
+  console.log(myBooks[num-1].idbooks);
   deleteBookData(myBooks[num-1].idbooks);
   handleNumBooksUpdate(user.idusers, 0);
 
-  if(num == user.numBooks){
+  user.numBooks = user.numBooks -1;
+  //num == user.numBooks ||
+  if(user.numBooks == 0){
     book.setAttribute("hidden", true);
     user.numBooks = user.numBooks - 1;
+    //myBooks[num-1] = null;
+    myBooks.pop();
     console.log(user.numBooks);
     return;
   }
@@ -928,22 +940,36 @@ function remove(num){
     console.log((i+1) + " replacing " + i);
     myBooks[i] = myBooks[i+1];
   }
+  myBooks.pop();
+  //myBooks[num-1] = null;
+  console.log(myBooks);
+  //user.numBooks
+  console.log("Index:");
+  console.log(index);
 
-  user.numBooks = user.numBooks -1;
-
-  for(var i = 0; i< user.numBooks; i++){
-  var j = i+1;
+  var j = 0;
+  for(var i = 0; i<= user.numBooks+1; i++){
+    console.log(myBooks[i]);
+  if (myBooks[i] != null) {
+  //var j = i+1;
+  j += 1;
+  
   var book = document.getElementById('book'+j);
   document.getElementById('title'+j).innerHTML = myBooks[i].title;;
   document.getElementById('summ'+j).innerHTML ="Author: " + myBooks[i].author + " ISBN:  " + myBooks[i].isbn;
   document.getElementById("image"+j).src = myBooks[i].img;
-  document.getElementById("edit"+j).innerHTML = "test";
+  if (myBooks[i].status == "Lent Out") {
+    document.getElementById('edit'+j).innerHTML = "Rented to: " + myBooks[i].renterName +"\n"+  "Returned?";
+  } else {
+    document.getElementById("edit"+j).innerHTML = "Lend this book?";
+  }
+ 
  // book.removeAttribute("hidden");
   console.log("displaying: " + j + " which is at index " + i);
-  
+  }
   }
   console.log("j " + j);
-  var book = document.getElementById('book'+j);
+  var book = document.getElementById('book'+(j+1));
   book.setAttribute("hidden", true);
   console.log("numbooks " + user.numBooks);
 
