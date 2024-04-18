@@ -263,7 +263,6 @@
       //accountList.newAccount=userAccount;
       //console.log(userAccount.username);
       //myPopup.removeAttribute("hidden");
-      window.location.href = "login.html"
 
     } else {
       console.log("Failed.");
@@ -335,6 +334,8 @@
       console.log("User added successfully!");
       alert("Account registered successfully.");
       // Optionally, you can reload the page or show a success message here
+      window.location.href = "login.html"
+
     } catch (error) {
       console.error('Error adding user:', error.message);
       alert("Error registering the account.");
