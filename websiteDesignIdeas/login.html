@@ -163,7 +163,6 @@ async function login() {
         alert("Password must be at least 8 characters.");
         return;
     }
-    
     await getUser(emailVal, passwordVal);
 
     if (success) {

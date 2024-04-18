@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "bzWWSejk5L9qFQCGxCTYy247k+4deN6Kycm21A9Ax2V31oYl8gIBFkkfjDWE36TnIos+O+TMZ1w8i6wMCBi+RQ==",
+  "dgSpecHash": "BvRa6rDu+iESNEu1xhc1XU/qRyORwep2gozsRcAK1GJkyQ4/6bCoJsmWHEVj5cyUdBMIdAoofzWgKvRMlBdxDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
+  "projectFilePath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/monicalalor/Documents/GitHub/Book-Library-Project/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

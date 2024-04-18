@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mikay\\.nuget\\packages\\": {}
+    "/Users/monicalalor/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
+      "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
       "projectName": "dotnetFolder",
-      "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\dotnetFolder.csproj",
-      "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\obj\\",
+      "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/dotnetFolder.csproj",
+      "packagesPath": "/Users/monicalalor/.nuget/packages/",
+      "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -59,8 +59,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/monicalalor/Documents/GitHub/Book-Library-Project/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
