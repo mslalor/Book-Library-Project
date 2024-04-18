@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj": {}
   },
   "projects": {
@@ -16,29 +15,11 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-    "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
-        "projectName": "api",
-        "projectPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\kadan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kadan\\OneDrive\\Documents\\GitHub\\Book-Library-Project\\api\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\kadan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -86,7 +62,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-<<<<<<< HEAD
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
@@ -105,8 +80,6 @@
               "version": "[6.0.29, 6.0.29]"
             }
           ],
-=======
->>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -115,11 +88,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
->>>>>>> c3fe4b64ed2c9df527acf8ff9bc87beea9a80208
         }
       }
     }

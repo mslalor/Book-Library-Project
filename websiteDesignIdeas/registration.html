@@ -1,230 +1,261 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Registration </title> 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-body{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgb(152, 152, 251);
-}
-.wrapper{
-  position: relative;
-  max-width: 430px;
-  width: 100%;
-  background: #fff;
-  padding: 34px;
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-.wrapper h2{
-  position: relative;
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-}
-.wrapper h2::before{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 28px;
-  border-radius: 12px;
-  background: rgb(152, 152, 251);
-}
-.wrapper form{
-  margin-top: 30px;
-}
-.wrapper form .input-box{
-  height: 52px;
-  margin: 18px 0;
-}
-form .input-box input{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  padding: 0 15px;
-  font-size: 17px;
-  font-weight: 400;
-  color: #333;
-  border: 1.5px solid #C7BEBE;
-  border-bottom-width: 2.5px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-.input-box input:focus,
-.input-box input:valid{
-  border-color: #4070f4;
-}
-form .policy{
-  display: flex;
-  align-items: center;
-}
-form h3{
-  color: #707070;
-  font-size: 14px;
-  font-weight: 500;
-  margin-left: 10px;
-}
-.input-box.button input{
-  color: #fff;
-  letter-spacing: 1px;
-  border: none;
-  background:rgb(152, 152, 251);
-  cursor: pointer;
-}
-.input-box.button input:hover{
-  background: rgb(152, 152, 251);
-}
-form .text h3{
- color: #333;
- width: 100%;
- text-align: center;
-}
-form .text h3 a{
-  color: rgb(152, 152, 251);
-  text-decoration: none;
-}
-form .text h3 a:hover{
-  text-decoration: underline;
-}
-    </style>
-    <script src = "accounts.js"></script>
-   </head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Registration </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(152, 152, 251);
+    }
+
+    .wrapper {
+      position: relative;
+      max-width: 430px;
+      width: 100%;
+      background: #fff;
+      padding: 34px;
+      border-radius: 6px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .wrapper h2 {
+      position: relative;
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .wrapper h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 28px;
+      border-radius: 12px;
+      background: rgb(152, 152, 251);
+    }
+
+    .wrapper form {
+      margin-top: 30px;
+    }
+
+    .wrapper form .input-box {
+      height: 52px;
+      margin: 18px 0;
+    }
+
+    form .input-box input {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      padding: 0 15px;
+      font-size: 17px;
+      font-weight: 400;
+      color: #333;
+      border: 1.5px solid #C7BEBE;
+      border-bottom-width: 2.5px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .input-box input:focus,
+    .input-box input:valid {
+      border-color: #4070f4;
+    }
+
+    form .policy {
+      display: flex;
+      align-items: center;
+    }
+
+    form h3 {
+      color: #707070;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+
+    .input-box.button input {
+      color: #fff;
+      letter-spacing: 1px;
+      border: none;
+      background: rgb(152, 152, 251);
+      cursor: pointer;
+    }
+
+    .input-box.button input:hover {
+      background: rgb(152, 152, 251);
+    }
+
+    form .text h3 {
+      color: #333;
+      width: 100%;
+      text-align: center;
+    }
+
+    form .text h3 a {
+      color: rgb(152, 152, 251);
+      text-decoration: none;
+    }
+
+    form .text h3 a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="accounts.js"></script>
+</head>
+
 <body>
   <div class="wrapper">
     <h2>Registration</h2>
-  
+
     <form action="#">
       <div class="input-box">
-        <input type="text" id = "username" placeholder="Enter your first name" required>
+        <input type="text" id="username" placeholder="Enter your first name" required>
       </div>
       <div>
-        <p id = "nameError" style = "color: red" hidden>*Username is required</p>
+        <p id="nameError" style="color: red" hidden>*Username is required</p>
       </div>
       <div class="input-box">
-        <input type="email" name="emailField" id= "emailField" placeholder="Enter your email" required/>
+        <input type="email" name="emailField" id="emailField" placeholder="Enter your email" required />
       </div>
       <div>
-        <p id = "emailError" style = "color: red" hidden>*Email is required</p>
+        <p id="emailError" style="color: red" hidden>*Email is required</p>
       </div>
       <div class="input-box">
-        <input type="password" id = "password" placeholder="Create password" required>
+        <input type="password" id="password" placeholder="Create password" required>
       </div>
       <div>
-        <p id = "passwordError" style = "color: red" hidden>*Password is required</p>
+        <p id="passwordError" style="color: red" hidden>*Password is required</p>
       </div>
       <div class="input-box">
-        <input type="password" id = "cpassword" placeholder="Confirm password" required>
+        <input type="password" id="cpassword" placeholder="Confirm password" required>
       </div>
       <div>
-        <p id = "confirmError" style = "color: red" hidden>*Passwords do not match</p>
+        <p id="confirmError" style="color: red" hidden>*Passwords do not match</p>
       </div>
       <!--<div class="policy">
         <input type="checkbox">
         <h3>I accept all terms & condition</h3>
       </div>-->
-      <div class="input-box button" >
-        
-        <input type="Submit" id = "submit" value="Register Now">
-        
+      <div class="input-box button">
+
+        <input type="Submit" id="submit" value="Register Now">
+
       </div>
-      </form>
-      <div id = "myPopup" hidden>
-        <h3>Success! Your account has been created! Please click "Login now" below!</h3>
-      </div>
-      <div class="text">
-        <h3>Already have an account? <a href="login.html">Login now</a></h3>
-      </div>
-    
+    </form>
+    <div id="myPopup" hidden>
+      <h3>Success! Your account has been created! Please click "Login now" below!</h3>
+    </div>
+    <div class="text">
+      <h3>Already have an account? <a href="login.html">Login now</a></h3>
+    </div>
+
   </div>
 </body>
+
 </html>
 
 
 <script>
-//const url = "http://localhost:5176/api/User";
-const url = "https://personal-book-library.azurewebsites.net/api/User";
-let myUser = [];
-let exists = false;
+  //const url = "http://localhost:5176/api/User";
+  const url = "https://personal-book-library.azurewebsites.net/api/User";
+  let myUser = [];
+  let exists = false;
 
-const form = document.querySelector('#form')
-const username = document.querySelector('#username');
-const email = document.querySelector('#emailField');
-const password = document.querySelector('#password');
-const cpassword = document.querySelector('#cpassword');
-var myPopup = document.getElementById('myPopuup');
+  const form = document.querySelector('#form')
+  const username = document.querySelector('#username');
+  const email = document.querySelector('#emailField');
+  const password = document.querySelector('#password');
+  const cpassword = document.querySelector('#cpassword');
+  var myPopup = document.getElementById('myPopuup');
 
-document.addEventListener('submit',(e)=>{
-  
-    const usernameVal = username.value; 
+  document.addEventListener('submit', (e) => {
+
+    const usernameVal = username.value;
     const emailVal = emailField.value;
     const passwordVal = password.value;
     const cpasswordVal = cpassword.value;
     let success = true
-    
 
-    if(usernameVal===''){
-        success=false;
-       // setError(name,'Username is required')
-       var error = document.getElementById("userError");
-       error.removeAttribute("hidden");
-    }
-    if(emailVal===''){
-        success = false;
-       // setError(email,'Email is required')
-       var error = document.getElementById("emailError");
-       error.removeAttribute("hidden");
-    }
-    
-  
 
-    if(passwordVal === ''){
-        success= false;
-       // setError(password,'Password is required')
-       var error = document.getElementById("passwordError");
-       error.removeAttribute("hidden");
+    if (usernameVal === '') {
+      success = false;
+      // setError(name,'Username is required')
+      var error = document.getElementById("userError");
+      error.removeAttribute("hidden");
     }
-    else if(passwordVal.length<8){
-        success = false;
-        //setError(password,'Password must be atleast 8 characters long')
-        var error = document.getElementById("passwordError");
-        error.innerHTML = "Password must be at least 8 characters long";
-        error.removeAttribute("hidden");
+    if (emailVal === '') {
+      success = false;
+      // setError(email,'Email is required')
+      var error = document.getElementById("emailError");
+      error.removeAttribute("hidden");
     }
-    
 
-    if(cpasswordVal === ''){
-        success = false;
+    if (passwordVal === '') {
+      success = false;
+      // setError(password,'Password is required')
+      var error = document.getElementById("passwordError");
+      error.removeAttribute("hidden");
+    }
+    else if (passwordVal.length < 8) {
+      success = false;
+      //setError(password,'Password must be at least 8 characters long')
+      var error = document.getElementById("passwordError");
+      error.innerHTML = "Password must be at least 8 characters long";
+      error.removeAttribute("hidden");
+    }
+    else if (passwordVal.length > 128) {
+      success = false;
+      //setError(password,'Password cannot exceed 128 characters')
+      var error = document.getElementById("passwordError");
+      error.innerHTML = "Password cannot exceed 128 characters";
+      error.removeAttribute("hidden");
+    }
+    else if (!(hasSpecialCharacter(passwordVal))) {
+      success = false;
+      error.innerHTML = "Password must contain special character";
+    }
+    else if (!(hasUppercase(passwordVal))) {
+      success = false;
+      error.innerHTML = "Password must contain uppercase letter";
+    }
+
+    if (cpasswordVal === '') {
+      success = false;
       //  setError(cpassword,'Confirm password is required')
-        var error = document.getElementById("confirmError");
-        error.innerHTML = "Confirm password is required";
-        error.removeAttribute("hidden");
+      var error = document.getElementById("confirmError");
+      error.innerHTML = "Confirm password is required";
+      error.removeAttribute("hidden");
       //console.log("culprit");
     }
-    else if(cpasswordVal!==passwordVal){
-        success = false;
-       // setError(cpassword,'Password does not match')
-       //console.log("culprit");
-       var error = document.getElementById("confirmError");
-        error.innerHTML = "Password does not match";
-        error.removeAttribute("hidden");
+    else if (cpasswordVal !== passwordVal) {
+      success = false;
+      // setError(cpassword,'Password does not match')
+      //console.log("culprit");
+      var error = document.getElementById("confirmError");
+      error.innerHTML = "Password does not match";
+      error.removeAttribute("hidden");
     }
-    
-    if (success){
-      
+
+    if (success) {
+
       addUser(usernameVal, emailVal, passwordVal);
       password.value = '';
       cpassword.value = '';
@@ -232,39 +263,51 @@ document.addEventListener('submit',(e)=>{
       //accountList.newAccount=userAccount;
       //console.log(userAccount.username);
       //myPopup.removeAttribute("hidden");
-    }else{
+    } else {
       console.log("Failed.");
       alert("Error registering the account.");
     }
     e.preventDefault();
 
-})
+  })
 
-async function GetAllUsers() {
-  let response = await fetch(url);
-  myUser = await response.json();
-  console.log(myUser);
-} 
+  function hasSpecialCharacter(password) {
+    const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+    // check if password has special character
+    return specialChars.test(password);
+  }
 
-async function getUser(emailVal) {
-await GetAllUsers();
-const userCheck = myUser.find(User => User.username === emailVal);
-if (!userCheck) {
-    return;
-}  else {
-    exists = true;
-    return;
-}
+  function hasUppercase(password) {
+    const uppercaseRegex = /[A-Z]/;
+    // check if password has uppercase letter
+    return uppercaseRegex.test(password);
+  }
 
-}
+  async function GetAllUsers() {
+    let response = await fetch(url);
+    myUser = await response.json();
+    console.log(myUser);
+  }
 
-async function addUser(usernameVal, emailVal, passwordVal) {
+  async function getUser(emailVal) {
+    await GetAllUsers();
+    const userCheck = myUser.find(User => User.username === emailVal);
+    if (!userCheck) {
+      return;
+    } else {
+      exists = true;
+      return;
+    }
+
+  }
+
+  async function addUser(usernameVal, emailVal, passwordVal) {
     let User = {
-        username: emailVal,
-        email: emailVal,
-        firstName: usernameVal,
-        password: passwordVal,
-        numBooks: 0
+      username: emailVal,
+      email: emailVal,
+      firstName: usernameVal,
+      password: passwordVal,
+      numBooks: 0
     };
     await getUser(emailVal);
     if (exists) {
@@ -275,58 +318,58 @@ async function addUser(usernameVal, emailVal, passwordVal) {
     myUser.push(User);
 
     try {
-        const response = await fetch(url, {
-            method: "POST",
-            body: JSON.stringify(User),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+      const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(User),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
         }
+      });
 
-        console.log("User added successfully!");
-        alert("Account registered successfully.");
-        // Optionally, you can reload the page or show a success message here
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      console.log("User added successfully!");
+      alert("Account registered successfully.");
+      // Optionally, you can reload the page or show a success message here
     } catch (error) {
-        console.error('Error adding user:', error.message);
-        alert("Error registering the account.");
-        // Log the error message to the console
-        // You can add more detailed error handling or show an error message to the user here
+      console.error('Error adding user:', error.message);
+      alert("Error registering the account.");
+      // Log the error message to the console
+      // You can add more detailed error handling or show an error message to the user here
     }
-}
+  }
 
 
-// async function addUser(usernameVal, emailVal, passwordVal)
-// {
-//   //const transactionDate = new Date();
-//   //const formattedDate = transactionDate.toLocaleDateString('en-CA');
-//   //dateEntered: formattedDate,
-//   //onHold: false,
-//   //isDeleted: false
+  // async function addUser(usernameVal, emailVal, passwordVal)
+  // {
+  //   //const transactionDate = new Date();
+  //   //const formattedDate = transactionDate.toLocaleDateString('en-CA');
+  //   //dateEntered: formattedDate,
+  //   //onHold: false,
+  //   //isDeleted: false
 
-//   let User= 
-//   {
-//     username: emailVal,
-//     email: emailVal,
-//     firstName: usernameVal,
-//     password: passwordVal,
-//     numBooks: 0
-//   }
-//   myUser.push(User)
+  //   let User= 
+  //   {
+  //     username: emailVal,
+  //     email: emailVal,
+  //     firstName: usernameVal,
+  //     password: passwordVal,
+  //     numBooks: 0
+  //   }
+  //   myUser.push(User)
 
-//    await fetch(url, {
-//     method: "POST",
-//     body: JSON.stringify(User),
-//     headers:
-//     {
-//       "Content-type": "application/json; charset=UTF-8"
-//     }
-//   })
-//   //location.reload();
-// }
+  //    await fetch(url, {
+  //     method: "POST",
+  //     body: JSON.stringify(User),
+  //     headers:
+  //     {
+  //       "Content-type": "application/json; charset=UTF-8"
+  //     }
+  //   })
+  //   //location.reload();
+  // }
 
 
 </script>
