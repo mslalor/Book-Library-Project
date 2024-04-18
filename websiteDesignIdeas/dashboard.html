@@ -499,10 +499,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 const url2 = "https://personal-book-library.azurewebsites.net/api/User";
 //const url = "http://localhost:5176/api/Book";
 const url = "https://personal-book-library.azurewebsites.net/api/Book";
+const url3 = "https://personal-book-library-1.azurewebsites.net/api/Environment";
 
 let myBooks = [];
 let allBooks = [];
 let index = 0;
+let envVariable = "";
 
 //var id = getID();
 //var id = localStorage.getItem("userId");
@@ -907,6 +909,8 @@ function getbooks(){
     });
 }
 
+
+
 function remind(num){
   var book = document.getElementById('book'+num);
   //renter email and book
@@ -975,13 +979,44 @@ function remove(num){
 
 }
 
+// async function grabEnv(successEnv) {
 
-function sendReminder(bookTitle, userName, renterEmailTo){ //actually sends the reminder
-  const sgMail = require('@sendgrid/mail')
+//     try {
+//         const response = await fetch(url3, {
+//             method: "GET"
+//         });
 
-  const API_KEY = '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';
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! Status: ${response.status}`);
+//         }
+//     } catch (error) {
+//         console.error('Error getting variable:', error.message);
+//         successEnv = false;
+//         // Log the error message to the console
+//     }
+// }
 
-  sgMail.setApiKey(API_KEY)
+async function GetEnv() {
+  let response = await fetch(url3);
+  envVariable = await response.json();
+  //console.log(myUser);
+} 
+
+
+async function sendReminder(bookTitle, userName, renterEmailTo){ //actually sends the reminder
+  
+  // fetch('/api/environmentvariable')
+  //   .then(response => response.json())
+  //   .then(data => {
+  //       // Now you can use the environment variable in your JavaScript code
+  //       console.log(data);
+  //   })
+  //   .catch(error => console.error('Error fetching environment variable:', error));
+  await GetEnv();
+  const sgMail = require('@sendgrid/mail');
+  sgMail.setApiKey(envVariable);
+  // $API_KEY = process.env.SENDGRID_API_KEY
+  //APPSETTING_SENDGRID_API_KEY
 
   const renter = userName;
 
