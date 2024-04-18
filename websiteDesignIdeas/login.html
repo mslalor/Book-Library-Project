@@ -159,20 +159,11 @@ async function login() {
         alert("Invalid email. Too short.");
         return;
     }
-    if (emailVal.length > 50) {
-        alert("Invalid email. Too long.");
-        return;
-    }
-    
     if (passwordVal.length < 8) {
         alert("Password must be at least 8 characters.");
         return;
     }
-    if (passwordVal.length > 30) {
-        alert("Password too long");
-        return;
-    }
-
+    
     await getUser(emailVal, passwordVal);
 
     if (success) {
