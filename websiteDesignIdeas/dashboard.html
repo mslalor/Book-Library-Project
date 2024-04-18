@@ -685,7 +685,7 @@ await fetch(`${url2}/${idusers}`, {
 // }
 
 function edit(num){
-  console.log("Do we even use this?");
+  
   if (myBooks[num-1].status == "In Library"){
     myBooks[num-1].status = "Lent Out Pending"; //FIX THIS LINE FOR DATABASE
     //go to lending html somehow
