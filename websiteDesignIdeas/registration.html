@@ -263,6 +263,8 @@
       //accountList.newAccount=userAccount;
       //console.log(userAccount.username);
       //myPopup.removeAttribute("hidden");
+      window.location.href = "login.html"
+
     } else {
       console.log("Failed.");
       alert("Error registering the account.");
@@ -271,13 +273,13 @@
 
   })
 
-  function hasSpecialCharacter(password) {
+  async function hasSpecialCharacter(password) {
     const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
     // check if password has special character
     return specialChars.test(password);
   }
 
-  function hasUppercase(password) {
+  async function hasUppercase(password) {
     const uppercaseRegex = /[A-Z]/;
     // check if password has uppercase letter
     return uppercaseRegex.test(password);
