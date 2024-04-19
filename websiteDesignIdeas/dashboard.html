@@ -998,7 +998,8 @@ function remove(num){
 
 async function GetEnv() {
   let response = await fetch(url3);
-  envVariable = await response.json();
+  //envVariable = await response.json();
+  let textResponse = await response.text(); 
   //console.log(myUser);
 } 
 
