@@ -19,7 +19,7 @@ namespace api.Controllers
             //List<Environment> environment = EnvironmentUtility.GetEnvironment();
             //return environment;
             var envVariable = System.Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
-            return Ok(envVariable);
+            return envVariable;
         }
 
         
