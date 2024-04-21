@@ -142,7 +142,7 @@
         <input type="password" id="password" placeholder="Create password" required>
       </div>
       <div>
-        <p id="passwordError" style="color: red" hidden>*Password is required</p>
+        <p id="passwordError" style="color: red" hidden>*Password error</p>
       </div>
       <div class="input-box">
         <input type="password" id="cpassword" placeholder="Confirm password" required>
@@ -230,11 +230,17 @@
     }
     else if (!(hasSpecialCharacter(passwordVal))) {
       success = false;
+      var error = document.getElementById("passwordError");
       error.innerHTML = "Password must contain special character";
+      error.removeAttribute("hidden");
+
     }
     else if (!(hasUppercase(passwordVal))) {
       success = false;
+      var error = document.getElementById("passwordError");
       error.innerHTML = "Password must contain uppercase letter";
+      error.removeAttribute("hidden");
+
     }
 
     if (cpasswordVal === '') {
@@ -272,13 +278,13 @@
 
   })
 
-  async function hasSpecialCharacter(password) {
+  function hasSpecialCharacter(password) {
     const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
     // check if password has special character
     return specialChars.test(password);
   }
 
-  async function hasUppercase(password) {
+  function hasUppercase(password) {
     const uppercaseRegex = /[A-Z]/;
     // check if password has uppercase letter
     return uppercaseRegex.test(password);
