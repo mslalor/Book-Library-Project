@@ -11,13 +11,8 @@ https://docs.google.com/document/d/1-y9ZOWtUgY1JdCROtOFc6kWhN_GXnb4F5fChdTu1WG4/
 Link to out Project Website 
 https://mslalor.github.io/Book-Library-Project/
 
-How to execute our website:
 
-The first page you are directed to is the login page to sign into your account (called login.html).
-The database has not currently been setup, meaning that there are no real accounts stored yet. 
-A fake account for login purposes is 
-username: kaleigh@gmail.com
-password: password
+How to execute our website:
 
 To register for an account, click "Sign up here!" which will take you to the registration page (registration.html).
 To return to the log in page, click "Login now".
@@ -26,6 +21,7 @@ After entering your login and clicking "Login", you are taken to your dashboard 
 Here, users are able to view their personal library, add/edit books and edit the book's status. 
 If a book has been lent out, select "Lend this book?". 
 This will change the button to "Returned?" which can be selected when the book has been returned. 
+"Remind" allows users to send a reminder email to the renter to return the book.
 Users can filter at the top of the screen by all their books, books that have been lent out, and books that have not been lent out and are currently in their library.
 
 Selecting "Add New Book" on the side bar takes users down to the section where they will be able to add a new book to their libary.
