@@ -8,6 +8,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = dotnetFolder
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\mikay\school\CS 495\Book-Library-Project\
+=======
+build_property.ProjectDir = C:\Users\kadan\OneDrive\Documents\GitHub\Book-Library-Project\
+>>>>>>> 7a8e95cb044f8b32582ab8faeff0ae3572f48f91
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

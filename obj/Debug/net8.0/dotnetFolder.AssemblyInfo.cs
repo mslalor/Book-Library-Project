@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnetFolder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+184914ab357363ecd9a5963e3b6ad965ece3c20a")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f9d5a0eeeb731c96954d05dfeacfd6e13c14f2a")]
+>>>>>>> 7a8e95cb044f8b32582ab8faeff0ae3572f48f91
 [assembly: System.Reflection.AssemblyProductAttribute("dotnetFolder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnetFolder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

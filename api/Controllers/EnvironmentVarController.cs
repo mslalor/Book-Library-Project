@@ -10,15 +10,15 @@ namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EnvironmentController : ControllerBase
+    public class EnvironmentVarController : ControllerBase
     {
-        // GET: api/Environment
+        // GET: api/EnvironmentVar
         [HttpGet]
-        public List<Environment> Get()
+        public IActionResult GetEnvironmentVariable()
         {
             //List<Environment> environment = EnvironmentUtility.GetEnvironment();
             //return environment;
-            string envVariable = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+            var envVariable = System.Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
             return Ok(envVariable);
         }
 

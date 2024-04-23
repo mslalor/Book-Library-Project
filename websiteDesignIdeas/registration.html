@@ -331,7 +331,7 @@
     await getUser(emailVal);
     if (exists) {
       exists = false;
-      alert("Error registering the account.");
+      alert("Account already exists.");
       return;
     }
     myUser.push(User);
