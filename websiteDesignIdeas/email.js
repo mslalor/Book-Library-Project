@@ -1,10 +1,12 @@
-import { setApiKey, send } from './node_modules/@sendgrid/mail/index.js'; //expected javascript module script 
+import { setApiKey, MailService } from './node_modules/@sendgrid/mail/index.js'; //expected javascript module script 
 
 async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
     const API_KEY = envVariable;
 
     setApiKey(API_KEY)
 
+     //send is a METHOD of MailService, not a function
+     const mailService = new MailService();
 
     const message = {
         to: renterEmailTo,
@@ -14,7 +16,7 @@ async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
         html: '<p><strong>Dear borrower,</strong></p><p>This is to inform you that your book <strong>' + bookTitle + '</strong> rented from <strong>' + userName + '</strong> is overdue.</p><p>Please return it as soon as possible.</p><p>Thank you,<br>Personal Book Library</p>',
     };
 
-    send(message)
-        .then(Response => console.log('Email sent.'))
+    mailService.send(message)
+        .then(() => console.log('Email sent.'))
         .catch(error => console.log(error.message));
 }
