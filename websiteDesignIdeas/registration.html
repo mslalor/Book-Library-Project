@@ -189,7 +189,7 @@
   document.addEventListener('submit', (e) => {
 
     const usernameVal = username.value;
-    const emailVal = emailField.value;
+    const emailVal = emailField.value.toLowerCase();
     const passwordVal = password.value;
     const cpasswordVal = cpassword.value;
     let success = true
@@ -240,8 +240,14 @@
       var error = document.getElementById("passwordError");
       error.innerHTML = "Password must contain uppercase letter";
       error.removeAttribute("hidden");
-
     }
+    else if (!(allValidChars(passwordVal))) {
+      success = false;
+      var error = document.getElementById("passwordError");
+      error.innerHTML = "Password contains invalid characters or symbols";
+      error.removeAttribute("hidden");
+    }
+    
 
     if (cpasswordVal === '') {
       success = false;
@@ -288,6 +294,12 @@
     const uppercaseRegex = /[A-Z]/;
     // check if password has uppercase letter
     return uppercaseRegex.test(password);
+  }
+
+  function allValidChars(password) {
+      var validRegex = /^[a-zA-Z0-9 !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+$/;
+      // check if password only contains valid characters
+      return validRegex.test(password);
   }
 
   async function GetAllUsers() {
