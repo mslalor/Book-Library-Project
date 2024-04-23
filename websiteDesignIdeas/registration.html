@@ -351,7 +351,10 @@
 
       console.log("User added successfully!");
       alert("Account registered successfully.");
-      // Optionally, you can reload the page or show a success message here
+    
+      clearErrorMessages();
+
+      // redirect to login page
       window.location.href = "login.html"
 
     } catch (error) {
@@ -360,6 +363,13 @@
       // Log the error message to the console
       // You can add more detailed error handling or show an error message to the user here
     }
+  }
+
+  function clearErrorMessages() {
+    document.getElementById("userError").hidden = true;
+    document.getElementById("emailError").hidden = true;
+    document.getElementById("passwordError").hidden = true;
+    document.getElementById("confirmError").hidden = true;
   }
 
 
