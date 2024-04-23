@@ -8465,19 +8465,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/monicalalor/.nuget/packages/": {}
+    "C:\\Users\\mikay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj",
+      "projectUniqueName": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/api.csproj",
-      "packagesPath": "/Users/monicalalor/.nuget/packages/",
-      "outputPath": "/Users/monicalalor/Documents/GitHub/Book-Library-Project/api/obj/",
+      "projectPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\mikay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mikay\\school\\CS 495\\Book-Library-Project\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/monicalalor/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mikay\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -8528,15 +8528,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
+            "version": "[6.0.29, 6.0.29]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.osx-x64",
-            "version": "[6.0.25, 6.0.25]"
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.29, 6.0.29]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
           }
         ],
         "frameworkReferences": {
@@ -8547,16 +8551,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/monicalalor/Documents/GitHub/Book-Library-Project/api/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
