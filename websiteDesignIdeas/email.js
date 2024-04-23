@@ -1,4 +1,4 @@
-import { setApiKey, send } from '../../node_modules/@sendgrid/mail/index.js';
+import { setApiKey, send } from '/node_modules/@sendgrid/mail/index.js';
 
 async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
     const API_KEY = envVariable;
