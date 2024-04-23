@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src = "accounts.js"></script> 
-<script src = "email.js"></script>
+<script type="module" src = "email.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
@@ -494,7 +494,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   
 <!-- End page content -->
 </div>
-<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+<!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
 <script>
 //const url2 = "http://localhost:5176/api/User";
 const url2 = "https://personal-book-library.azurewebsites.net/api/User";
@@ -1035,26 +1035,13 @@ async function sendReminder(bookTitle, userName, renterEmailTo){ //actually send
   //   })
   //   .catch(error => console.error('Error fetching environment variable:', error));
   await GetEnv();
+  await sendMail(envVariable, bookTitle, userName, renterEmailTo);
   //sendEmail(bookTitle, userName, renterEmailTo, envVariable);
-  const sgMail = require('@sendgrid/mail');
-  sgMail.setApiKey(envVariable);
+  // const sgMail = require('@sendgrid/mail');
+  // sgMail.setApiKey(envVariable);
   // $API_KEY = process.env.SENDGRID_API_KEY
   //APPSETTING_SENDGRID_API_KEY
 
-  const renter = userName;
-
-  const message = {
-      to: renterEmailTo,
-      from: 'personalbooklibrarydesign@gmail.com',
-      subject: 'Your book is overdue!',
-      text: 'Dear borrower,\n\nThis is to inform you that your book ' + bookTitle + ' rented from ' + renter + ' is overdue.\nPlease return it as soon as possible.\n\nThank you,\nPersonal Book Library',
-      html: '<p><strong>Dear borrower,</strong></p><p>This is to inform you that your book <strong>' + bookTitle + '</strong> rented from <strong>' + renter + '</strong> is overdue.</p><p>Please return it as soon as possible.</p><p>Thank you,<br>Personal Book Library</p>',
-  };
-
-  sgMail
-      .send(message)
-      .then(Response => console.log('Email sent.'))
-      .catch(error => console.log(error.message));
 }
 
 </script>
