@@ -1,10 +1,10 @@
-import { setApiKey, send } from './node_modules/@sendgrid/mail';
+// import { setApiKey, send } from './node_modules/@sendgrid/mail/index.js'; //expected javascript module script 
+import { setApiKey, send } from './node_modules/@sendgrid/mail/index.js';
 
 async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
     const API_KEY = envVariable;
 
-    setApiKey(API_KEY)
-
+    setApiKey(API_KEY);
 
     const message = {
         to: renterEmailTo,
@@ -15,6 +15,6 @@ async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
     };
 
     send(message)
-        .then(Response => console.log('Email sent.'))
+        .then(() => console.log('Email sent.'))
         .catch(error => console.log(error.message));
 }
