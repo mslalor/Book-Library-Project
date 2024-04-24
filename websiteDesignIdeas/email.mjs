@@ -2,7 +2,7 @@
 //import { setApiKey, send } from './node_modules/@sendgrid/mail/index.js';
 //import { setApiKey, send } from '../../api/node_modules/@sendgrid/mail/index.mjs';
 //const sgMail = require('@sendgrid/mail');
-import sgMail from '../../api/node_modules/@sendgrid/mail/index.mjs';
+import * as sgMail from '../../api/node_modules/@sendgrid/mail/index.mjs';
 
 async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
     const API_KEY = envVariable;
