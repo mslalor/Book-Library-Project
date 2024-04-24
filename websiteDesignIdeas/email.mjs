@@ -1,12 +1,13 @@
 // import { setApiKey, send } from './node_modules/@sendgrid/mail/index.js'; //expected javascript module script 
 //import { setApiKey, send } from './node_modules/@sendgrid/mail/index.js';
-import { setApiKey, send } from '../../api/node_modules/@sendgrid/mail/index.mjs';
+//import { setApiKey, send } from '../../api/node_modules/@sendgrid/mail/index.mjs';
 //const sgMail = require('@sendgrid/mail');
+import sgMail from '../../api/node_modules/@sendgrid/mail/index.mjs';
 
 async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
     const API_KEY = envVariable;
 
-    setApiKey(API_KEY);
+    sgMail.setApiKey(API_KEY);
 
     const message = {
         to: renterEmailTo,
@@ -16,7 +17,8 @@ async function sendMail(envVariable, bookTitle, userName, renterEmailTo){
         html: '<p><strong>Dear borrower,</strong></p><p>This is to inform you that your book <strong>' + bookTitle + '</strong> rented from <strong>' + userName + '</strong> is overdue.</p><p>Please return it as soon as possible.</p><p>Thank you,<br>Personal Book Library</p>',
     };
 
-    send(message)
+    sgMail
+        .send(message)
         .then(() => console.log('Email sent.'))
         .catch(error => console.log(error.message));
 }
