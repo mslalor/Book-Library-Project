@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Assignment 2</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../websiteDesignIdeas/styles.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 150px auto;
+            grid-template-rows: 72px auto auto;
+            grid-template-areas: "head head" "nav nav" "nav2 content";
+        }
+
+        h1 {
+            grid-area: head;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        #nav2 {
+            grid-area: nav2;
+            width: 100%;
+            z-index: 1;
+            top: 72px;
+            bottom: 0px;
+            background-color: rgb(152, 152, 251);
+            text-align: left;
+        }
+
+        #nav2 a {
+            padding: 8px 8px 8px 8px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid white;
+        }
+
+        #nav2 a:hover {
+            background-color: black;
+        }
+
+        #content {
+            grid-area: content;
+            padding: 15px;
+            background-color: rgb(177, 177, 251);
+            color: black;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+        ol li{
+            margin-bottom: 5px;
+        }
+        h2{
+            padding-top: 50px;
+            color:white;
+        }
+        h3{
+            color:black;
+            padding-bottom: 0px;
+            padding-left: 10px;
+        }
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px; 
+            left: 20px; 
+            background-color: rgba(255, 255, 255, 0.5); 
+            color: black;
+            font-size: small; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-decoration: none;
+            z-index: 1000; 
+        }
+        .back-to-top:hover {
+            background-color: rgb(152, 152, 251); 
+        }
+        .show {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="top">Writing Assignment 2</h1>
+    <nav>
+        <div class="button-container">
+            <a href="../../index.html" class="button">Home</a>
+            <a href="../../websiteDesignIdeas/deliverables.html" class="button">Deliverables</a>
+            <a href="writingassignment2.html" class="button">Writing Assignment 2</a>
+            <a href="../../websiteDesignIdeas/teambios.html" class="button">Our Team</a>
+            <a href="../../websiteDesignIdeas/registration.html" class="button">Sign Up</a>
+            <a href="../../websiteDesignIdeas/login.html" class="button">Login</a>
+        </div>
+    </nav>
+    <div id="nav2">
+        <a href="#install">Install Software</a>
+        <a href="#features">Features</a>
+        <a href="#modify">Modifying and Extending Code</a>
+        <a href="#faq">FAQ's</a>
+
+    </div>
+    <div id="content">
+        <h2 id="install" style="padding-top: 0;">Installing Our Software!</h2>
+        <p>The project can be cloned from the GitHub repository: <a href='https://github.com/mslalor/Book-Library-Project'>  https://github.com/mslalor/Book-Library-Project.</a> </p>
+        <p>It is not necessary to have .NET 6 or 7 downloaded onto your environment since the API is hosted, but that is an option. This project utilizes .NET 6, but .NET 7 is also compatible with this version.</p>
+        <p>To run this project with .NET, ensure you are in the api folder of the project (cd api) and then run the command “dotnet watch run” in your terminal. Once the SwaggerAPI page is loaded onto your browser, the project is ready to run. </p>
+        <p>The html file that holds our welcome page is called index.html in the main repository. However, the website is also located on <a href = "https://mslalor.github.io/Book-Library-Project/">https://mslalor.github.io/Book-Library-Project/</a> and <a href ="https://personal-book-library.netlify.app/">https://personal-book-library.netlify.app/</a>. </p>
+        <p>Any software that is able to clone a GitHub repository and modify code can be used, but Visual Studio 2022 is needed in order to publish the API to Azure.</p>
+        <p>This project utilizes Heroku, JawsDB, MySQL, Azure, SwaggerAPI, OpenLibrary, SendGrid, Netlify, and GitHub Pages. All of these resources are free and at most only require an account. </p>
+        <p>The account with Heroku allows you to create an app with an add-on for JawsDB, which creates a free MySQL database for the user. This is the database used for this project since it is not a local database and can be accessed from our website. Heroku is also what connected the SwaggerAPI to allow for the connection of frontend and backend with .NET. </p>
+        <p>OpenLibrary is the API used to populate the books users can search for and connect to the expansive book database. </p> 
+            <p>SendGrid is the application to send reminder emails to renters. To use this application, a user must create an account (the free tier allows for 100 emails a day) and generate an API key. The API is hosted using the free tier of Azure, where it is published on an app service to allow for non-local connection. With Azure, we input the SendGrid API key into an environment variable, where we could securely access it. </p>
+            <p>   Finally, Netlify and GitHub pages both host the website without any fees.
+            </p>
+
+        <h2 id="features">Features</h2>
+        
+        
+        <h2 id="modify">Modifying and Extending Code</h2>
+        
+
+        <h2 id="faq">FAQ's</h2> 
+        
+    
+    </div>
+
+
+    <a href="#top" class="back-to-top">To Top &uarr;</a>
+    <script>
+        // Show or hide the back-to-top button based on scroll position
+        window.onscroll = function () {
+            scrollFunction()
+        };
+        function scrollFunction() {
+            var backToTopButton = document.querySelector('.back-to-top');
+            var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            var scrollThreshold = 500;
+
+            if (scrollPosition > scrollThreshold) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
