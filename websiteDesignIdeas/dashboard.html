@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src = "accounts.js"></script> 
-<script type = "module" src = "email.mjs"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
@@ -1034,8 +1033,10 @@ async function sendReminder(bookTitle, userName, renterEmailTo){ //actually send
   //       console.log(data);
   //   })
   //   .catch(error => console.error('Error fetching environment variable:', error));
+
   await GetEnv();
-  await sendMail(envVariable, bookTitle, userName, renterEmailTo);
+  //await sendMail(envVariable, bookTitle, userName, renterEmailTo);
+
   //sendEmail(bookTitle, userName, renterEmailTo, envVariable);
   // const sgMail = require('@sendgrid/mail');
   // sgMail.setApiKey(envVariable);
