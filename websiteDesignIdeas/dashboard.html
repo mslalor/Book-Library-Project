@@ -813,7 +813,21 @@ function addBook(num){
 
  // console.log("title: " + title);
 
-  let newBook = new Book(title, author, isbn, "In Library", source)
+  //let newBook = new Book(title, author, isbn, "In Library", source)
+  // let Book = {
+  //       username: user.username,
+  //       isbn: isbn,
+  //       author: author,
+  //       title: title,
+  //       img: source,
+  //       status: "In Library",
+  //       renter: "none",
+  //       renterEmail: "none"
+  //       //dateRented: 0-0-0
+  //   };
+
+  // myBooks.push(Book);
+  console.log(myBooks);
   //user2.addBook(newBook);
   addBookData(userName, isbn, author, title, source);
   //numBooks += 1;
@@ -923,6 +937,7 @@ function remind(num){
 }
 
 function remove(num){
+  console.log(myBooks);
   console.log("Removing " + num);
   var book = document.getElementById('book'+num);
   var place = num - 1; 
