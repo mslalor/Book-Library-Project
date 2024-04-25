@@ -599,6 +599,7 @@ async function addBookData(username, isbn, author, title, img) {
         console.error('Error adding book:', error.message);
         // Log the error message to the console
     }
+    getBooks(userName);
 }
 
 async function handleStatusUpdate(idbooks, status, renterEmail, renterName) {
@@ -697,14 +698,14 @@ function edit(num){
     label.removeAttribute('hidden');
     var remind = document.getElementById("remind"+num);
     remind.removeAttribute("disabled");
-    console.log("here");
+    //console.log("here");
   }else{
     myBooks[num-1].status = "In Library";
     handleStatusUpdate(myBooks[num-1].idbooks, 'In Library', 'none', 'none');
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
     var remind = document.getElementById("remind"+num);
     remind.setAttribute("disabled", true);
-    console.log("here1");
+    //console.log("here1");
   }
   document.getElementById('summ'+num).innerHTML ="Author: " + myBooks[num-1].author + " ISBN:  " + myBooks[num-1].isbn;
   
@@ -769,7 +770,7 @@ function filterIn(){
   var book = document.getElementById('book'+j);
   console.log(myBooks[i].status + myBooks[i].title);
   if(myBooks[i].status == "In Library"){
-      console.log("here");
+      //console.log("here");
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -827,7 +828,7 @@ function addBook(num){
   //   };
 
   // myBooks.push(Book);
-  console.log(myBooks);
+  //console.log(myBooks);
   //user2.addBook(newBook);
   addBookData(userName, isbn, author, title, source);
   //numBooks += 1;
@@ -838,7 +839,7 @@ function addBook(num){
   //user2.numBooks = user2.numBooks + 1; 
   //console.log(user.numBooks);
   //console.log(user.bookList[user.numBooks-1].title);
-
+  
   var j = user.numBooks;
   var i = user.numBooks - 1;
   //console.log(i + "= i"); 
@@ -937,12 +938,12 @@ function remind(num){
 }
 
 function remove(num){
-  console.log(myBooks);
+  //console.log(myBooks);
   console.log("Removing " + num);
   var book = document.getElementById('book'+num);
   var place = num - 1; 
-  console.log(myBooks);
-  console.log(myBooks[num-1].idbooks);
+  //console.log(myBooks);
+  //console.log(myBooks[num-1].idbooks);
   deleteBookData(myBooks[num-1].idbooks);
   handleNumBooksUpdate(user.idusers, 0);
 
@@ -962,7 +963,7 @@ function remove(num){
   }
   myBooks.pop();
   //myBooks[num-1] = null;
-  console.log(myBooks);
+  //console.log(myBooks);
   //user.numBooks
   console.log("Index:");
   console.log(index);
