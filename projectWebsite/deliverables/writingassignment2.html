@@ -129,6 +129,55 @@
             </p>
 
         <h2 id="features">Features</h2>
+        <p> To begin, our welcome page contains the description of our website along with the key features that it implements. I will walk through each of these features:
+        </p>
+        <ul>
+            <li><b>I. Personal Dashboard</b>
+                <ul>
+                    <li><b>Easily add and remove books from your library with our user-friendly dashboard.</b></li>
+                    <li>To begin to access your own user-friendly dashboard library, click “sign up” (<a href="../../welcome.html">  Welcome Page</a>). On the registration page (<a href="../websiteDesignIdeas/registration.html">  Registration Page</a>), type in your name, email address, 
+                        and your password/confirmation password that must be at least 8 characters and contain a capital letter and special character (ex: ? and !). 
+                        Refer to <i>V. Secure and Reliable</i> for security. If successful, you should see an alert saying that the account was registered successfully. 
+                        This adds the account to our database in Azure using Heroku.
+                    </li>
+                    <li>Now, it redirects you to the login page (<a href="../websiteDesignIdeas/login.html">  Login Page</a>). Enter your username and password that you just created. This accesses the accounts created in our database to ensure that the username and password being submitted are valid. Upon logging in, you come to the personal dashboard (<a href="../websiteDesignIdeas/dashboard.html">  Dashboard Page</a>).
+                    </li>
+                    <li>To begin your library, go to the search bar that says “Add Book”. Click in the search bar and type the title of the book. After typing the title, click “Get books” to search for that title. When you click “Get books”, it queries the OpenLibrary API to find that specific book. There may be a delay between books populating and pressing the button, but that is caused by the OpenLibrary API itself. Click “Add to Library!” in order to add it to your library. Now, you should see this book in your library above. If adding a book was a mistake or a book is no longer in your library, you can click “Remove” to remove the book. Adding and removing books from a user's profile is dealt with using our database and updating a user's status.
+                    </li>
+                </ul>
+            </li>
+            <li><b>II. Effortless Book Tracking</b>
+                <ul>
+                    <li><b>Easily log your books and monitor their lending status.</b></li>
+                    <li>Logging books can be done easily with <i>I Personal Dashboard</i>. When you want to rent out one of your books, simply click “Lend this book?” on the book that you want to rent out. Now, by either scrolling or clicking on “Add Renter Info” on the sidebar, you can enter the renter's email and name. By submitting this information, our application will keep track of this user for you. More information about reminding these users can be found in <i>IV Reminders</i>.
+                    </li>
+                    <li>Now, to monitor your books' lending status, you can filter your library. By returning to the top of the page, click “Lent out” to see all books that have been lent to the user(s). However, if you want to see what books you have in your library available for renting, click “In Library” beside Filter. To return to the default view, filter by “ALL” to see all of the books in your library.
+                    </li>
+                </ul>
+            </li>
+            <li><b>III. Borrower Management</b>
+                <ul>
+                    <li><b>Keep a record of who borrowed which book.</b></li>
+                    <li>As mentioned above in <i>II Effortless Book Tracking</i>, our website will keep track of the user and their email for you through our database. By clicking on “Lent out”, it is possible to see each book that you rented out. To send a reminder to the user renting the book, refer to <i>IV Reminders</i>. When a user returns their book, simply click on the “Rented to: X Returned?” button to remove this renter from that book. This will allow the book to be rented again. You can see that it will now be removed from the “Lent out” list.</li>
+                </ul>
+            </li>
+            <li><b>IV. Reminders</b>
+                <ul>
+                    <li><b>Send timely reminders for overdue books and needed returns.</b></li>
+                    <li>When you input the information of a renter when renting out a book, their email will be used to remind them to return their book. Click the “Remind” button on the book in order to remind the renter that their book is due. This reminder feature is implemented through SendGrid's API, which allows for 100 emails a day (approved by Dr. Anderson). Valid users should primarily be teachers renting books to their students, so they should not abuse the reminder email functionality.
+                    </li>
+                    <li> You may notice that non-rented books have an inactive Remind button. This choice was done intentionally, as you cannot remind a non-existent renter to return their rented book.
+                    </li>
+                </ul>
+            </li>
+            <li><b>V. Secure and Reliable</b>
+                <ul>
+                    <li><b>Your data is safe with us, and our platform is designed for reliability.</b></li>
+                    <li>We have various security features, mainly provided through the Azure database that we used to host our website. It keeps track of the users that have registered for and can log into our website. </li>
+                    <li>In addition, to create a valid user in the registration page, we only allow for valid email and password input (between 8 and 128 valid characters and at least one capital letter & one special character). Any empty field when registering would also cause an error. The same checks occur in the login page (registered user, no empty fields, and valid email).</li>
+                </ul>
+            </li>
+        </ul>
         
         
         <h2 id="modify">Modifying and Extending Code</h2>
@@ -136,7 +185,7 @@
             If someone wanted to modify any code, they could do so by opening their repository (the cloned version from the project GitHub), and pulling for any changes. Then, they could create new files, change existing files, modify directories and more before pushing to the repository. 
         </p>
         <p>
-            To publish any changes made in the API folder to Azure, use Visual Studio to publish the API folder. Clone the repository, right click on the API folder, and select publish. Target an import profile and select “personal-book-library.PublishSettings”. Then select “Publish” to have it built on the Azure website. If you change anything in the Environment Controller, it would be necessary to change the url3 in dashboard.html to “personal-book-library” instead of “personal-book-library-1”. 
+            To publish any changes made in the API folder to Azure, use Visual Studio to publish the API folder. Clone the repository, right click on the API folder, and select publish. Target an import profile and select “personal-book-library.PublishSettings” found in /projectWebsite/deliverables. Then select “Publish” to have it built on the Azure website. If you change anything in the Environment Controller, it would be necessary to change the url3 in dashboard.html to “personal-book-library” instead of “personal-book-library-1”. 
         </p>
         <p>
             If you need to make any changes to the database for any reason, we recommend using MySQL Workbench and logging into the connection using the information in api/database/Database.cs. Ensure that any changes you make are reflected in the respective files in the API folder and are republished to Azure.
