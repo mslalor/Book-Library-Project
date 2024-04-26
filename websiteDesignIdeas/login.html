@@ -202,7 +202,7 @@ async function login() {
 async function GetAllUsers() {
   let response = await fetch(url);
   myUser = await response.json();
-  console.log(myUser);
+  //console.log(myUser);
 } 
 
 async function getUser(emailVal, passwordVal) {
@@ -216,7 +216,7 @@ user = userCheck;
 //console.log(userCheck.password);
 if (userCheck.password == passwordVal) {
     success = true;
-    console.log("Success");
+    //console.log("Success");
 } 
 
 // await fetch(`${url}/${username}`, {

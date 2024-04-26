@@ -14,7 +14,7 @@ The main welcome page is index.html.
 All other pages for our project can be found in the websiteDesignIdeas folder.
 All deliverables can be found in the projectWebsite folder under the deliverables folder. This is also where you can find the writing assignment 2 page.
 
-The documentFiles folder hosts some notes we took to organize thoughts for our database.
+The documentFiles folder hosts some notes we took to organize thoughts for our database along with the personal-book-library.PublishSettings file for publishing the API.
 
 Documentation for the project can be found on:
 https://personal-book-library.netlify.app/projectwebsite/deliverables/writingassignment2

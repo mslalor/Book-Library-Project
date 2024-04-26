@@ -277,7 +277,7 @@
       //myPopup.removeAttribute("hidden");
 
     } else {
-      console.log("Failed.");
+      //console.log("Failed.");
       alert("Error registering the account.");
     }
     e.preventDefault();
@@ -305,7 +305,7 @@
   async function GetAllUsers() {
     let response = await fetch(url);
     myUser = await response.json();
-    console.log(myUser);
+    //console.log(myUser);
   }
 
   async function getUser(emailVal) {
@@ -349,7 +349,7 @@
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      console.log("User added successfully!");
+      //console.log("User added successfully!");
       alert("Account registered successfully.");
     
       //clearErrorMessages();
@@ -358,7 +358,7 @@
       window.location.href = "login.html"
 
     } catch (error) {
-      console.error('Error adding user:', error.message);
+      //console.error('Error adding user:', error.message);
       alert("Error registering the account.");
       // Log the error message to the console
       // You can add more detailed error handling or show an error message to the user here

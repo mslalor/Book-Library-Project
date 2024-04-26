@@ -534,9 +534,9 @@ async function getBooks(username) {
 await GetAllBooks();
 myBooks = allBooks.filter(Book => Book.username === username);
 user.numBooks = myBooks.length;
-console.log(user.numBooks);
+//console.log(user.numBooks);
 if (!myBooks) return;
-console.log(myBooks);
+//console.log(myBooks);
 for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
@@ -555,14 +555,6 @@ for(var i = 0; i< user.numBooks; i++){
   
 }
 
-//userID = userCheck.idusers;
-//console.log(userID);
-//console.log(passwordVal);
-//console.log(userCheck.password);
-// if (userCheck.password == passwordVal) {
-//     success = true;
-//     console.log("Success");
-// } 
 }
 
 async function addBookData(username, isbn, author, title, img) {
@@ -575,7 +567,6 @@ async function addBookData(username, isbn, author, title, img) {
         status: "In Library",
         renter: "none",
         renterEmail: "none"
-        //dateRented: 0-0-0
     };
 
     myBooks.push(Book);
@@ -593,10 +584,10 @@ async function addBookData(username, isbn, author, title, img) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        console.log("Book added successfully!");
-        // Optionally, you can reload the page or show a success message here
+        //console.log("Book added successfully!");
+        
     } catch (error) {
-        console.error('Error adding book:', error.message);
+        //console.error('Error adding book:', error.message);
         // Log the error message to the console
     }
     getBooks(userName);
@@ -688,9 +679,7 @@ await fetch(`${url2}/${idusers}`, {
 function edit(num){
   
   if (myBooks[num-1].status == "In Library"){
-    myBooks[num-1].status = "Lent Out Pending"; //FIX THIS LINE FOR DATABASE
-    //go to lending html somehow
-    //handleStatusUpdate(myBooks[num-1].idbooks);
+    myBooks[num-1].status = "Lent Out Pending"; 
     var box = document.getElementById('renter');
     box.removeAttribute('hidden');
     document.getElementById('edit'+num).innerHTML = "Please input information in the box below";
@@ -698,14 +687,12 @@ function edit(num){
     label.removeAttribute('hidden');
     var remind = document.getElementById("remind"+num);
     remind.removeAttribute("disabled");
-    //console.log("here");
-  }else{
+  } else{
     myBooks[num-1].status = "In Library";
     handleStatusUpdate(myBooks[num-1].idbooks, 'In Library', 'none', 'none');
     document.getElementById('edit'+num).innerHTML = "Lend this book?"
     var remind = document.getElementById("remind"+num);
     remind.setAttribute("disabled", true);
-    //console.log("here1");
   }
   document.getElementById('summ'+num).innerHTML ="Author: " + myBooks[num-1].author + " ISBN:  " + myBooks[num-1].isbn;
   
@@ -734,7 +721,7 @@ function checkOut(){
 
   for(var i = 0; i < user.numBooks; i++){
     if(myBooks[i].status == "Lent Out Pending"){
-        //myBooks[i].marked(email, date, weeks); idk what this is but we need it
+        //myBooks[i].marked(email, date, weeks); 
         myBooks[i].status = "Lent Out";
         myBooks[i].renterEmail = email;
         //myBooks[i].renterEmail
@@ -755,7 +742,7 @@ function checkOut(){
 }
 
 function filterAll(){
-  console.log("Filter all");
+  //console.log("Filter all");
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
@@ -764,13 +751,12 @@ function filterAll(){
 }
 
 function filterIn(){
-  console.log("Filtered In library");
+  //console.log("Filtered In library");
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
-  console.log(myBooks[i].status + myBooks[i].title);
+  //console.log(myBooks[i].status + myBooks[i].title);
   if(myBooks[i].status == "In Library"){
-      //console.log("here");
       book.removeAttribute("hidden");
   }else{
     book.setAttribute("hidden", true);
@@ -778,7 +764,7 @@ function filterIn(){
 }
 }
 function filterLent(){
-  console.log("filterd lent out");
+  //console.log("filterd lent out");
   for(var i = 0; i< user.numBooks; i++){
   var j = i+1;
   var book = document.getElementById('book'+j);
@@ -814,19 +800,6 @@ function addBook(num){
 
  // console.log("title: " + title);
 
-  //let newBook = new Book(title, author, isbn, "In Library", source)
-  // let Book = {
-  //       username: user.username,
-  //       isbn: isbn,
-  //       author: author,
-  //       title: title,
-  //       img: source,
-  //       status: "In Library",
-  //       renter: "none",
-  //       renterEmail: "none"
-  //       //dateRented: 0-0-0
-  //   };
-
   // myBooks.push(Book);
   //console.log(myBooks);
   //user2.addBook(newBook);
@@ -861,45 +834,6 @@ function addBook(num){
 
 }
 
-
-// function addBook(num){
-//   var searched = document.getElementById('result'+num);
-//   var title = document.getElementById("search" + num).innerHTML;
-//   var author = document.getElementById("info"+num).innerHTML;
-//   var isbn = document.getElementById("isbn"+num).innerHTML;
-//   if(!document.getElementById("cover"+num).src){
-//     var source = 'img/noimage.jpeg';
-//   }else{
-//     var source = document.getElementById("cover"+num).src;
-//   }
-
-//  // console.log("title: " + title);
-
-//   let newBook = new Book(title, author, isbn, "In Library", source)
-//   //user.addBook(newBook);
-//   addBookData(userName, isbn);
-//   user.numBooks = user.numBooks + 1; //FIX THIS LINE FOR THE DATABASE
-//   //console.log(user.numBooks);
-//   //console.log(user.bookList[user.numBooks-1].title);
-
-//   var j = user.numBooks;
-//   var i = user.numBooks - 1;
-//   //console.log(i + "= i"); 
-//   var book = document.getElementById('book'+j);
-//   document.getElementById('title'+j).innerHTML = user.bookList[i].title;
-//   document.getElementById('summ'+j).innerHTML ="Author: " + user.bookList[i].author + " ISBN:  " +user.bookList[i].isbn;
-//   document.getElementById("image"+j).src = user.bookList[i].img;
-//   book.removeAttribute("hidden");
-
-//   document.getElementById('input').innerHTML = "";
-//   for(var i = 0; i<9; i++){
-//     j = i +1;
-//     var searched = document.getElementById('result'+j);
-//     searched.setAttribute("hidden", true);
-//   }
-
-// }
-
 function getbooks(){
     document.getElementById('output').innerHTML="Searching...";
     fetch("https://openlibrary.org/search.json?q=" + document.getElementById("input").value)
@@ -929,7 +863,7 @@ function getbooks(){
 function remind(num){
   var book = document.getElementById('book'+num);
   //renter email and book
-  console.log("Issue");
+  //console.log("Issue");
   var bookTitle = myBooks[num-1].title;
   var renterEmailTo = myBooks[num-1].renterEmail;
   
@@ -939,7 +873,7 @@ function remind(num){
 
 function remove(num){
   //console.log(myBooks);
-  console.log("Removing " + num);
+  //console.log("Removing " + num);
   var book = document.getElementById('book'+num);
   var place = num - 1; 
   //console.log(myBooks);
@@ -954,23 +888,23 @@ function remove(num){
     user.numBooks = user.numBooks - 1;
     //myBooks[num-1] = null;
     myBooks.pop();
-    console.log(user.numBooks);
+    //console.log(user.numBooks);
     return;
   }
   for(var i = place; i<user.numBooks; i++){
-    console.log((i+1) + " replacing " + i);
+    //console.log((i+1) + " replacing " + i);
     myBooks[i] = myBooks[i+1];
   }
   myBooks.pop();
   //myBooks[num-1] = null;
   //console.log(myBooks);
   //user.numBooks
-  console.log("Index:");
-  console.log(index);
+  //console.log("Index:");
+  //console.log(index);
 
   var j = 0;
   for(var i = 0; i<= user.numBooks+1; i++){
-    console.log(myBooks[i]);
+    //console.log(myBooks[i]);
   if (myBooks[i] != null) {
   //var j = i+1;
   j += 1;
@@ -986,13 +920,13 @@ function remove(num){
   }
  
  // book.removeAttribute("hidden");
-  console.log("displaying: " + j + " which is at index " + i);
+  //console.log("displaying: " + j + " which is at index " + i);
   }
   }
-  console.log("j " + j);
+  //console.log("j " + j);
   var book = document.getElementById('book'+(j+1));
   book.setAttribute("hidden", true);
-  console.log("numbooks " + user.numBooks);
+  //console.log("numbooks " + user.numBooks);
 
 }
 
