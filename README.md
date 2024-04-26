@@ -8,10 +8,21 @@ https://docs.google.com/presentation/d/1ZUvkWjVVrHXY7PvtJWYM9PY-nLF-qYOtTNUASSvM
 Link to out Project Website 
 https://mslalor.github.io/Book-Library-Project/
 
+Testing document can be found in test.md
+
+The main welcome page can be found in welcome.html.
+All other pages for our project can be found in the websiteDesignIdeas folder.
+All deliverables can be found in the projectWebsite folder under the deliverables folder. This is also where you can find the writing assignment 2 page.
+
+The documentFiles folder hosts some notes we took to organize thoughts for our database.
+
+Documentation for the project can be found on:
+https://personal-book-library.netlify.app/projectwebsite/deliverables/writingassignment2
+
 
 How to execute our website:
 
-- On the welcome page, select "Get started now!" or select "Sign Up" from the navigation bar to register.
+- On the welcome page (welcome.html), select "Get started now!" or select "Sign Up" from the navigation bar to register.
 - To register for an account, click "Sign up here!" which will take you to the registration page (registration.html).
 - To get to the login page, click "Login now". (login.html)
 
